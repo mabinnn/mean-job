@@ -24,7 +24,8 @@ var CompanySchema = new mongoose.Schema({
         }
     ],
     status: {type: String},
-    notes: [{type: String}]
+    notes: [{type: String}],
+    contact: {type: Object}
 }, {timestamp: true});
 
 //register schema as model

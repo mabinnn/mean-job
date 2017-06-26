@@ -34,7 +34,7 @@ module.exports = {
         .then(user => {
             //create new company using given req data
             //and data from User.findOne()
-            var new_comp = new Company({name: req.body.name, url: req.body.url, _contacts: [], _user: user.id, address: rew.body.address, upcoming: req.body.upcoming, notes: req.body.notes[], role: erq.body.role});
+            var new_comp = new Company({name: req.body.name, url: req.body.url, _contacts: [], _user: user.id, address: rew.body.address, upcoming: req.body.upcoming, notes: req.body.notes, role: erq.body.role});
             console.log("new company:",new_comp);
 
             // new_comp.save(new_comp)

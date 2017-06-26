@@ -8,7 +8,8 @@ mongoose.Promise = global.Promise;
 var CompanySchema = new mongoose.Schema({
     name: {type: String},
     role: {type: String},
-    _contacts: [{type: Schema.Types.ObjectId, ref: 'Contact'}],
+    _contact1: {type: Schema.Types.ObjectId, ref: 'Contact'},
+    _contact2: {type: Schema.Types.ObjectId, ref: 'Contact'},
     address: {
         street: {type: String},
         suite: {type: String},

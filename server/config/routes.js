@@ -36,6 +36,6 @@ module.exports = function(app){
     //     items.deleteItem(req, res);
     // })
     app.all("*", (req,res) => {
-        res.sendfile(path.resolve("./public/dist/index.html"));
+        res.sendFile(path.resolve("./public/dist/index.html"));
     });
 }

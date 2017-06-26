@@ -3,6 +3,8 @@
  */
 var mongoose = require('mongoose');
 var Company = mongoose.model('Company');
+var Contact = mongoose.model('Contact');
+var User = mongoose.model('User');
 mongoose.Promise = global.Promise;
 
 var path = require('path');
@@ -34,7 +36,7 @@ module.exports = {
         .then(user => {
             //create new company using given req data
             //and data from User.findOne()
-            var new_comp = new Company({name: req.body.name, url: req.body.url, _contacts: [], _user: user.id, address: req.body.address, upcoming: req.body.upcoming, notes: req.body.notes, role: req.body.role});
+            var new_comp = new Company({name: req.body.name, url: req.body.url, _user: user.id, address: req.body.address, upcoming: req.body.upcoming, notes: req.body.notes, role: req.body.role});
             console.log("new company:",new_comp);
             //save new company
             new_comp.save(new_comp)
@@ -47,7 +49,12 @@ module.exports = {
                 user.save(user)
                 .then(data => {
                     console.log('saved user change');
-                    res.json(data);
+                    //cd add contacts (if any)
+                    if (req.body.contact1) {
+                        //var new_cont1 = new Contact()
+                        console.log('tes');
+                    }
+                    //res.json(data);
                 })
                 .catch(error => {
                     console.log('error saving user change');

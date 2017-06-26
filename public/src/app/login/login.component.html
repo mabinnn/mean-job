@@ -1,3 +1,41 @@
-<p>
-  login works!
-</p>
+
+<link rel="stylesheet" href="https://bootswatch.com/cerulean/bootstrap.min.css">
+
+<div class="container" style="text-align:center">
+
+  <h1>Welcome to our App!</h1>
+
+  <div class="loginform">
+    <form class="form-horizontal">
+      <fieldset>
+        <legend>Login Here</legend>
+        <!--Username-->
+        <div class="form-group">
+          <label for="email" class="col-lg-2 control-label">Email:</label>
+          <div class="col-lg-10">
+            <input type="text" class="form-control" name="email" placeholder="your@email.com">
+          </div>
+        </div> 
+
+        <!--Password-->
+        <div class="form-group">
+          <label for="password" class="col-lg-2 control-label">Password</label>
+          <div class="col-lg-10">
+            <input type="password" class="form-control" name="password" placeholder="Please enter your password">
+          </div>
+        </div> 
+
+          <!--If user is not registered-->
+          <div class="linktoregister">
+            <h4>Not registered?</h4>
+            <h5>Register 
+            <a [routerLink]="['/register']">here</a>
+            </h5>
+          </div> 
+
+        <button type="submit" class="btn btn-success">Login</button>      
+
+      </fieldset>
+    </form>
+  </div>
+</div>  

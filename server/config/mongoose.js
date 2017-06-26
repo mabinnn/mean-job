@@ -7,7 +7,7 @@ var fs = require('fs');//for loading model files
 var path = require('path');//use to get models path
 
 //1 - connect to database
-mongoose.connect('mongodb://localhost/');
+mongoose.connect('mongodb://localhost/jobs-db');
 
 //2 - point to where models live
 var models_path = path.join(__dirname, '../models');

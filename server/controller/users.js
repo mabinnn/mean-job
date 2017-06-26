@@ -1,15 +1,28 @@
 /*
- * USER MODEL 
+ * VARIABLES
  */
 var mongoose = require('mongoose');
+var User = mongoose.model('User');
 mongoose.Promise = global.Promise;
-//create schema
-var UserSchema = new mongoose.Schema({
-    username: {type: String},
-    email: {type: String},
-    password: {type: String},
-    note: {type: String},
-}, {timestamp: true});
 
-//register schema as model
-var User = mongoose.model('User', UserSchema);
+var path = require('path');
+
+/*
+ * LOGIC
+ */
+
+module.exports = {
+
+    readUsers: (req, res) => {
+        User.find({})
+        .then(data => {
+            console.log('success in users.js/index()');
+            console.log(data);
+            res.json(data);
+        })
+        .catch(err => {
+            console.log('error in users.js/index()');
+            res.json(err);
+        })
+    },
+}

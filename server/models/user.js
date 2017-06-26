@@ -1,17 +1,15 @@
 /*
- * VARIABLES
+ * USER MODEL 
  */
 var mongoose = require('mongoose');
-var User = mongoose.model('User');
 mongoose.Promise = global.Promise;
+//create schema
+var UserSchema = new mongoose.Schema({
+    username: {type: String},
+    email: {type: String},
+    password: {type: String},
+    note: {type: String},
+}, {timestamp: true});
 
-var path = require('path');
-
-/*
- * LOGIC
- */
-
-module.exports = {
-
-    
-}
+//register schema as model
+var User = mongoose.model('User', UserSchema);

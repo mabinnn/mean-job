@@ -11,6 +11,10 @@ var users = require('../controller/users.js'),
  */
 module.exports = function(app){
     
+    //users
+    app.get('/user/:id', (req, res) => {
+        users.findUser(req, res);
+    });
     // app.post('/newitem', (req, res) => {
     //     items.createItem(req, res);
     // });

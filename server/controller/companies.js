@@ -34,29 +34,30 @@ module.exports = {
         .then(user => {
             //create new company using given req data
             //and data from User.findOne()
-            var new_comp = new Company({name: req.body.name, url: req.body.url, _contacts: [], _user: user.id, address: rew.body.address, upcoming: req.body.upcoming, notes: req.body.notes, role: erq.body.role});
+            var new_comp = new Company({name: req.body.name, url: req.body.url, _contacts: [], _user: user.id, address: req.body.address, upcoming: req.body.upcoming, notes: req.body.notes, role: req.body.role});
             console.log("new company:",new_comp);
-
-            // new_comp.save(new_comp)
-            //     //'topic' below must NOT be named data for nesting
-            //     .then(topic => {
-            //         //add topic to user
-            //         console.log("user:",data);
-            //         data._topics.push(topic.id);
-            //         console.log("user:", data);
-
-            //         data.save(data)
-            //         .then(data => {
-            //             res.json(data);
-            //         })
-            //         .catch(error => {
-            //             res.json(error);
-            //         })
-            //     })
-            //     .catch(error => {
-            //         console.log('error adding topic');
-            //         res.json(error);
-            //     })
+            //save new company
+            new_comp.save(new_comp)
+            .then(company => {
+                //add company to user
+                console.log('user:', user);
+                user._companies.push(company.id);
+                console.log('user:', user);
+                //save user change
+                user.save(user)
+                .then(data => {
+                    console.log('saved user change');
+                    res.json(data);
+                })
+                .catch(error => {
+                    console.log('error saving user change');
+                    res.json(error);
+                })
+            })
+            .catch(error => {
+                console.log('error saving new company');
+                res.json(error);
+            })
         })
         .catch(error => {
             console.log('error finding topic:', error)

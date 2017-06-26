@@ -2,14 +2,15 @@
  * CONTACT MODEL 
  */
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 mongoose.Promise = global.Promise;
 //create schema
 var ContactSchema = new mongoose.Schema({
     name: {type: String},
     linkedin: {type: String},
-    _company: {type: Schema.Types.ObjectId, ref: 'Company'}
+    _company: {type: Schema.Types.ObjectId, ref: 'Company'},
     email: {type: String},
-    phone: {type: String}
+    phone: {type: String},
     note: [{ypte: String}]
 }, {timestamp: true});
 

@@ -2,6 +2,7 @@
  * USER MODEL 
  */
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 mongoose.Promise = global.Promise;
 //create schema
 var UserSchema = new mongoose.Schema({

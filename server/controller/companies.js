@@ -13,5 +13,17 @@ var path = require('path');
 
 module.exports = {
 
-    
+    findCompany: (req, res) => {
+        console.log('reached findUser()');
+        Company.findOne({_id: req.params.id})
+        .populate('_contacts')
+        .exec()
+        .then(company => {
+            console.log('company:', company);
+            res.json(data);
+        })
+        .catch(error => {
+            res.json(error);
+        })
+    },
 }

@@ -14,6 +14,7 @@ var path = require('path');
 
 module.exports = {
 
+    //COME BACK TO ME & FIX HASH!
     createUser: (req, res) => {
         console.log('reached createUser()');
         console.log(req.body);

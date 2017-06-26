@@ -22,6 +22,7 @@ var CompanySchema = new mongoose.Schema({
             note: {type: String}
         }
     ],
+    status: {type: String},
     notes: [{type: String}]
 }, {timestamp: true});
 

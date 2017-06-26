@@ -19,6 +19,9 @@ module.exports = function(app){
         users.findUser(req, res);
     });
     //companies
+    app.post('/new_company', (req, res) => {
+        companies.createCompany(req, res);
+    });
     app.get('/company/:id', (req, res) => {
         companies.findCompany(req, res);
     });

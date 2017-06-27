@@ -6,7 +6,7 @@ var Schema = mongoose.Schema;
 mongoose.Promise = global.Promise;
 //create schema
 var UpcomingSchema = new mongoose.Schema({
-    _company: {type: Schema.Types.ObjectId, ref: 'Company'};
+    _company: {type: Schema.Types.ObjectId, ref: 'Company'},
     followup: {type: String},
     note: {type: String}
 }, {timestamp: true});

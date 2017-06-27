@@ -16,7 +16,7 @@ var CompanySchema = new mongoose.Schema({
         zip: {type: Number},
         state: {type: String}
     },
-    _upcomings: [{type: Schema.Types.ObjectId, ref: 'Upcoming'}]
+    _upcomings: [{type: Schema.Types.ObjectId, ref: 'Upcoming'}],
     status: {type: String},
     notes: [{type: String}],
     contact: {

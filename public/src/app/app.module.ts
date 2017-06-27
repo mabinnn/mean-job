@@ -28,7 +28,7 @@ import { RegistrationComponent } from './registration/registration.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-        AgmCoreModule.forRoot({
+    AgmCoreModule.forRoot({
       apiKey: 'AIzaSyB4kOD9AMomNP4OswtJNFTkgQtJleJSNV8'   // <-- Using my API Key
     })
   ],

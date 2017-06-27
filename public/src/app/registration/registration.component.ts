@@ -9,6 +9,14 @@ export class RegistrationComponent implements OnInit {
 
   constructor() { }
 
+  user = {
+    firstname: "",
+    lastname: "",
+    email: "",
+    password: "",
+    confirmpassword: "",
+  }
+
   ngOnInit() {
   }
 

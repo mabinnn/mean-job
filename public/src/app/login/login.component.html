@@ -2,28 +2,40 @@
 <link rel="stylesheet" href="https://bootswatch.com/cerulean/bootstrap.min.css">
 
 <div class="container" style="text-align:center">
-
   <h1>Welcome to our App!</h1>
-
   <div class="loginform">
-    <form class="form-horizontal">
+    <form class="form-horizontal" #myform="ngForm">
       <fieldset>
         <legend>Login Here</legend>
+      
         <!--Username-->
         <div class="form-group">
           <label for="email" class="col-lg-2 control-label">Email:</label>
           <div class="col-lg-10">
-            <input type="text" class="form-control" name="email" placeholder="your@email.com">
+            <input type="text" class="form-control" name="email" placeholder="your@email.com"
+            required
+            [(ngModel)]="userLogging.email"
+            #email="ngModel">
           </div>
+            <div class="red" *ngIf="email.errors && ( email.touched || myform.submitted )">
+              <p *ngIf="email.errors.required">Email is required</p>
+            </div>
         </div> 
 
         <!--Password-->
         <div class="form-group">
           <label for="password" class="col-lg-2 control-label">Password</label>
           <div class="col-lg-10">
-            <input type="password" class="form-control" name="password" placeholder="Please enter your password">
+            <input type="password" class="form-control" name="password" placeholder="Please enter your password"
+            required
+            [(ngModel)]="userLogging.password"
+            #password="ngModel">
           </div>
+            <div class="red" *ngIf="password.errors && ( password.touched || myform.submitted )">
+              <p *ngIf="password.errors.required">Password is required</p>
+            </div>
         </div> 
+          <button type="submit" class="btn btn-success">Login</button>   
 
           <!--If user is not registered-->
           <div class="linktoregister">
@@ -32,9 +44,6 @@
             <a [routerLink]="['/register']">here</a>
             </h5>
           </div> 
-
-        <button type="submit" class="btn btn-success">Login</button>      
-
       </fieldset>
     </form>
   </div>

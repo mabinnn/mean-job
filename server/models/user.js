@@ -10,7 +10,6 @@ var UserSchema = new mongoose.Schema({
     last_name: {type: String},
     email: {type: String},
     password: {type: String},
-    note: {type: String},
     _companies: [{type: Schema.Types.ObjectId, ref: 'Company'}]
 }, {timestamp: true});
 

@@ -32,7 +32,7 @@ module.exports = function(app){
         companies.findCompany(req, res);
     });
     /* - company id in url
-       - company note passed in req */
+       - new company note passed in req */
     app.post('/new_note/:id', (req, res) => {
         companies.addNote(req, res);
     });
@@ -41,25 +41,21 @@ module.exports = function(app){
     // app.post('/new_contact_note/:id', (req, res) => {
     //     companies.editContactNote(req, res);
     // });
-    /* - company id in url
-       - user email passed in req*/
-    app.post('/delete_company/:id', (req, res) => {
+    /* company id in url*/
+    app.get('/delete_company/:id', (req, res) => {
         companies.deleteCompany(req, res);
     });
 
     //UPCOMINGS
-    /* - company id in url
-       - upcoming details in req */
-    app.post('/new_upcoming/:id', (req, res) => {
+    /* upcoming details (&company id) in req */
+    app.post('/new_upcoming/', (req, res) => {
         upcomings.createUpcoming(req, res);
     });
-    /* - upcoming id in url
-       - company id in req details */
-    app.post('/delete_upcoming/:id', (req, res) => {
+    /* upcoming id in url */
+    app.get('/delete_upcoming/:id', (req, res) => {
         upcomings.deleteUpcoming(req, res);
     });
-    /* - upcoming id in url 
-       - company id in req */
+    /* upcoming id in url, upcoming update in req */
     app.post('/edit_upcoming/:id', (req, res) => {
         upcomings.editUpcoming(req, res);
     });

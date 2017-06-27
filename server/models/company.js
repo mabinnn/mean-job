@@ -17,7 +17,7 @@ var CompanySchema = new mongoose.Schema({
         state: {type: String}
     },
     _upcomings: [{type: Schema.Types.ObjectId, ref: 'Upcoming'}],
-    _user: {type: Schema.Types.ObjectId, ref: 'User'}.
+    _user: {type: Schema.Types.ObjectId, ref: 'User'},
     status: {type: String},
     notes: [{type: String}],
     contact: {

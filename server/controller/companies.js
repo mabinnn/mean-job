@@ -20,8 +20,13 @@ module.exports = {
         .populate('_contacts')
         .exec()
         .then(company => {
-            console.log('company:', company);
-            res.json(data);
+            if (company) {//if company found
+                console.log('company:', company);
+                res.json(data);
+            } else {//company not found
+                console.log('company not found');
+                res.json(company);
+            }
         })
         .catch(error => {
             res.json(error);
@@ -42,11 +47,34 @@ module.exports = {
         })
     },
 
+    // req.body {
+    //     name: [[name]],
+    //     url: [[url]],
+    //     role: [[role]],
+    //     address: [[{
+    //         street: [[stree]],
+    //         suite: [[suite]],
+    //         city: [[city]],
+    //         zip: [[zip]],
+    //         state: [[state]]
+    //     }]],
+    //     user: [[USER'S EMAIL]],
+    //     status: [[status]],
+    //     notes: [],
+    //     contact: {
+    //         name: [[name]],
+    //         linkedin: [[linkedinurl]],
+    //         email: [[email of contact]],
+    //         phone: [[contact phone num]],
+    //         note: [[note]]
+    //     }
+    // }
     createCompany: (req, res) => {
         console.log('reached companies.js/createCompany() - company:', req.body);
         //find user matching email passed in req
         User.findOne({email: req.body.user_email})
         .then(user => {
+            if (user) {//if user is found
             //create new company using given req data
             //and data from User.findOne()
             var new_comp = new Company({
@@ -82,6 +110,10 @@ module.exports = {
                 console.log('error saving new company');
                 res.json(error);
             })
+            } else {//user not found
+                console.log('user not found, company not added');
+                res.json(user);
+            }
         })
         .catch(error => {
             console.log('error finding user:', error)
@@ -92,14 +124,19 @@ module.exports = {
         console.log('reached companies/addNote()');
         Company.findOne({_id: req.params.id})
         .then(company => {
-            company.notes.push(req.body.note);
-            company.save(company)
-            .then(data => {
-                res.json(data);
-            })
-            .catch(error => {
-                res.json(error);
-            })
+            if (company) {//if company exists
+                company.notes.push(req.body.note);
+                company.save(company)
+                .then(data => {
+                    res.json(data);
+                })
+                .catch(error => {
+                    res.json(error);
+                })
+            } else {
+                console.log('company not found, note not added');
+                res.json(company);
+            }
         })
         .catch(error => {
             console.log('error finding company in addNote()')
@@ -107,43 +144,36 @@ module.exports = {
         })
     },
 
-    // editContactNote: (req, res) => {
-    //     console.log('reached companies/editContactNote()');
-    //     Company.findOne({_id: req.params.id})
-    //     .then(company => {
-    //         company.contact.notes
-    //     })
-    //     .catch(error => {
-    //         console.log('error adding ')
-    //     })
-    // },
-
     deleteCompany: (req, res) => {
-        console.log("USER:", req.body,user);
         console.log("COMPANY:", req.params.id);
 
         Company.findOne({_id: req.params.id})
         .then(company => {
-            console.log("COMPANYDATA:", company);
-            User.update(
-                {email: req.body.email},
-                {$pull: {_companies:{$in: [company._id]}}})
-            .then(data => {
-                console.log('removed company from user');
-                Company.deleteOne({_id: req.params.id})
+            if (company) {//if company exists
+                console.log("COMPANYDATA:", company);
+                User.update(
+                    {id: company._user},
+                    {$pull: {_companies:{$in: [company._id]}}})
                 .then(data => {
-                    console.log('company deleted');
-                    res.json(data);
+                    console.log('removed company from user');
+                    Company.deleteOne({_id: req.params.id})
+                    .then(data => {
+                        console.log('company deleted');
+                        res.json(data);
+                    })
+                    .catch(error => {
+                        console.log('error deleting company');
+                        res.json(error);
+                    })
                 })
                 .catch(error => {
-                    console.log('error deleting company');
-                    res.json(error);
-                })
-            })
-            .catch(error => {
                 console.log('error removing company from user')
                 res.json(error);
-            })
+                })
+            } else {//company does not exist
+                console.log('company does not exist, not deleted');
+                res.json(company);
+            }
         })
         .catch(error => {
             console.log('error finding company');

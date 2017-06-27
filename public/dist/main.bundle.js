@@ -22,6 +22,7 @@ webpackEmptyContext.id = "../../../../../src async recursive";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login_component__ = __webpack_require__("../../../../../src/app/login/login.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__registration_registration_component__ = __webpack_require__("../../../../../src/app/registration/registration.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__newentry_newentry_component__ = __webpack_require__("../../../../../src/app/newentry/newentry.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__companyinfo_companyinfo_component__ = __webpack_require__("../../../../../src/app/companyinfo/companyinfo.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppRoutingModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -34,11 +35,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var routes = [
     { path: "", pathMatch: 'full', component: __WEBPACK_IMPORTED_MODULE_2__login_login_component__["a" /* LoginComponent */] },
     { path: "register", component: __WEBPACK_IMPORTED_MODULE_3__registration_registration_component__["a" /* RegistrationComponent */] },
-    { path: "homepage", component: __WEBPACK_IMPORTED_MODULE_4__newentry_newentry_component__["a" /* NewentryComponent */] }
-    // {path: "dashboard", component: DashboardComponent}
+    { path: "homepage", component: __WEBPACK_IMPORTED_MODULE_4__newentry_newentry_component__["a" /* NewentryComponent */] },
+    { path: "information", component: __WEBPACK_IMPORTED_MODULE_5__companyinfo_companyinfo_component__["a" /* CompanyinfoComponent */] }
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {
@@ -101,7 +103,7 @@ var AppComponent = (function () {
     return AppComponent;
 }());
 AppComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["l" /* Component */])({
         selector: 'app-root',
         template: __webpack_require__("../../../../../src/app/app.component.html"),
         styles: [__webpack_require__("../../../../../src/app/app.component.css")]
@@ -119,13 +121,14 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_routing_module__ = __webpack_require__("../../../../../src/app/app-routing.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__login_login_component__ = __webpack_require__("../../../../../src/app/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__newentry_newentry_component__ = __webpack_require__("../../../../../src/app/newentry/newentry.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/dashboard/dashboard.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__companyinfo_companyinfo_component__ = __webpack_require__("../../../../../src/app/companyinfo/companyinfo.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__registration_registration_component__ = __webpack_require__("../../../../../src/app/registration/registration.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__agm_core__ = __webpack_require__("../../../../@agm/core/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_routing_module__ = __webpack_require__("../../../../../src/app/app-routing.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__login_login_component__ = __webpack_require__("../../../../../src/app/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__newentry_newentry_component__ = __webpack_require__("../../../../../src/app/newentry/newentry.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/dashboard/dashboard.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__companyinfo_companyinfo_component__ = __webpack_require__("../../../../../src/app/companyinfo/companyinfo.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__registration_registration_component__ = __webpack_require__("../../../../../src/app/registration/registration.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -136,6 +139,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+// Importing @agm/core for Google mpas
+
+// Importing components
 
 
 
@@ -151,20 +157,23 @@ var AppModule = (function () {
 AppModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["b" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_5__login_login_component__["a" /* LoginComponent */],
-            __WEBPACK_IMPORTED_MODULE_6__newentry_newentry_component__["a" /* NewentryComponent */],
-            __WEBPACK_IMPORTED_MODULE_7__dashboard_dashboard_component__["a" /* DashboardComponent */],
-            __WEBPACK_IMPORTED_MODULE_8__companyinfo_companyinfo_component__["a" /* CompanyinfoComponent */],
-            __WEBPACK_IMPORTED_MODULE_9__registration_registration_component__["a" /* RegistrationComponent */]
+            __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_6__login_login_component__["a" /* LoginComponent */],
+            __WEBPACK_IMPORTED_MODULE_7__newentry_newentry_component__["a" /* NewentryComponent */],
+            __WEBPACK_IMPORTED_MODULE_8__dashboard_dashboard_component__["a" /* DashboardComponent */],
+            __WEBPACK_IMPORTED_MODULE_9__companyinfo_companyinfo_component__["a" /* CompanyinfoComponent */],
+            __WEBPACK_IMPORTED_MODULE_10__registration_registration_component__["a" /* RegistrationComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_3__app_routing_module__["a" /* AppRoutingModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */]
+            __WEBPACK_IMPORTED_MODULE_4__app_routing_module__["a" /* AppRoutingModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
+            __WEBPACK_IMPORTED_MODULE_3__agm_core__["a" /* AgmCoreModule */].forRoot({
+                apiKey: 'AIzaSyB4kOD9AMomNP4OswtJNFTkgQtJleJSNV8' // <-- Using my API Key
+            })
         ],
         providers: [],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]]
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
@@ -180,7 +189,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "\nagm-map {\n    height: 500px;\n    width: 800px;\n}\n.googlemaps {\n    margin: 0 auto 0 auto;\n    width: 800px;\n    margin-left: auto;\n    margin-right: auto;\n}", ""]);
 
 // exports
 
@@ -193,7 +202,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/companyinfo/companyinfo.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  companyinfo works!\n</p>\n"
+module.exports = "<p>\n  companyinfo works!\n</p>\n\n<div class=\"googlemaps\"> \n  <agm-map [latitude]=\"lat\" [longitude]=\"lng\">\n    <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n  </agm-map>\n</div>\n\n\n"
 
 /***/ }),
 
@@ -215,13 +224,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var CompanyinfoComponent = (function () {
     function CompanyinfoComponent() {
+        this.lat = 37.780337;
+        this.lng = -122.403408;
     }
+    //   map = new google.maps.Map(document.getElementById('map'), {
+    //   center: {lat: -34.397, lng: 150.644},
+    //   zoom: 8
+    // });
     CompanyinfoComponent.prototype.ngOnInit = function () {
     };
     return CompanyinfoComponent;
 }());
 CompanyinfoComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["l" /* Component */])({
         selector: 'app-companyinfo',
         template: __webpack_require__("../../../../../src/app/companyinfo/companyinfo.component.html"),
         styles: [__webpack_require__("../../../../../src/app/companyinfo/companyinfo.component.css")]
@@ -254,7 +269,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<link rel=\"stylesheet\" href=\"https://bootswatch.com/cerulean/bootstrap.min.css\">\n\n<div class=\"container\"> \n  <table id=\"mytable\" class=\"table table-striped table-hover \">\n    <tr>\n      <th>Company Name</th>\n      <th>Date Added</th>\n      <th>Status</th>\n      <th>Notes</th>\n    </tr>\n    <tr class=\"success\">\n      <td><a href=\"\"> Apple </a></td>\n      <td>March 22, 2017</td>\n      <td>Interviewed</td>\n      <td>Waiting for my background check</td>\n    </tr>\n  </table>\n\n\n\n</div>\n"
+module.exports = "\n<link rel=\"stylesheet\" href=\"https://bootswatch.com/cerulean/bootstrap.min.css\">\n\n<div class=\"container\"> \n  <table id=\"mytable\" class=\"table table-striped table-hover \">\n    <tr>\n      <th>Company Name</th>\n      <th>Date Added</th>\n      <th>Status</th>\n      <th>Notes</th>\n    </tr>\n    <tr class=\"success\">\n      <td><a [routerLink]=\"['/information']\"> Apple </a></td>\n      <td>March 22, 2017</td>\n      <td>Interviewed</td>\n      <td>Waiting for my background check</td>\n    </tr>\n  </table>\n\n\n\n</div>\n"
 
 /***/ }),
 
@@ -282,7 +297,7 @@ var DashboardComponent = (function () {
     return DashboardComponent;
 }());
 DashboardComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["l" /* Component */])({
         selector: 'app-dashboard',
         template: __webpack_require__("../../../../../src/app/dashboard/dashboard.component.html"),
         styles: [__webpack_require__("../../../../../src/app/dashboard/dashboard.component.css")]
@@ -347,7 +362,7 @@ var LoginComponent = (function () {
     return LoginComponent;
 }());
 LoginComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["l" /* Component */])({
         selector: 'app-login',
         template: __webpack_require__("../../../../../src/app/login/login.component.html"),
         styles: [__webpack_require__("../../../../../src/app/login/login.component.css")]
@@ -408,7 +423,7 @@ var NewentryComponent = (function () {
     return NewentryComponent;
 }());
 NewentryComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["l" /* Component */])({
         selector: 'app-newentry',
         template: __webpack_require__("../../../../../src/app/newentry/newentry.component.html"),
         styles: [__webpack_require__("../../../../../src/app/newentry/newentry.component.css")]
@@ -476,7 +491,7 @@ var RegistrationComponent = (function () {
     return RegistrationComponent;
 }());
 RegistrationComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["l" /* Component */])({
         selector: 'app-registration',
         template: __webpack_require__("../../../../../src/app/registration/registration.component.html"),
         styles: [__webpack_require__("../../../../../src/app/registration/registration.component.css")]

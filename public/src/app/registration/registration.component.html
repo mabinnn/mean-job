@@ -2,17 +2,16 @@
 <link rel="stylesheet" href="https://bootswatch.com/cerulean/bootstrap.min.css">
 <div class="container" style="text-align:center">
   <div class="registration">
-    <form class="form-horizontal" #myform="ngForm">
+    <form class="form-horizontal" #myform="ngForm" (submit)="submitRegForm(myform)">
       <fieldset>
         <legend>Registration</legend>
-
         <!--First Name-->
         <div class="form-group">
           <label for="fname" class="col-lg-2 control-label">First Name:</label>
           <div class="col-lg-10">
             <input type="text" name="fname" class="form-control" placeholder="Your first name"
             required
-            [(ngModel)]="user.firstname"
+            [(ngModel)]="newuser.firstname"
             #fname="ngModel">     
           </div >
             <div class="red" *ngIf="fname.errors && (fname.touched || myform.submitted)">
@@ -26,7 +25,7 @@
           <div class="col-lg-10">
             <input type="text"  class="form-control" name="lname" placeholder="Your last name"
             required
-            [(ngModel)]="user.lastname"
+            [(ngModel)]="newuser.lastname"
             #lname="ngModel">
           </div>
             <div class="red" *ngIf="lname.errors && (lname.touched || myform.submitted)">
@@ -41,7 +40,7 @@
             <input type="text" class="form-control" name="email" placeholder="your@email.com"
             required
             pattern = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-            [(ngModel)]="user.email"
+            [(ngModel)]="newuser.email"
             #email="ngModel">
           </div>
             <div class="red" *ngIf="email.errors && (email.touched || myform.submitted)">
@@ -58,7 +57,7 @@
             required
             minlength="8"
             maxlength="12"
-            [(ngModel)]="user.password"
+            [(ngModel)]="newuser.password"
             #password="ngModel">
           </div>
             <div class="red" *ngIf="password.errors && (password.touched || myform.submitted)">
@@ -72,7 +71,7 @@
           <label for="confirmpw" class="col-lg-2 control-label">Confirm Password:</label>
           <div class="col-lg-10">
             <input type="password" class="form-control" name="confirmpassword" placeholder="Passwords must match"
-            [(ngModel)]="user.confirmpassword"
+            [(ngModel)]="newuser.confirmpassword"
             #confirmpassword="ngModel">
           </div>
             <div class="red" *ngIf="password.value !== confirmpassword.value && myform.submitted">

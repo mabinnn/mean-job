@@ -1,11 +1,50 @@
-<p>
-  companyinfo works!
-</p>
 
-<div class="googlemaps"> 
-  <agm-map [latitude]="lat" [longitude]="lng">
-    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-  </agm-map>
+<link rel="stylesheet" href="https://bootswatch.com/cerulean/bootstrap.min.css">
+
+<div class="container">
+  <!--Nav bar to search compnanies-->
+  <div class="nav">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search Comapany!">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+        </div>
+      </div>
+    </nav>      
+  </div>
+
+  <!--Display Google Maps-->
+  <div class="googlemaps"> 
+    <agm-map [latitude]="lat" [longitude]="lng">
+      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+    </agm-map>
+  </div>
+
+  <!--Display Comapny details-->
+  <div class="displaycompany">
+    <h2>Apple Inc</h2>
+    <p>Added on</p>
+    <div class="contact">
+      <h3>Contact Person</h3>
+      <a href="http://linkedin">linkedin of Contact</a>
+      <p>Email of contact</p>
+      <p>Phone Number</p>
+    </div>
+  </div>
+
+  <!--Office visit-->
+  <div class="visit">
+    <h2>Visiting Onsite?</h2>
+    <p>Address here</p>
+    <p> WEATER API here</p>
+  </div>
 </div>
+
+
 
 

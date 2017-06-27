@@ -45,27 +45,36 @@ module.exports = {
     createCompany: (req, res) => {
         console.log('reached companies.js/createCompany() - company:', req.body);
         //find user matching email passed in req
-        User.findOne({email: req.body.email})
+        User.findOne({email: req.body.user_email})
         .then(user => {
             //create new company using given req data
             //and data from User.findOne()
-            var new_comp = new Company({name: req.body.name, url: req.body.url, _user: user.id, address: req.body.address, status: req.body.status, notes: req.body.notes, role: req.body.role, contact: req.body.contact, _upcomings: []});
+            var new_comp = new Company({
+                name: req.body.name,
+                url: req.body.url,
+                _user: user._id,
+                address: req.body.address,
+                status: req.body.status,
+                notes: req.body.notes,
+                role: req.body.role,
+                contact: req.body.contact,
+                _upcomings: []});
             console.log("new company:",new_comp);
             //save new company
             new_comp.save(new_comp)
-            .then(company => {
+            .then(newcompany => {
                 //add company to user
                 console.log('user:', user);
-                user._companies.push(company.id);
+                user._companies.push(newcompany.id);
                 console.log('user:', user);
                 //save user change
                 user.save(user)
                 .then(data => {
-                    console.log('saved user change');                   
+                    console.log('saved company to user');
                     res.json(data);
                 })
                 .catch(error => {
-                    console.log('error saving user change');
+                    console.log('error saving company to user');
                     res.json(error);
                 })
             })
@@ -75,11 +84,12 @@ module.exports = {
             })
         })
         .catch(error => {
-            console.log('error finding topic:', error)
+            console.log('error finding user:', error)
         })
     },
 
     addNote: (req, res) => {
+        console.log('reached companies/addNote()');
         Company.findOne({_id: req.params.id})
         .then(company => {
             company.notes.push(req.body.note);
@@ -92,9 +102,21 @@ module.exports = {
             })
         })
         .catch(error => {
+            console.log('error finding company in addNote()')
             res.json(error);
         })
     },
+
+    // editContactNote: (req, res) => {
+    //     console.log('reached companies/editContactNote()');
+    //     Company.findOne({_id: req.params.id})
+    //     .then(company => {
+    //         company.contact.notes
+    //     })
+    //     .catch(error => {
+    //         console.log('error adding ')
+    //     })
+    // },
 
     deleteCompany: (req, res) => {
         console.log("USER:", req.body,user);

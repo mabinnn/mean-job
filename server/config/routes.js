@@ -36,11 +36,11 @@ module.exports = function(app){
     app.post('/new_note/:id', (req, res) => {
         companies.addNote(req, res);
     });
-    /* - company id in url
-       - contact note passed in req*/
-    app.post('/new_contact_note/:id', (req, res) => {
-        companies.addContactNote(req, res);
-    });
+    // /* - company id in url
+    //    - contact note passed in req*/
+    // app.post('/new_contact_note/:id', (req, res) => {
+    //     companies.editContactNote(req, res);
+    // });
     /* - company id in url
        - user email passed in req*/
     app.post('/delete_company/:id', (req, res) => {

@@ -28,6 +28,20 @@ module.exports = {
         })
     },
 
+    findCompanies: (req, res) => {
+        console.log('reached findCompanies()');
+        Company.find({})
+        .populate('_upcomings')
+        .exec()
+        .then(companies => {
+            console.log('companies:', companies);
+            res.json(data);
+        })
+        .catch(error => {
+            res.json(error);
+        })
+    },
+
     createCompany: (req, res) => {
         console.log('reached companies.js/createCompany() - company:', req.body);
         //find user matching email passed in req

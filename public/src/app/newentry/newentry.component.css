@@ -1,0 +1,16 @@
+
+.form-horizontal, newentrycomponent {
+    display: inline-block;
+    margin-top: 50px;
+    width: 75%;
+}
+
+.rightside {
+    display: inline-block;
+    margin-top: 20px;
+    float: right;
+}
+a {
+    display: block;
+    margin-top: 5px;
+}

@@ -22,7 +22,6 @@ webpackEmptyContext.id = "../../../../../src async recursive";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login_component__ = __webpack_require__("../../../../../src/app/login/login.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__registration_registration_component__ = __webpack_require__("../../../../../src/app/registration/registration.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__newentry_newentry_component__ = __webpack_require__("../../../../../src/app/newentry/newentry.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/dashboard/dashboard.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppRoutingModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -35,12 +34,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-
 var routes = [
     { path: "", pathMatch: 'full', component: __WEBPACK_IMPORTED_MODULE_2__login_login_component__["a" /* LoginComponent */] },
     { path: "register", component: __WEBPACK_IMPORTED_MODULE_3__registration_registration_component__["a" /* RegistrationComponent */] },
-    { path: "homepage", component: __WEBPACK_IMPORTED_MODULE_4__newentry_newentry_component__["a" /* NewentryComponent */] },
-    { path: "dashboard", component: __WEBPACK_IMPORTED_MODULE_5__dashboard_dashboard_component__["a" /* DashboardComponent */] }
+    { path: "homepage", component: __WEBPACK_IMPORTED_MODULE_4__newentry_newentry_component__["a" /* NewentryComponent */] }
+    // {path: "dashboard", component: DashboardComponent}
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {
@@ -103,7 +101,7 @@ var AppComponent = (function () {
     return AppComponent;
 }());
 AppComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
         selector: 'app-root',
         template: __webpack_require__("../../../../../src/app/app.component.html"),
         styles: [__webpack_require__("../../../../../src/app/app.component.css")]
@@ -120,13 +118,14 @@ AppComponent = __decorate([
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_routing_module__ = __webpack_require__("../../../../../src/app/app-routing.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__login_login_component__ = __webpack_require__("../../../../../src/app/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__newentry_newentry_component__ = __webpack_require__("../../../../../src/app/newentry/newentry.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/dashboard/dashboard.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__companyinfo_companyinfo_component__ = __webpack_require__("../../../../../src/app/companyinfo/companyinfo.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__registration_registration_component__ = __webpack_require__("../../../../../src/app/registration/registration.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_routing_module__ = __webpack_require__("../../../../../src/app/app-routing.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__login_login_component__ = __webpack_require__("../../../../../src/app/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__newentry_newentry_component__ = __webpack_require__("../../../../../src/app/newentry/newentry.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/dashboard/dashboard.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__companyinfo_companyinfo_component__ = __webpack_require__("../../../../../src/app/companyinfo/companyinfo.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__registration_registration_component__ = __webpack_require__("../../../../../src/app/registration/registration.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -134,6 +133,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -151,19 +151,20 @@ var AppModule = (function () {
 AppModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["b" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_4__login_login_component__["a" /* LoginComponent */],
-            __WEBPACK_IMPORTED_MODULE_5__newentry_newentry_component__["a" /* NewentryComponent */],
-            __WEBPACK_IMPORTED_MODULE_6__dashboard_dashboard_component__["a" /* DashboardComponent */],
-            __WEBPACK_IMPORTED_MODULE_7__companyinfo_companyinfo_component__["a" /* CompanyinfoComponent */],
-            __WEBPACK_IMPORTED_MODULE_8__registration_registration_component__["a" /* RegistrationComponent */]
+            __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_5__login_login_component__["a" /* LoginComponent */],
+            __WEBPACK_IMPORTED_MODULE_6__newentry_newentry_component__["a" /* NewentryComponent */],
+            __WEBPACK_IMPORTED_MODULE_7__dashboard_dashboard_component__["a" /* DashboardComponent */],
+            __WEBPACK_IMPORTED_MODULE_8__companyinfo_companyinfo_component__["a" /* CompanyinfoComponent */],
+            __WEBPACK_IMPORTED_MODULE_9__registration_registration_component__["a" /* RegistrationComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_2__app_routing_module__["a" /* AppRoutingModule */]
+            __WEBPACK_IMPORTED_MODULE_3__app_routing_module__["a" /* AppRoutingModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */]
         ],
         providers: [],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */]]
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
@@ -220,7 +221,7 @@ var CompanyinfoComponent = (function () {
     return CompanyinfoComponent;
 }());
 CompanyinfoComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
         selector: 'app-companyinfo',
         template: __webpack_require__("../../../../../src/app/companyinfo/companyinfo.component.html"),
         styles: [__webpack_require__("../../../../../src/app/companyinfo/companyinfo.component.css")]
@@ -240,7 +241,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "\n\n#mytable {\n    width: 100%;\n    -ms-flex-line-pack: center;\n        align-content: center;\n    margin-bottom: 50px;\n\n}", ""]);
 
 // exports
 
@@ -253,7 +254,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  dashboard works!\n</p>\n"
+module.exports = "\n<link rel=\"stylesheet\" href=\"https://bootswatch.com/cerulean/bootstrap.min.css\">\n\n<div class=\"container\"> \n  <table id=\"mytable\" class=\"table table-striped table-hover \">\n    <tr>\n      <th>Company Name</th>\n      <th>Date Added</th>\n      <th>Status</th>\n      <th>Notes</th>\n    </tr>\n    <tr class=\"success\">\n      <td><a href=\"\"> Apple </a></td>\n      <td>March 22, 2017</td>\n      <td>Interviewed</td>\n      <td>Waiting for my background check</td>\n    </tr>\n  </table>\n\n\n\n</div>\n"
 
 /***/ }),
 
@@ -281,7 +282,7 @@ var DashboardComponent = (function () {
     return DashboardComponent;
 }());
 DashboardComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
         selector: 'app-dashboard',
         template: __webpack_require__("../../../../../src/app/dashboard/dashboard.component.html"),
         styles: [__webpack_require__("../../../../../src/app/dashboard/dashboard.component.css")]
@@ -301,7 +302,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "\nh1 {\n    margin-bottom: 50px;\n}\n.form-horizontal {\n    background-color: mintcream;\n    padding: 25px;\n    border-radius: 25px;\n}", ""]);
+exports.push([module.i, "\nh1 {\n    margin-bottom: 50px;\n}\n.form-horizontal {\n    background-color: mintcream;\n    padding: 25px;\n    border-radius: 25px;\n}\n.red {\n    color: red;\n    font-size: 14px;\n\n}\n.linktoregister {\n    margin-top: 40px;\n}", ""]);
 
 // exports
 
@@ -314,7 +315,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/login/login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<link rel=\"stylesheet\" href=\"https://bootswatch.com/cerulean/bootstrap.min.css\">\n\n<div class=\"container\" style=\"text-align:center\">\n\n  <h1>Welcome to our App!</h1>\n\n  <div class=\"loginform\">\n    <form class=\"form-horizontal\">\n      <fieldset>\n        <legend>Login Here</legend>\n        <!--Username-->\n        <div class=\"form-group\">\n          <label for=\"email\" class=\"col-lg-2 control-label\">Email:</label>\n          <div class=\"col-lg-10\">\n            <input type=\"text\" class=\"form-control\" name=\"email\" placeholder=\"your@email.com\">\n          </div>\n        </div> \n\n        <!--Password-->\n        <div class=\"form-group\">\n          <label for=\"password\" class=\"col-lg-2 control-label\">Password</label>\n          <div class=\"col-lg-10\">\n            <input type=\"password\" class=\"form-control\" name=\"password\" placeholder=\"Please enter your password\">\n          </div>\n        </div> \n\n          <!--If user is not registered-->\n          <div class=\"linktoregister\">\n            <h4>Not registered?</h4>\n            <h5>Register \n            <a [routerLink]=\"['/register']\">here</a>\n            </h5>\n          </div> \n\n        <button type=\"submit\" class=\"btn btn-success\">Login</button>      \n\n      </fieldset>\n    </form>\n  </div>\n</div>  "
+module.exports = "\n<link rel=\"stylesheet\" href=\"https://bootswatch.com/cerulean/bootstrap.min.css\">\n\n<div class=\"container\" style=\"text-align:center\">\n  <h1>Welcome to our App!</h1>\n  <div class=\"loginform\">\n    <form class=\"form-horizontal\" #myform=\"ngForm\">\n      <fieldset>\n        <legend>Login Here</legend>\n      \n        <!--Username-->\n        <div class=\"form-group\">\n          <label for=\"email\" class=\"col-lg-2 control-label\">Email:</label>\n          <div class=\"col-lg-10\">\n            <input type=\"text\" class=\"form-control\" name=\"email\" placeholder=\"your@email.com\"\n            required\n            [(ngModel)]=\"userLogging.email\"\n            #email=\"ngModel\">\n          </div>\n            <div class=\"red\" *ngIf=\"email.errors && ( email.touched || myform.submitted )\">\n              <p *ngIf=\"email.errors.required\">Email is required</p>\n            </div>\n        </div> \n\n        <!--Password-->\n        <div class=\"form-group\">\n          <label for=\"password\" class=\"col-lg-2 control-label\">Password</label>\n          <div class=\"col-lg-10\">\n            <input type=\"password\" class=\"form-control\" name=\"password\" placeholder=\"Please enter your password\"\n            required\n            [(ngModel)]=\"userLogging.password\"\n            #password=\"ngModel\">\n          </div>\n            <div class=\"red\" *ngIf=\"password.errors && ( password.touched || myform.submitted )\">\n              <p *ngIf=\"password.errors.required\">Password is required</p>\n            </div>\n        </div> \n          <button type=\"submit\" class=\"btn btn-success\">Login</button>   \n\n          <!--If user is not registered-->\n          <div class=\"linktoregister\">\n            <h4>Not registered?</h4>\n            <h5>Register \n            <a [routerLink]=\"['/register']\">here</a>\n            </h5>\n          </div> \n      </fieldset>\n    </form>\n  </div>\n</div>  "
 
 /***/ }),
 
@@ -336,13 +337,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var LoginComponent = (function () {
     function LoginComponent() {
+        this.userLogging = {
+            email: "",
+            password: ""
+        };
     }
     LoginComponent.prototype.ngOnInit = function () {
     };
     return LoginComponent;
 }());
 LoginComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
         selector: 'app-login',
         template: __webpack_require__("../../../../../src/app/login/login.component.html"),
         styles: [__webpack_require__("../../../../../src/app/login/login.component.css")]
@@ -362,7 +367,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "\n.form-horizontal, newentrycomponent {\n    display: inline-block;\n    margin-top: 50px;\n    width: 75%;\n}\n\n.rightside {\n    display: inline-block;\n    margin-top: 20px;\n    float: right;\n}\na {\n    display: block;\n    margin-top: 5px;\n}\n.dashboardcomponent {\n    margin-top: 30px;\n    margin-bottom: 30px;\n}", ""]);
 
 // exports
 
@@ -375,7 +380,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/newentry/newentry.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<link rel=\"stylesheet\" href=\"https://bootswatch.com/cerulean/bootstrap.min.css\">\n<div class=\"container\">\n  <form class=\"form-horizontal\">\n    <fieldset>\n      <legend>Add new job Entry</legend>\n\n\n    </fieldset>\n  </form>\n\n\n</div>\n\n\n\n"
+module.exports = "\n<link rel=\"stylesheet\" href=\"https://bootswatch.com/cerulean/bootstrap.min.css\">\n<div class=\"container\">\n\n  <div class=\"header\">\n    <h2>Welcome, User!</h2>\n  </div>\n\n  <div class=\"newentrycomponent\">\n    <!--From to add new Entry-->\n    <form class=\"form-horizontal\">\n      <fieldset>\n        <legend>Add new job Entry</legend>\n\n        <!--Company name-->\n        <div class=\"form-group\">\n          <label for=\"company\" class=\"col-lg-2 control-label\">Company:</label>\n          <div class=\"col-lg-10\">\n            <input type=\"text\" name=\"company\" class=\"form-control\" placeholder=\"Agency, Employer, etc.\">     \n          </div> \n        </div>\n        <!--Position Applied-->\n        <div class=\"form-group\">\n          <label for=\"role\" class=\"col-lg-2 control-label\">Position:</label>\n          <div class=\"col-lg-10\">\n            <input type=\"text\" name=\"role\" class=\"form-control\" placeholder=\"ex: Software Enginner\">     \n          </div> \n        </div>        \n        <!--Link URL-->\n        <div class=\"form-group\">\n          <label for=\"link\" class=\"col-lg-2 control-label\">Link:</label>\n          <div class=\"col-lg-10\">\n            <input type=\"text\" name=\"link\" class=\"form-control\" placeholder=\"www.job.com\">     \n          </div> \n        </div>    \n        <!--Address of the company-->\n        <div class=\"form-group\">\n          <label for=\"street\" class=\"col-lg-2 control-label\">Street</label>\n          <div class=\"col-lg-10\">\n            <input type=\"text\" name=\"street\" class=\"form-control\" placeholder=\"ex: 400 Main Ave.\">\n          </div> \n        </div> \n              <!--Suite-->\n        <div class=\"form-group\">\n          <label for=\"Suite\" class=\"col-lg-2 control-label\">Office Suite:</label>\n          <div class=\"col-lg-10\">\n              <input type=\"text\" name=\"suite\" class=\"form-control\" placeholder=\"Suite #\">\n          </div>\n        </div>\n              <!--City-->\n        <div class=\"form-group\">\n          <label for=\"city\" class=\"col-lg-2 control-label\">City:</label>\n          <div class=\"col-lg-10\">\n              <input type=\"text\" name=\"city\" class=\"form-control\" placeholder=\"City\">\n          </div>\n        </div>        \n              <!--Zip Code-->\n        <div class=\"form-group\">\n          <label for=\"zip\" class=\"col-lg-2 control-label\">Zip Code:</label>\n          <div class=\"col-lg-10\">\n            <input type=\"number\" name=\"zip\" class=\"form-control\" placeholder=\"Zip code\">\n          </div>\n        </div>\n              <!--Choose State-->\n        <div class=\"form-group\">\n          <label for=\"state\" class=\"col-lg-2 control-label\">State:</label>\n            <div class=\"col-lg-10\">\n              <select name=\"state\">\n                <option value=\"AL\">Alabama</option>\n                <option value=\"AK\">Alaska</option>\n                <option value=\"AZ\">Arizona</option>\n                <option value=\"AR\">Arkansas</option>\n                <option value=\"CA\">California</option>\n                <option value=\"CO\">Colorado</option>\n                <option value=\"CT\">Connecticut</option>\n                <option value=\"DE\">Delaware</option>\n                <option value=\"FL\">Florida</option>\n                <option value=\"GA\">Georgia</option>\n                <option value=\"HI\">Hawaii</option>\n                <option value=\"ID\">Idaho</option>\n                <option value=\"IL\">Illinois</option>\n                <option value=\"IN\">Indiana</option>\n                <option value=\"IA\">Iowa</option>\n                <option value=\"KS\">Kansas</option>\n                <option value=\"KY\">Kentucky</option>\n                <option value=\"LA\">Louisiana</option>\n                <option value=\"ME\">Maine</option>\n                <option value=\"MD\">Maryland</option>\n                <option value=\"MA\">Massachusetts</option>\n                <option value=\"MI\">Michigan</option>\n                <option value=\"MN\">Minnesota</option>\n                <option value=\"MS\">Mississippi</option>\n                <option value=\"MO\">Missouri</option>\n                <option value=\"MT\">Montana</option>\n                <option value=\"NE\">Nebraska</option>\n                <option value=\"NV\">Nevada</option>\n                <option value=\"NH\">New Hampshire</option>\n                <option value=\"NJ\">New Jersey</option>\n                <option value=\"NM\">New Mexico</option>\n                <option value=\"NY\">New York</option>\n                <option value=\"NC\">North Carolina</option>\n                <option value=\"ND\">North Dakota</option>\n                <option value=\"OH\">Ohio</option>\n                <option value=\"OK\">Oklahoma</option>\n                <option value=\"OR\">Oregon</option>\n                <option value=\"PA\">Pennsylvania</option>\n                <option value=\"RI\">Rhode Island</option>\n                <option value=\"SC\">South Carolina</option>\n                <option value=\"SD\">South Dakota</option>\n                <option value=\"TN\">Tennessee</option>\n                <option value=\"TX\">Texas</option>\n                <option value=\"UT\">Utah</option>\n                <option value=\"VT\">Vermont</option>\n                <option value=\"VA\">Virginia</option>\n                <option value=\"WA\">Washington</option>\n                <option value=\"WV\">West Virginia</option>\n                <option value=\"WI\">Wisconsin</option>\n                <option value=\"WY\">Wyoming</option>\n              </select> \n             </div> \n        </div>\n              <!--Submit Button-->\n        <div class=\"form-group\" style=\"text-align:center;\">\n          <button type=\"submit\" class=\"btn btn-primary\" style=\"text-align:center\">Submit</button>\n        </div>\n      </fieldset>\n    </form>\n    <!--End Form-->\n    <div class=\"rightside\">\n      <h2>Job Search</h2>\n        <a href=\"http://www.linkedin.com\">LinkedIn</a>\n        <a href=\"http://www.indeed.com\">Indeed</a>\n        <a href=\"http://www.monster.com\">Monster</a>\n    </div>\n  </div>\n  <!--Nesting Dashboard Component Here-->\n  <div class=\"dashboardcomponent\">\n    <app-dashboard></app-dashboard>\n  </div>\n\n</div>\n\n\n\n"
 
 /***/ }),
 
@@ -403,7 +408,7 @@ var NewentryComponent = (function () {
     return NewentryComponent;
 }());
 NewentryComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
         selector: 'app-newentry',
         template: __webpack_require__("../../../../../src/app/newentry/newentry.component.html"),
         styles: [__webpack_require__("../../../../../src/app/newentry/newentry.component.css")]
@@ -423,7 +428,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "\n.form-horizontal {\n    margin-top: 50px;\n    background-color: lavender;\n    padding: 25px;\n    border-radius: 25px;  \n    \n}\nbutton {\n    margin-top: 20px;  \n}", ""]);
+exports.push([module.i, "\n.form-horizontal {\n    margin-top: 50px;\n    background-color: lavender;\n    padding: 25px;\n    border-radius: 25px;  \n    \n}\nbutton {\n    margin-top: 20px;  \n}\n.red {\n    color: red;\n}", ""]);
 
 // exports
 
@@ -436,7 +441,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/registration/registration.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<link rel=\"stylesheet\" href=\"https://bootswatch.com/cerulean/bootstrap.min.css\">\n<div class=\"container\" style=\"text-align:center\">\n  <div class=\"registration\">\n    <form class=\"form-horizontal\">\n      <fieldset>\n        <legend>Registration</legend>\n        <!--First Name-->\n        <div class=\"form-group\">\n          <label for=\"fname\" class=\"col-lg-2 control-label\">First Name:</label>\n          <div class=\"col-lg-10\">\n            <input type=\"text\" name=\"fname\" class=\"form-control\" placeholder=\"Your first name\">     \n          </div> \n        </div>\n\n        <!--Last Name-->\n        <div class=\"form-group\">\n          <label for=\"lname\" class=\"col-lg-2 control-label\">Last Name:</label>\n          <div class=\"col-lg-10\">\n            <input type=\"text\"  class=\"form-control\" name=\"lname\" placeholder=\"Your last name\">\n          </div>\n          \n        </div>\n\n        <!--Email-->\n        <div class=\"form-group\">\n          <label for=\"email\" class=\"col-lg-2 control-label\">Email:</label>\n          <div class=\"col-lg-10\">\n            <input type=\"text\" class=\"form-control\" name=\"email\" placeholder=\"your@email.com\">\n          </div>\n        </div>     \n\n        <!--Password -->\n        <div class=\"form-group\">\n          <label for=\"password\" class=\"col-lg-2 control-label\">Password</label>\n          <div class=\"col-lg-10\">\n            <input type=\"password\" class=\"form-control\" name=\"password\" placeholder=\"Must be between 8-12 characters\">\n          </div>\n        </div>\n\n        <!--Confirm Password -->\n        <div class=\"form-group\">\n          <label for=\"confirmpw\" class=\"col-lg-2 control-label\">Confirm Password:</label>\n          <div class=\"col-lg-10\">\n            <input type=\"password\" class=\"form-control\" name=\"confirmpw\" placeholder=\"Passwords must match\">\n          </div>\n        </div>\n        <h4> Already Registered?</h4>\n        <h5>\n          <a [routerLink]=\"['/']\"> Go Back</a>\n        </h5>\n        <button class=\"btn btn-primary\">Register!</button>      \n      </fieldset>\n    </form>\n  </div>\n</div>\n"
+module.exports = "\n<link rel=\"stylesheet\" href=\"https://bootswatch.com/cerulean/bootstrap.min.css\">\n<div class=\"container\" style=\"text-align:center\">\n  <div class=\"registration\">\n    <form class=\"form-horizontal\" #myform=\"ngForm\">\n      <fieldset>\n        <legend>Registration</legend>\n\n        <!--First Name-->\n        <div class=\"form-group\">\n          <label for=\"fname\" class=\"col-lg-2 control-label\">First Name:</label>\n          <div class=\"col-lg-10\">\n            <input type=\"text\" name=\"fname\" class=\"form-control\" placeholder=\"Your first name\"\n            required\n            [(ngModel)]=\"user.firstname\"\n            #fname=\"ngModel\">     \n          </div >\n            <div class=\"red\" *ngIf=\"fname.errors && (fname.touched || myform.submitted)\">\n              <p *ngIf=\"fname.errors.required\">This field must not be blank</p>\n            </div>\n        </div>\n\n        <!--Last Name-->\n        <div class=\"form-group\">\n          <label for=\"lname\" class=\"col-lg-2 control-label\">Last Name:</label>\n          <div class=\"col-lg-10\">\n            <input type=\"text\"  class=\"form-control\" name=\"lname\" placeholder=\"Your last name\"\n            required\n            [(ngModel)]=\"user.lastname\"\n            #lname=\"ngModel\">\n          </div>\n            <div class=\"red\" *ngIf=\"lname.errors && (lname.touched || myform.submitted)\">\n              <p *ngIf=\"lname.errors.required\">This field must not be blank</p>\n            </div>\n        </div>\n\n        <!--Email-->\n        <div class=\"form-group\">\n          <label for=\"email\" class=\"col-lg-2 control-label\">Email:</label>\n          <div class=\"col-lg-10\">\n            <input type=\"text\" class=\"form-control\" name=\"email\" placeholder=\"your@email.com\"\n            required\n            pattern = \"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$\"\n            [(ngModel)]=\"user.email\"\n            #email=\"ngModel\">\n          </div>\n            <div class=\"red\" *ngIf=\"email.errors && (email.touched || myform.submitted)\">\n              <p *ngIf=\"email.errors.required\">This field must not be blank</p>\n              <p *ngIf=\"email.errors.pattern\">Please enter a valid email address</p>\n            </div>\n        </div>     \n\n        <!--Password -->\n        <div class=\"form-group\">\n          <label for=\"password\" class=\"col-lg-2 control-label\">Password</label>\n          <div class=\"col-lg-10\">\n            <input type=\"password\" class=\"form-control\" name=\"password\" placeholder=\"Must be between 8-12 characters\"\n            required\n            minlength=\"8\"\n            maxlength=\"12\"\n            [(ngModel)]=\"user.password\"\n            #password=\"ngModel\">\n          </div>\n            <div class=\"red\" *ngIf=\"password.errors && (password.touched || myform.submitted)\">\n              <p *ngIf=\"password.errors.required\">This field must not be blank</p>\n              <p *ngIf=\"password.errors.minlength || password.errors.maxlength\">Password should be between 8-12 characters</p>\n            </div>\n        </div>\n\n        <!--Confirm Password -->\n        <div class=\"form-group\">\n          <label for=\"confirmpw\" class=\"col-lg-2 control-label\">Confirm Password:</label>\n          <div class=\"col-lg-10\">\n            <input type=\"password\" class=\"form-control\" name=\"confirmpassword\" placeholder=\"Passwords must match\"\n            [(ngModel)]=\"user.confirmpassword\"\n            #confirmpassword=\"ngModel\">\n          </div>\n            <div class=\"red\" *ngIf=\"password.value !== confirmpassword.value && myform.submitted\">\n              <p>Password are not matching!</p>\n            </div>\n        </div>\n\n        <h4> Already Registered?</h4>\n        <h5>\n          <a [routerLink]=\"['/']\"> Go Back</a>\n        </h5>\n        <button class=\"btn btn-primary\">Register!</button>      \n      </fieldset>\n    </form>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -458,13 +463,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var RegistrationComponent = (function () {
     function RegistrationComponent() {
+        this.user = {
+            firstname: "",
+            lastname: "",
+            email: "",
+            password: "",
+            confirmpassword: "",
+        };
     }
     RegistrationComponent.prototype.ngOnInit = function () {
     };
     return RegistrationComponent;
 }());
 RegistrationComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
         selector: 'app-registration',
         template: __webpack_require__("../../../../../src/app/registration/registration.component.html"),
         styles: [__webpack_require__("../../../../../src/app/registration/registration.component.css")]

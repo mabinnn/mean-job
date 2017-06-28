@@ -13,8 +13,7 @@ export class HttpService {
   /* USERS */
   //add user to db
   addUser(user) {
-    console.log('reached http/addUser - ', 
-    user);
+    console.log('reached http/addUser - ', user);
     return this._http.post('/new_user', user)
     .map((data) => data.json())
     .toPromise();

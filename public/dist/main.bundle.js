@@ -286,6 +286,8 @@ module.exports = "\n<link rel=\"stylesheet\" href=\"https://bootswatch.com/cerul
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__ = __webpack_require__("../../../../angular2-cookie/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DashboardComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -297,10 +299,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var DashboardComponent = (function () {
-    function DashboardComponent() {
+    function DashboardComponent(_cookieService) {
+        this._cookieService = _cookieService;
     }
     DashboardComponent.prototype.ngOnInit = function () {
+        console.log("newentry comp", this._cookieService.get('email'));
     };
     return DashboardComponent;
 }());
@@ -310,9 +315,10 @@ DashboardComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/dashboard/dashboard.component.html"),
         styles: [__webpack_require__("../../../../../src/app/dashboard/dashboard.component.css")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__["CookieService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__["CookieService"]) === "function" && _a || Object])
 ], DashboardComponent);
 
+var _a;
 //# sourceMappingURL=dashboard.component.js.map
 
 /***/ }),
@@ -484,7 +490,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/newentry/newentry.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<link rel=\"stylesheet\" href=\"https://bootswatch.com/cerulean/bootstrap.min.css\">\n<div class=\"container\">\n\n  <div class=\"header\">\n    <h2>Welcome, User!</h2>\n  </div>\n\n  <div class=\"newentrycomponent\">\n    <!--From to add new Entry-->\n    <form class=\"form-horizontal\">\n      <fieldset>\n        <legend>Add new job Entry</legend>\n\n        <!--Company name-->\n        <div class=\"form-group\">\n          <label for=\"company\" class=\"col-lg-2 control-label\">Company:</label>\n          <div class=\"col-lg-10\">\n            <input type=\"text\" name=\"company\" class=\"form-control\" placeholder=\"Agency, Employer, etc.\">     \n          </div> \n        </div>\n        <!--Position Applied-->\n        <div class=\"form-group\">\n          <label for=\"role\" class=\"col-lg-2 control-label\">Position:</label>\n          <div class=\"col-lg-10\">\n            <input type=\"text\" name=\"role\" class=\"form-control\" placeholder=\"ex: Software Enginner\">     \n          </div> \n        </div>        \n        <!--Link URL-->\n        <div class=\"form-group\">\n          <label for=\"link\" class=\"col-lg-2 control-label\">Link:</label>\n          <div class=\"col-lg-10\">\n            <input type=\"text\" name=\"link\" class=\"form-control\" placeholder=\"www.job.com\">     \n          </div> \n        </div>    \n        <!--Address of the company-->\n        <div class=\"form-group\">\n          <label for=\"street\" class=\"col-lg-2 control-label\">Street</label>\n          <div class=\"col-lg-10\">\n            <input type=\"text\" name=\"street\" class=\"form-control\" placeholder=\"ex: 400 Main Ave.\">\n          </div> \n        </div> \n              <!--Suite-->\n        <div class=\"form-group\">\n          <label for=\"Suite\" class=\"col-lg-2 control-label\">Office Suite:</label>\n          <div class=\"col-lg-10\">\n              <input type=\"text\" name=\"suite\" class=\"form-control\" placeholder=\"Suite #\">\n          </div>\n        </div>\n              <!--City-->\n        <div class=\"form-group\">\n          <label for=\"city\" class=\"col-lg-2 control-label\">City:</label>\n          <div class=\"col-lg-10\">\n              <input type=\"text\" name=\"city\" class=\"form-control\" placeholder=\"City\">\n          </div>\n        </div>        \n              <!--Zip Code-->\n        <div class=\"form-group\">\n          <label for=\"zip\" class=\"col-lg-2 control-label\">Zip Code:</label>\n          <div class=\"col-lg-10\">\n            <input type=\"number\" name=\"zip\" class=\"form-control\" placeholder=\"Zip code\">\n          </div>\n        </div>\n              <!--Choose State-->\n        <div class=\"form-group\">\n          <label for=\"state\" class=\"col-lg-2 control-label\">State:</label>\n            <div class=\"col-lg-10\">\n              <select name=\"state\">\n                <option value=\"AL\">Alabama</option>\n                <option value=\"AK\">Alaska</option>\n                <option value=\"AZ\">Arizona</option>\n                <option value=\"AR\">Arkansas</option>\n                <option value=\"CA\">California</option>\n                <option value=\"CO\">Colorado</option>\n                <option value=\"CT\">Connecticut</option>\n                <option value=\"DE\">Delaware</option>\n                <option value=\"FL\">Florida</option>\n                <option value=\"GA\">Georgia</option>\n                <option value=\"HI\">Hawaii</option>\n                <option value=\"ID\">Idaho</option>\n                <option value=\"IL\">Illinois</option>\n                <option value=\"IN\">Indiana</option>\n                <option value=\"IA\">Iowa</option>\n                <option value=\"KS\">Kansas</option>\n                <option value=\"KY\">Kentucky</option>\n                <option value=\"LA\">Louisiana</option>\n                <option value=\"ME\">Maine</option>\n                <option value=\"MD\">Maryland</option>\n                <option value=\"MA\">Massachusetts</option>\n                <option value=\"MI\">Michigan</option>\n                <option value=\"MN\">Minnesota</option>\n                <option value=\"MS\">Mississippi</option>\n                <option value=\"MO\">Missouri</option>\n                <option value=\"MT\">Montana</option>\n                <option value=\"NE\">Nebraska</option>\n                <option value=\"NV\">Nevada</option>\n                <option value=\"NH\">New Hampshire</option>\n                <option value=\"NJ\">New Jersey</option>\n                <option value=\"NM\">New Mexico</option>\n                <option value=\"NY\">New York</option>\n                <option value=\"NC\">North Carolina</option>\n                <option value=\"ND\">North Dakota</option>\n                <option value=\"OH\">Ohio</option>\n                <option value=\"OK\">Oklahoma</option>\n                <option value=\"OR\">Oregon</option>\n                <option value=\"PA\">Pennsylvania</option>\n                <option value=\"RI\">Rhode Island</option>\n                <option value=\"SC\">South Carolina</option>\n                <option value=\"SD\">South Dakota</option>\n                <option value=\"TN\">Tennessee</option>\n                <option value=\"TX\">Texas</option>\n                <option value=\"UT\">Utah</option>\n                <option value=\"VT\">Vermont</option>\n                <option value=\"VA\">Virginia</option>\n                <option value=\"WA\">Washington</option>\n                <option value=\"WV\">West Virginia</option>\n                <option value=\"WI\">Wisconsin</option>\n                <option value=\"WY\">Wyoming</option>\n              </select> \n             </div> \n        </div>\n              <!--Submit Button-->\n        <div class=\"form-group\" style=\"text-align:center;\">\n          <button type=\"submit\" class=\"btn btn-primary\" style=\"text-align:center\">Submit</button>\n        </div>\n      </fieldset>\n    </form>\n    <!--End Form-->\n    <div class=\"rightside\">\n      <h2>Job Search</h2>\n        <a href=\"http://www.linkedin.com\">LinkedIn</a>\n        <a href=\"http://www.indeed.com\">Indeed</a>\n        <a href=\"http://www.monster.com\">Monster</a>\n    </div>\n  </div>\n  <!--Nesting Dashboard Component Here-->\n  <div class=\"dashboardcomponent\">\n    <app-dashboard></app-dashboard>\n  </div>\n\n</div>\n\n\n\n"
+module.exports = "\n<link rel=\"stylesheet\" href=\"https://bootswatch.com/cerulean/bootstrap.min.css\">\n<div class=\"container\">\n\n  <div class=\"header\">\n    <h2>Welcome, {{loggedUser}}!</h2>\n  </div>\n\n  <div class=\"newentrycomponent\">\n    <!--From to add new Entry-->\n    <form class=\"form-horizontal\">\n      <fieldset>\n        <legend>Add new job Entry</legend>\n\n        <!--Company name-->\n        <div class=\"form-group\">\n          <label for=\"company\" class=\"col-lg-2 control-label\">Company:</label>\n          <div class=\"col-lg-10\">\n            <input type=\"text\" name=\"company\" class=\"form-control\" placeholder=\"Agency, Employer, etc.\">     \n          </div> \n        </div>\n        <!--Position Applied-->\n        <div class=\"form-group\">\n          <label for=\"role\" class=\"col-lg-2 control-label\">Position:</label>\n          <div class=\"col-lg-10\">\n            <input type=\"text\" name=\"role\" class=\"form-control\" placeholder=\"ex: Software Enginner\">     \n          </div> \n        </div>        \n        <!--Link URL-->\n        <div class=\"form-group\">\n          <label for=\"link\" class=\"col-lg-2 control-label\">Link:</label>\n          <div class=\"col-lg-10\">\n            <input type=\"text\" name=\"link\" class=\"form-control\" placeholder=\"www.job.com\">     \n          </div> \n        </div>    \n        <!--Address of the company-->\n        <div class=\"form-group\">\n          <label for=\"street\" class=\"col-lg-2 control-label\">Street</label>\n          <div class=\"col-lg-10\">\n            <input type=\"text\" name=\"street\" class=\"form-control\" placeholder=\"ex: 400 Main Ave.\">\n          </div> \n        </div> \n              <!--Suite-->\n        <div class=\"form-group\">\n          <label for=\"Suite\" class=\"col-lg-2 control-label\">Office Suite:</label>\n          <div class=\"col-lg-10\">\n              <input type=\"text\" name=\"suite\" class=\"form-control\" placeholder=\"Suite #\">\n          </div>\n        </div>\n              <!--City-->\n        <div class=\"form-group\">\n          <label for=\"city\" class=\"col-lg-2 control-label\">City:</label>\n          <div class=\"col-lg-10\">\n              <input type=\"text\" name=\"city\" class=\"form-control\" placeholder=\"City\">\n          </div>\n        </div>        \n              <!--Zip Code-->\n        <div class=\"form-group\">\n          <label for=\"zip\" class=\"col-lg-2 control-label\">Zip Code:</label>\n          <div class=\"col-lg-10\">\n            <input type=\"number\" name=\"zip\" class=\"form-control\" placeholder=\"Zip code\">\n          </div>\n        </div>\n              <!--Choose State-->\n        <div class=\"form-group\">\n          <label for=\"state\" class=\"col-lg-2 control-label\">State:</label>\n            <div class=\"col-lg-10\">\n              <select name=\"state\">\n                <option value=\"AL\">Alabama</option>\n                <option value=\"AK\">Alaska</option>\n                <option value=\"AZ\">Arizona</option>\n                <option value=\"AR\">Arkansas</option>\n                <option value=\"CA\">California</option>\n                <option value=\"CO\">Colorado</option>\n                <option value=\"CT\">Connecticut</option>\n                <option value=\"DE\">Delaware</option>\n                <option value=\"FL\">Florida</option>\n                <option value=\"GA\">Georgia</option>\n                <option value=\"HI\">Hawaii</option>\n                <option value=\"ID\">Idaho</option>\n                <option value=\"IL\">Illinois</option>\n                <option value=\"IN\">Indiana</option>\n                <option value=\"IA\">Iowa</option>\n                <option value=\"KS\">Kansas</option>\n                <option value=\"KY\">Kentucky</option>\n                <option value=\"LA\">Louisiana</option>\n                <option value=\"ME\">Maine</option>\n                <option value=\"MD\">Maryland</option>\n                <option value=\"MA\">Massachusetts</option>\n                <option value=\"MI\">Michigan</option>\n                <option value=\"MN\">Minnesota</option>\n                <option value=\"MS\">Mississippi</option>\n                <option value=\"MO\">Missouri</option>\n                <option value=\"MT\">Montana</option>\n                <option value=\"NE\">Nebraska</option>\n                <option value=\"NV\">Nevada</option>\n                <option value=\"NH\">New Hampshire</option>\n                <option value=\"NJ\">New Jersey</option>\n                <option value=\"NM\">New Mexico</option>\n                <option value=\"NY\">New York</option>\n                <option value=\"NC\">North Carolina</option>\n                <option value=\"ND\">North Dakota</option>\n                <option value=\"OH\">Ohio</option>\n                <option value=\"OK\">Oklahoma</option>\n                <option value=\"OR\">Oregon</option>\n                <option value=\"PA\">Pennsylvania</option>\n                <option value=\"RI\">Rhode Island</option>\n                <option value=\"SC\">South Carolina</option>\n                <option value=\"SD\">South Dakota</option>\n                <option value=\"TN\">Tennessee</option>\n                <option value=\"TX\">Texas</option>\n                <option value=\"UT\">Utah</option>\n                <option value=\"VT\">Vermont</option>\n                <option value=\"VA\">Virginia</option>\n                <option value=\"WA\">Washington</option>\n                <option value=\"WV\">West Virginia</option>\n                <option value=\"WI\">Wisconsin</option>\n                <option value=\"WY\">Wyoming</option>\n              </select> \n             </div> \n        </div>\n              <!--Submit Button-->\n        <div class=\"form-group\" style=\"text-align:center;\">\n          <button type=\"submit\" class=\"btn btn-primary\" style=\"text-align:center\">Submit</button>\n        </div>\n      </fieldset>\n    </form>\n    <!--End Form-->\n    <div class=\"rightside\">\n      <h2>Job Search</h2>\n        <a href=\"http://www.linkedin.com\">LinkedIn</a>\n        <a href=\"http://www.indeed.com\">Indeed</a>\n        <a href=\"http://www.monster.com\">Monster</a>\n    </div>\n  </div>\n  <!--Nesting Dashboard Component Here-->\n  <div class=\"dashboardcomponent\">\n    <app-dashboard></app-dashboard>\n  </div>\n\n</div>\n\n\n\n"
 
 /***/ }),
 
@@ -493,6 +499,8 @@ module.exports = "\n<link rel=\"stylesheet\" href=\"https://bootswatch.com/cerul
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__ = __webpack_require__("../../../../angular2-cookie/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NewentryComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -504,10 +512,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var NewentryComponent = (function () {
-    function NewentryComponent() {
+    function NewentryComponent(_cookieService) {
+        this._cookieService = _cookieService;
+        this.loggedUser = this._cookieService.get('email');
     }
     NewentryComponent.prototype.ngOnInit = function () {
+        console.log("newentry comp", this._cookieService.get('email'));
     };
     return NewentryComponent;
 }());
@@ -517,9 +529,10 @@ NewentryComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/newentry/newentry.component.html"),
         styles: [__webpack_require__("../../../../../src/app/newentry/newentry.component.css")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__["CookieService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__["CookieService"]) === "function" && _a || Object])
 ], NewentryComponent);
 
+var _a;
 //# sourceMappingURL=newentry.component.js.map
 
 /***/ }),
@@ -545,7 +558,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/registration/registration.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<link rel=\"stylesheet\" href=\"https://bootswatch.com/cerulean/bootstrap.min.css\">\n<div class=\"container\" style=\"text-align:center\">\n  <div class=\"registration\">\n    <form class=\"form-horizontal\" #myform=\"ngForm\" (submit)=\"submitRegForm(myform)\">\n      <fieldset>\n        <legend>Registration</legend>\n        <!--First Name-->\n        <div class=\"form-group\">\n          <label for=\"fname\" class=\"col-lg-2 control-label\">First Name:</label>\n          <div class=\"col-lg-10\">\n            <input type=\"text\" name=\"fname\" class=\"form-control\" placeholder=\"Your first name\"\n            required\n            [(ngModel)]=\"newuser.firstname\"\n            #fname=\"ngModel\">     \n          </div >\n            <div class=\"red\" *ngIf=\"fname.errors && (fname.touched || myform.submitted)\">\n              <p *ngIf=\"fname.errors.required\">This field must not be blank</p>\n            </div>\n        </div>\n\n        <!--Last Name-->\n        <div class=\"form-group\">\n          <label for=\"lname\" class=\"col-lg-2 control-label\">Last Name:</label>\n          <div class=\"col-lg-10\">\n            <input type=\"text\"  class=\"form-control\" name=\"lname\" placeholder=\"Your last name\"\n            required\n            [(ngModel)]=\"newuser.lastname\"\n            #lname=\"ngModel\">\n          </div>\n            <div class=\"red\" *ngIf=\"lname.errors && (lname.touched || myform.submitted)\">\n              <p *ngIf=\"lname.errors.required\">This field must not be blank</p>\n            </div>\n        </div>\n\n        <!--Email-->\n        <div class=\"form-group\">\n          <label for=\"email\" class=\"col-lg-2 control-label\">Email:</label>\n          <div class=\"col-lg-10\">\n            <input type=\"text\" class=\"form-control\" name=\"email\" placeholder=\"your@email.com\"\n            required\n            pattern = \"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$\"\n            [(ngModel)]=\"newuser.email\"\n            #email=\"ngModel\">\n          </div>\n            <div class=\"red\" *ngIf=\"email.errors && (email.touched || myform.submitted)\">\n              <p *ngIf=\"email.errors.required\">This field must not be blank</p>\n              <p *ngIf=\"email.errors.pattern\">Please enter a valid email address</p>\n            </div>\n        </div>     \n\n        <!--Password -->\n        <div class=\"form-group\">\n          <label for=\"password\" class=\"col-lg-2 control-label\">Password</label>\n          <div class=\"col-lg-10\">\n            <input type=\"password\" class=\"form-control\" name=\"password\" placeholder=\"Must be between 8-12 characters\"\n            required\n            minlength=\"8\"\n            maxlength=\"12\"\n            [(ngModel)]=\"newuser.password\"\n            #password=\"ngModel\">\n          </div>\n            <div class=\"red\" *ngIf=\"password.errors && (password.touched || myform.submitted)\">\n              <p *ngIf=\"password.errors.required\">This field must not be blank</p>\n              <p *ngIf=\"password.errors.minlength || password.errors.maxlength\">Password should be between 8-12 characters</p>\n            </div>\n        </div>\n\n        <!--Confirm Password -->\n        <div class=\"form-group\">\n          <label for=\"confirmpw\" class=\"col-lg-2 control-label\">Confirm Password:</label>\n          <div class=\"col-lg-10\">\n            <input type=\"password\" class=\"form-control\" name=\"confirmpassword\" placeholder=\"Passwords must match\"\n            [(ngModel)]=\"newuser.confirmpassword\"\n            #confirmpassword=\"ngModel\">\n          </div>\n            <div class=\"red\" *ngIf=\"password.value !== confirmpassword.value && myform.submitted\">\n              <p>Password are not matching!</p>\n            </div>\n        </div>\n\n        <h4> Already Registered?</h4>\n        <h5>\n          <a [routerLink]=\"['/']\"> Go Back</a>\n        </h5>\n        <button class=\"btn btn-primary\">Register!</button>      \n      </fieldset>\n    </form>\n  </div>\n</div>\n"
+module.exports = "\n<link rel=\"stylesheet\" href=\"https://bootswatch.com/cerulean/bootstrap.min.css\">\n<div class=\"container\" style=\"text-align:center\">\n  <div class=\"registration\">\n\n    <form class=\"form-horizontal\" #myform=\"ngForm\" (submit)=\"submitRegForm(myform)\">\n      <fieldset>\n        <legend>Registration</legend>\n\n              <!--If form is submitted, but invalid, display this message-->\n          <div class=\"red\" *ngIf=\"failBool\">\n            <p>Form is invalid. Please try again. </p>\n          </div>\n\n        <!--First Name-->\n        <div class=\"form-group\">\n          <label for=\"fname\" class=\"col-lg-2 control-label\">First Name:</label>\n          <div class=\"col-lg-10\">\n            <input type=\"text\" name=\"fname\" class=\"form-control\" placeholder=\"Your first name\"\n            required\n            [(ngModel)]=\"newuser.firstname\"\n            #fname=\"ngModel\">     \n          </div >\n            <div class=\"red\" *ngIf=\"fname.errors && (fname.touched || myform.submitted)\">\n              <p *ngIf=\"fname.errors.required\">This field must not be blank</p>\n            </div>\n        </div>\n\n        <!--Last Name-->\n        <div class=\"form-group\">\n          <label for=\"lname\" class=\"col-lg-2 control-label\">Last Name:</label>\n          <div class=\"col-lg-10\">\n            <input type=\"text\"  class=\"form-control\" name=\"lname\" placeholder=\"Your last name\"\n            required\n            [(ngModel)]=\"newuser.lastname\"\n            #lname=\"ngModel\">\n          </div>\n            <div class=\"red\" *ngIf=\"lname.errors && (lname.touched || myform.submitted)\">\n              <p *ngIf=\"lname.errors.required\">This field must not be blank</p>\n            </div>\n        </div>\n\n        <!--Email-->\n        <div class=\"form-group\">\n          <label for=\"email\" class=\"col-lg-2 control-label\">Email:</label>\n          <div class=\"col-lg-10\">\n            <input type=\"text\" class=\"form-control\" name=\"email\" placeholder=\"your@email.com\"\n            required\n            pattern = \"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$\"\n            [(ngModel)]=\"newuser.email\"\n            #email=\"ngModel\">\n          </div>\n            <div class=\"red\" *ngIf=\"email.errors && (email.touched || myform.submitted)\">\n              <p *ngIf=\"email.errors.required\">This field must not be blank</p>\n              <p *ngIf=\"email.errors.pattern\">Please enter a valid email address</p>\n            </div>\n        </div>     \n\n        <!--Password -->\n        <div class=\"form-group\">\n          <label for=\"password\" class=\"col-lg-2 control-label\">Password</label>\n          <div class=\"col-lg-10\">\n            <input type=\"password\" class=\"form-control\" name=\"password\" placeholder=\"Must be between 8-12 characters\"\n            required\n            minlength=\"8\"\n            maxlength=\"12\"\n            [(ngModel)]=\"newuser.password\"\n            #password=\"ngModel\">\n          </div>\n            <div class=\"red\" *ngIf=\"password.errors && (password.touched || myform.submitted)\">\n              <p *ngIf=\"password.errors.required\">This field must not be blank</p>\n              <p *ngIf=\"password.errors.minlength || password.errors.maxlength\">Password should be between 8-12 characters</p>\n            </div>\n        </div>\n\n        <!--Confirm Password -->\n        <div class=\"form-group\">\n          <label for=\"confirmpw\" class=\"col-lg-2 control-label\">Confirm Password:</label>\n          <div class=\"col-lg-10\">\n            <input type=\"password\" class=\"form-control\" name=\"confirmpassword\" placeholder=\"Passwords must match\"\n            [(ngModel)]=\"newuser.confirmpassword\"\n            #confirmpassword=\"ngModel\">\n          </div>\n            <div class=\"red\" *ngIf=\"password.value !== confirmpassword.value && myform.submitted\">\n              <p>Password are not matching!</p>\n            </div>\n        </div>\n\n        <h4> Already Registered?</h4>\n        <h5>\n          <a [routerLink]=\"['/']\"> Go Back</a>\n        </h5>\n        <button  class=\"btn btn-primary\">Register!</button>      \n      </fieldset>\n    </form>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -555,7 +568,10 @@ module.exports = "\n<link rel=\"stylesheet\" href=\"https://bootswatch.com/cerul
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__user__ = __webpack_require__("../../../../../src/app/user.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__http_service__ = __webpack_require__("../../../../../src/app/http.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_cookie_core__ = __webpack_require__("../../../../angular2-cookie/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_cookie_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_cookie_core__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegistrationComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -569,14 +585,38 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var RegistrationComponent = (function () {
-    function RegistrationComponent(_router) {
+    function RegistrationComponent(_router, _cookieService, _http) {
         this._router = _router;
+        this._cookieService = _cookieService;
+        this._http = _http;
         this.newuser = new __WEBPACK_IMPORTED_MODULE_1__user__["a" /* User */]();
     }
     RegistrationComponent.prototype.submitRegForm = function (form) {
-        console.log("Subitted:", this.newuser);
-        this._router.navigate(['/homepage']);
+        var _this = this;
+        if (!form.valid) {
+            this.invalidForm();
+            return;
+        }
+        else {
+            this._cookieService.put('email', this.newuser.email);
+            console.log("the cookie is:", this._cookieService.get('email'));
+            this._http.addUser(this.newuser)
+                .then(function (data) {
+                console.log("Created user into the database: ", _this.newuser);
+            })
+                .catch(function (err) {
+                console.log("Error adding user who is trying to register.");
+            });
+            this._router.navigate(['/homepage']);
+        }
+    };
+    // This function sets the boolean to true so we can display a div in the html
+    RegistrationComponent.prototype.invalidForm = function () {
+        console.log("Invalid Form");
+        this.failBool = true;
     };
     RegistrationComponent.prototype.ngOnInit = function () {
     };
@@ -588,10 +628,10 @@ RegistrationComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/registration/registration.component.html"),
         styles: [__webpack_require__("../../../../../src/app/registration/registration.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_cookie_core__["CookieService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_cookie_core__["CookieService"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__http_service__["a" /* HttpService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__http_service__["a" /* HttpService */]) === "function" && _c || Object])
 ], RegistrationComponent);
 
-var _a;
+var _a, _b, _c;
 //# sourceMappingURL=registration.component.js.map
 
 /***/ }),

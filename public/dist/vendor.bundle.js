@@ -2955,6 +2955,58 @@ var BROWSER_GLOBALS_PROVIDERS = [WindowRef, DocumentRef];
 
 /***/ }),
 
+/***/ "../../../../angular2-cookie/core.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * angular2-cookie - Implementation of Angular 1.x $cookies service to Angular 2
+ * @version v1.2.6
+ * @link https://github.com/salemdar/angular2-cookie#readme
+ * @license MIT
+ */
+
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+var services_1 = __webpack_require__("../../../../angular2-cookie/services.js");
+__export(__webpack_require__("../../../../angular2-cookie/services.js"));
+exports.ANGULAR2_COOKIE_PROVIDERS = [
+    { provide: services_1.CookieOptions, useClass: services_1.BaseCookieOptions },
+    { provide: services_1.CookieService, useFactory: cookieServiceFactory, deps: [services_1.CookieOptions] }
+];
+function cookieServiceFactory(options) {
+    return new services_1.CookieService(options);
+}
+exports.cookieServiceFactory = cookieServiceFactory;
+
+//# sourceMappingURL=core.js.map
+
+
+/***/ }),
+
+/***/ "../../../../angular2-cookie/services.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * angular2-cookie - Implementation of Angular 1.x $cookies service to Angular 2
+ * @version v1.2.6
+ * @link https://github.com/salemdar/angular2-cookie#readme
+ * @license MIT
+ */
+
+var base_cookie_options_1 = __webpack_require__("../../../../angular2-cookie/services/base-cookie-options.js");
+exports.BaseCookieOptions = base_cookie_options_1.BaseCookieOptions;
+exports.CookieOptions = base_cookie_options_1.CookieOptions;
+var cookies_service_1 = __webpack_require__("../../../../angular2-cookie/services/cookies.service.js");
+exports.CookieService = cookies_service_1.CookieService;
+
+//# sourceMappingURL=services.js.map
+
+
+/***/ }),
+
 /***/ "../../../../angular2-cookie/services/base-cookie-options.js":
 /***/ (function(module, exports, __webpack_require__) {
 

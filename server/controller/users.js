@@ -33,6 +33,15 @@ module.exports = {
                     password: req.body.password,
                     _companies: []
                 }); 
+                new_user.save(new_user)
+                .then(data => {
+                    console.log('success saving new user');
+                    res.json(data);
+                })
+                .catch(error => {
+                    console.log('error saving new user');
+                    res.json(error);
+                })
             } else {
                 console.log('email found in database, user NOT added');
                 res.json(users);

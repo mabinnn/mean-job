@@ -32,7 +32,7 @@ module.exports = {
                     email: req.body.email,
                     password: req.body.password,
                     _companies: []
-                });
+                }); 
             } else {
                 console.log('email found in database, user NOT added');
                 res.json(users);

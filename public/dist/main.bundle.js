@@ -596,7 +596,7 @@ var RegistrationComponent = (function () {
     }
     RegistrationComponent.prototype.submitRegForm = function (form) {
         var _this = this;
-        if (!form.valid) {
+        if (!form.valid || this.newuser.password !== this.newuser.confirmpassword) {
             this.invalidForm();
             return;
         }
@@ -615,7 +615,7 @@ var RegistrationComponent = (function () {
     };
     // This function sets the boolean to true so we can display a div in the html
     RegistrationComponent.prototype.invalidForm = function () {
-        console.log("Invalid Form");
+        console.log("Invalid Form, or passwords are not matching");
         this.failBool = true;
     };
     RegistrationComponent.prototype.ngOnInit = function () {

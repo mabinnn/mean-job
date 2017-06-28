@@ -72,7 +72,7 @@ module.exports = {
     createCompany: (req, res) => {
         console.log('reached companies.js/createCompany() - company:', req.body);
         //find user matching email passed in req
-        User.findOne({email: req.body.user_email})
+        User.findOne({email: req.body.user})
         .then(user => {
             if (user) {//if user is found
             //create new company using given req data

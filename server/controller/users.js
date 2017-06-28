@@ -1,7 +1,6 @@
 /*
  * VARIABLES
  */
-var bcrypt = require('bcrypt');
 var mongoose = require('mongoose');
 var User = mongoose.model('User');
 mongoose.Promise = global.Promise;
@@ -14,7 +13,12 @@ var path = require('path');
 
 module.exports = {
 
-    //COME BACK TO ME & FIX HASH!
+    // req.body {
+    //     firstname: [[first name]],
+    //     lastname: [[last name]],
+    //     email: [[email]],
+    //     password: [[password]]
+    // }
     createUser: (req, res) => {
         console.log('reached createUser()');
         console.log(req.body);
@@ -22,7 +26,13 @@ module.exports = {
         .then(users => {
             if (users.length == 0){
                 console.log('email not found in database, adding user');
-                var new_user = new User();
+                var new_user = new User({
+                    first_name: req.body.firstname,
+                    last_name: req.body.lastname,
+                    email: req.body.email,
+                    password: req.body.password,
+                    _companies: []
+                });
             } else {
                 console.log('email found in database, user NOT added');
                 res.json(users);
@@ -34,9 +44,12 @@ module.exports = {
         })
     },
 
+    // req.body {
+    //     email: [[user email]]
+    // }
     findUser: (req, res) => {
         console.log('reached findUser()');
-        User.findOne({_id: req.params.id})
+        User.findOne({email: req.body.email})
         .then(user => {
             console.log('user:', user);
             res.json(data);

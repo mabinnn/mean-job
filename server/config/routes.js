@@ -15,8 +15,8 @@ module.exports = function(app){
     app.post('/new_user', (req, res) => {
         users.createUser(req, res);
     });
-    /*user id in url*/
-    app.get('/user/:id', (req, res) => {
+    /*find user by email*/
+    app.get('/user', (req, res) => {
         users.findUser(req, res);
     });
 

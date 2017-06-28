@@ -602,7 +602,17 @@ var _a;
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return User; });
 var User = (function () {
-    function User() {
+    function User(firstname, lastname, email, password, confirmpassword) {
+        if (firstname === void 0) { firstname = ""; }
+        if (lastname === void 0) { lastname = ""; }
+        if (email === void 0) { email = ""; }
+        if (password === void 0) { password = ""; }
+        if (confirmpassword === void 0) { confirmpassword = ""; }
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.email = email;
+        this.password = password;
+        this.confirmpassword = confirmpassword;
     }
     return User;
 }());

@@ -2,14 +2,14 @@
 .form-horizontal, newentrycomponent {
     display: inline-block;
     margin-top: 50px;
-    width: 75%;
+    width: 60%;
 }
 
-.rightside {
-    display: inline-block;
-    margin-top: 20px;
-    float: right;
+.pull-right {
+    margin-top: 30px;
+    margin-right: 50px;
 }
+
 a {
     display: block;
     margin-top: 5px;

@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import {CookieService} from 'angular2-cookie/core';
+import { Routes, RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -7,9 +11,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _cookieService: CookieService) {   }
 
   ngOnInit() {
+        console.log("newentry comp",this._cookieService.get('email'))
   }
 
 }

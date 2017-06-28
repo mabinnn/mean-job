@@ -22,7 +22,8 @@ webpackEmptyContext.id = "../../../../../src async recursive";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login_component__ = __webpack_require__("../../../../../src/app/login/login.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__registration_registration_component__ = __webpack_require__("../../../../../src/app/registration/registration.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__newentry_newentry_component__ = __webpack_require__("../../../../../src/app/newentry/newentry.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__companyinfo_companyinfo_component__ = __webpack_require__("../../../../../src/app/companyinfo/companyinfo.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/dashboard/dashboard.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__companyinfo_companyinfo_component__ = __webpack_require__("../../../../../src/app/companyinfo/companyinfo.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppRoutingModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -36,11 +37,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var routes = [
     { path: "", pathMatch: 'full', component: __WEBPACK_IMPORTED_MODULE_2__login_login_component__["a" /* LoginComponent */] },
     { path: "register", component: __WEBPACK_IMPORTED_MODULE_3__registration_registration_component__["a" /* RegistrationComponent */] },
-    { path: "homepage", component: __WEBPACK_IMPORTED_MODULE_4__newentry_newentry_component__["a" /* NewentryComponent */] },
-    { path: "information", component: __WEBPACK_IMPORTED_MODULE_5__companyinfo_companyinfo_component__["a" /* CompanyinfoComponent */] }
+    { path: "addnew", component: __WEBPACK_IMPORTED_MODULE_4__newentry_newentry_component__["a" /* NewentryComponent */] },
+    { path: "homepage", component: __WEBPACK_IMPORTED_MODULE_5__dashboard_dashboard_component__["a" /* DashboardComponent */] },
+    { path: "information", component: __WEBPACK_IMPORTED_MODULE_6__companyinfo_companyinfo_component__["a" /* CompanyinfoComponent */] },
+    { path: "dashboard", component: __WEBPACK_IMPORTED_MODULE_5__dashboard_dashboard_component__["a" /* DashboardComponent */] }
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {
@@ -133,6 +137,7 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/dashboard/dashboard.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__companyinfo_companyinfo_component__ = __webpack_require__("../../../../../src/app/companyinfo/companyinfo.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__registration_registration_component__ = __webpack_require__("../../../../../src/app/registration/registration.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__homepage_homepage_component__ = __webpack_require__("../../../../../src/app/homepage/homepage.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -156,6 +161,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var AppModule = (function () {
     function AppModule() {
     }
@@ -169,7 +175,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_10__newentry_newentry_component__["a" /* NewentryComponent */],
             __WEBPACK_IMPORTED_MODULE_11__dashboard_dashboard_component__["a" /* DashboardComponent */],
             __WEBPACK_IMPORTED_MODULE_12__companyinfo_companyinfo_component__["a" /* CompanyinfoComponent */],
-            __WEBPACK_IMPORTED_MODULE_13__registration_registration_component__["a" /* RegistrationComponent */]
+            __WEBPACK_IMPORTED_MODULE_13__registration_registration_component__["a" /* RegistrationComponent */],
+            __WEBPACK_IMPORTED_MODULE_14__homepage_homepage_component__["a" /* HomepageComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -264,7 +271,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "\n\n#mytable {\n    width: 100%;\n    -ms-flex-line-pack: center;\n        align-content: center;\n    margin-bottom: 50px;\n\n}", ""]);
+exports.push([module.i, "\n\n#mytable {\n    width: 100%;\n    -ms-flex-line-pack: center;\n        align-content: center;\n    margin-top: 30px;\n    margin-bottom: 50px;\n}\n.container {\n    margin-top: 50px;\n}\n.pull-right {\n    margin-right: 40px;\n    margin-bottom: 20px;\n}\na, {\n    margin-right: 15px;\n}", ""]);
 
 // exports
 
@@ -277,7 +284,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<link rel=\"stylesheet\" href=\"https://bootswatch.com/cerulean/bootstrap.min.css\">\n\n<div class=\"container\"> \n  <table id=\"mytable\" class=\"table table-striped table-hover \">\n    <tr>\n      <th>Company Name</th>\n      <th>Date Added</th>\n      <th>Status</th>\n      <th>Notes</th>\n    </tr>\n    <tr class=\"success\">\n      <td><a [routerLink]=\"['/information']\"> Apple </a></td>\n      <td>March 22, 2017</td>\n      <td>Interviewed</td>\n      <td>Waiting for my background check</td>\n    </tr>\n  </table>\n\n\n\n</div>\n"
+module.exports = "\n<link rel=\"stylesheet\" href=\"https://bootswatch.com/cerulean/bootstrap.min.css\">\n\n<div class=\"container\"> \n  <div class=\"header\">\n    <h3>Welcome, {{ loggedUser }}  </h3>\n      <div class=\"pull-right\">\n        <h2>Job Search</h2>\n          <a href=\"http://www.linkedin.com\">LinkedIn |</a>\n          <a href=\"http://www.indeed.com\">Indeed |</a>\n          <a href=\"http://www.monster.com\">Monster</a>\n      </div>\n    <a [routerLink]=\"['/addnew']\" class=\"btn btn-primary\">Add New Entry</a> \n    <button class=\"btn btn-warning\" (click)=\"logOut()\">Logout</button> \n  </div>\n\n  <table id=\"mytable\" class=\"table table-striped table-hover \">\n    <tr>\n      <th>Company Name</th>\n      <th>Date Added</th>\n      <th>Status</th>\n      <th>Notes</th>\n    </tr>\n    <tr class=\"success\">\n      <td><a [routerLink]=\"['/information']\"> Apple </a></td>\n      <td>March 22, 2017</td>\n      <td>Interviewed</td>\n      <td>Waiting for my background check</td>\n    </tr>\n  </table>\n\n\n\n\n</div>\n"
 
 /***/ }),
 
@@ -288,6 +295,7 @@ module.exports = "\n<link rel=\"stylesheet\" href=\"https://bootswatch.com/cerul
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__ = __webpack_require__("../../../../angular2-cookie/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DashboardComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -300,12 +308,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var DashboardComponent = (function () {
-    function DashboardComponent(_cookieService) {
+    function DashboardComponent(_cookieService, _router) {
         this._cookieService = _cookieService;
+        this._router = _router;
+        this.loggedUser = this._cookieService.get("email");
     }
+    DashboardComponent.prototype.logOut = function () {
+        console.log("logOut() from dashbaord.comp invoked");
+        this._cookieService.removeAll();
+        this._router.navigate(['/']);
+    };
     DashboardComponent.prototype.ngOnInit = function () {
-        console.log("newentry comp", this._cookieService.get('email'));
+        console.log("Dashboard comp", this._cookieService.get('email'));
+        if (this.loggedUser == undefined) {
+            this._router.navigate(['/']);
+        }
     };
     return DashboardComponent;
 }());
@@ -315,11 +334,72 @@ DashboardComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/dashboard/dashboard.component.html"),
         styles: [__webpack_require__("../../../../../src/app/dashboard/dashboard.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__["CookieService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__["CookieService"]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__["CookieService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__["CookieService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object])
 ], DashboardComponent);
 
-var _a;
+var _a, _b;
 //# sourceMappingURL=dashboard.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/homepage/homepage.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/homepage/homepage.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/homepage/homepage.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomepageComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var HomepageComponent = (function () {
+    function HomepageComponent() {
+    }
+    HomepageComponent.prototype.ngOnInit = function () {
+    };
+    return HomepageComponent;
+}());
+HomepageComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-homepage',
+        template: __webpack_require__("../../../../../src/app/homepage/homepage.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/homepage/homepage.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], HomepageComponent);
+
+//# sourceMappingURL=homepage.component.js.map
 
 /***/ }),
 
@@ -434,6 +514,8 @@ module.exports = "\n<link rel=\"stylesheet\" href=\"https://bootswatch.com/cerul
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__ = __webpack_require__("../../../../angular2-cookie/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -445,14 +527,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var LoginComponent = (function () {
-    function LoginComponent() {
+    function LoginComponent(_cookieService) {
+        this._cookieService = _cookieService;
         this.userLogging = {
             email: "",
             password: ""
         };
     }
     LoginComponent.prototype.ngOnInit = function () {
+        console.log("In the login component. Cookie is: ", this._cookieService.get("email"));
     };
     return LoginComponent;
 }());
@@ -462,9 +547,10 @@ LoginComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/login/login.component.html"),
         styles: [__webpack_require__("../../../../../src/app/login/login.component.css")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__["CookieService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angular2_cookie_core__["CookieService"]) === "function" && _a || Object])
 ], LoginComponent);
 
+var _a;
 //# sourceMappingURL=login.component.js.map
 
 /***/ }),
@@ -477,7 +563,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "\n.form-horizontal, newentrycomponent {\n    display: inline-block;\n    margin-top: 50px;\n    width: 75%;\n}\n\n.rightside {\n    display: inline-block;\n    margin-top: 20px;\n    float: right;\n}\na {\n    display: block;\n    margin-top: 5px;\n}\n.dashboardcomponent {\n    margin-top: 30px;\n    margin-bottom: 30px;\n}", ""]);
+exports.push([module.i, "\n.form-horizontal, newentrycomponent {\n    display: inline-block;\n    margin-top: 50px;\n    width: 60%;\n}\n\n.pull-right {\n    margin-top: 30px;\n    margin-right: 50px;\n}\n\na {\n    display: block;\n    margin-top: 5px;\n}\n.dashboardcomponent {\n    margin-top: 30px;\n    margin-bottom: 30px;\n}\n", ""]);
 
 // exports
 
@@ -490,7 +576,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/newentry/newentry.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<link rel=\"stylesheet\" href=\"https://bootswatch.com/cerulean/bootstrap.min.css\">\n<div class=\"container\">\n\n  <div class=\"header\">\n    <h2>Welcome, {{loggedUser}}!</h2>\n  </div>\n\n  <div class=\"newentrycomponent\">\n    <!--From to add new Entry-->\n    <form class=\"form-horizontal\">\n      <fieldset>\n        <legend>Add new job Entry</legend>\n\n        <!--Company name-->\n        <div class=\"form-group\">\n          <label for=\"company\" class=\"col-lg-2 control-label\">Company:</label>\n          <div class=\"col-lg-10\">\n            <input type=\"text\" name=\"company\" class=\"form-control\" placeholder=\"Agency, Employer, etc.\">     \n          </div> \n        </div>\n        <!--Position Applied-->\n        <div class=\"form-group\">\n          <label for=\"role\" class=\"col-lg-2 control-label\">Position:</label>\n          <div class=\"col-lg-10\">\n            <input type=\"text\" name=\"role\" class=\"form-control\" placeholder=\"ex: Software Enginner\">     \n          </div> \n        </div>        \n        <!--Link URL-->\n        <div class=\"form-group\">\n          <label for=\"link\" class=\"col-lg-2 control-label\">Link:</label>\n          <div class=\"col-lg-10\">\n            <input type=\"text\" name=\"link\" class=\"form-control\" placeholder=\"www.job.com\">     \n          </div> \n        </div>    \n        <!--Address of the company-->\n        <div class=\"form-group\">\n          <label for=\"street\" class=\"col-lg-2 control-label\">Street</label>\n          <div class=\"col-lg-10\">\n            <input type=\"text\" name=\"street\" class=\"form-control\" placeholder=\"ex: 400 Main Ave.\">\n          </div> \n        </div> \n              <!--Suite-->\n        <div class=\"form-group\">\n          <label for=\"Suite\" class=\"col-lg-2 control-label\">Office Suite:</label>\n          <div class=\"col-lg-10\">\n              <input type=\"text\" name=\"suite\" class=\"form-control\" placeholder=\"Suite #\">\n          </div>\n        </div>\n              <!--City-->\n        <div class=\"form-group\">\n          <label for=\"city\" class=\"col-lg-2 control-label\">City:</label>\n          <div class=\"col-lg-10\">\n              <input type=\"text\" name=\"city\" class=\"form-control\" placeholder=\"City\">\n          </div>\n        </div>        \n              <!--Zip Code-->\n        <div class=\"form-group\">\n          <label for=\"zip\" class=\"col-lg-2 control-label\">Zip Code:</label>\n          <div class=\"col-lg-10\">\n            <input type=\"number\" name=\"zip\" class=\"form-control\" placeholder=\"Zip code\">\n          </div>\n        </div>\n              <!--Choose State-->\n        <div class=\"form-group\">\n          <label for=\"state\" class=\"col-lg-2 control-label\">State:</label>\n            <div class=\"col-lg-10\">\n              <select name=\"state\">\n                <option value=\"AL\">Alabama</option>\n                <option value=\"AK\">Alaska</option>\n                <option value=\"AZ\">Arizona</option>\n                <option value=\"AR\">Arkansas</option>\n                <option value=\"CA\">California</option>\n                <option value=\"CO\">Colorado</option>\n                <option value=\"CT\">Connecticut</option>\n                <option value=\"DE\">Delaware</option>\n                <option value=\"FL\">Florida</option>\n                <option value=\"GA\">Georgia</option>\n                <option value=\"HI\">Hawaii</option>\n                <option value=\"ID\">Idaho</option>\n                <option value=\"IL\">Illinois</option>\n                <option value=\"IN\">Indiana</option>\n                <option value=\"IA\">Iowa</option>\n                <option value=\"KS\">Kansas</option>\n                <option value=\"KY\">Kentucky</option>\n                <option value=\"LA\">Louisiana</option>\n                <option value=\"ME\">Maine</option>\n                <option value=\"MD\">Maryland</option>\n                <option value=\"MA\">Massachusetts</option>\n                <option value=\"MI\">Michigan</option>\n                <option value=\"MN\">Minnesota</option>\n                <option value=\"MS\">Mississippi</option>\n                <option value=\"MO\">Missouri</option>\n                <option value=\"MT\">Montana</option>\n                <option value=\"NE\">Nebraska</option>\n                <option value=\"NV\">Nevada</option>\n                <option value=\"NH\">New Hampshire</option>\n                <option value=\"NJ\">New Jersey</option>\n                <option value=\"NM\">New Mexico</option>\n                <option value=\"NY\">New York</option>\n                <option value=\"NC\">North Carolina</option>\n                <option value=\"ND\">North Dakota</option>\n                <option value=\"OH\">Ohio</option>\n                <option value=\"OK\">Oklahoma</option>\n                <option value=\"OR\">Oregon</option>\n                <option value=\"PA\">Pennsylvania</option>\n                <option value=\"RI\">Rhode Island</option>\n                <option value=\"SC\">South Carolina</option>\n                <option value=\"SD\">South Dakota</option>\n                <option value=\"TN\">Tennessee</option>\n                <option value=\"TX\">Texas</option>\n                <option value=\"UT\">Utah</option>\n                <option value=\"VT\">Vermont</option>\n                <option value=\"VA\">Virginia</option>\n                <option value=\"WA\">Washington</option>\n                <option value=\"WV\">West Virginia</option>\n                <option value=\"WI\">Wisconsin</option>\n                <option value=\"WY\">Wyoming</option>\n              </select> \n             </div> \n        </div>\n              <!--Submit Button-->\n        <div class=\"form-group\" style=\"text-align:center;\">\n          <button type=\"submit\" class=\"btn btn-primary\" style=\"text-align:center\">Submit</button>\n        </div>\n      </fieldset>\n    </form>\n    <!--End Form-->\n    <div class=\"rightside\">\n      <h2>Job Search</h2>\n        <a href=\"http://www.linkedin.com\">LinkedIn</a>\n        <a href=\"http://www.indeed.com\">Indeed</a>\n        <a href=\"http://www.monster.com\">Monster</a>\n    </div>\n  </div>\n  <!--Nesting Dashboard Component Here-->\n  <div class=\"dashboardcomponent\">\n    <app-dashboard></app-dashboard>\n  </div>\n\n</div>\n\n\n\n"
+module.exports = "\n<link rel=\"stylesheet\" href=\"https://bootswatch.com/cerulean/bootstrap.min.css\">\n<div class=\"container\">\n\n  <div class=\"pull-right\">\n    <a [routerLink]=\"['/homepage']\">Back to Dashboard</a>\n    <a [routerLink]=\"['/']\">Logout</a>\n  </div>\n\n    <div class=\"newentrycomponent\">\n      <!--From to add new Entry-->\n      <form class=\"form-horizontal\">\n        <fieldset>\n          <legend>Add New Job Entry</legend>\n\n          <!--Company name-->\n          <div class=\"form-group\">\n            <label for=\"company\" class=\"col-lg-2 control-label\">Company:</label>\n            <div class=\"col-lg-10\">\n              <input type=\"text\" name=\"company\" class=\"form-control\" placeholder=\"Agency, Employer, etc.\">     \n            </div> \n          </div>\n          <!--Position Applied-->\n          <div class=\"form-group\">\n            <label for=\"role\" class=\"col-lg-2 control-label\">Position:</label>\n            <div class=\"col-lg-10\">\n              <input type=\"text\" name=\"role\" class=\"form-control\" placeholder=\"ex: Software Enginner\">     \n            </div> \n          </div>        \n          <!--Link URL-->\n          <div class=\"form-group\">\n            <label for=\"link\" class=\"col-lg-2 control-label\">Link:</label>\n            <div class=\"col-lg-10\">\n              <input type=\"text\" name=\"link\" class=\"form-control\" placeholder=\"www.job.com\">     \n            </div> \n          </div>    \n          <!--Address of the company-->\n          <div class=\"form-group\">\n            <label for=\"street\" class=\"col-lg-2 control-label\">Street</label>\n            <div class=\"col-lg-10\">\n              <input type=\"text\" name=\"street\" class=\"form-control\" placeholder=\"ex: 400 Main Ave.\">\n            </div> \n          </div> \n                <!--Suite-->\n          <div class=\"form-group\">\n            <label for=\"Suite\" class=\"col-lg-2 control-label\">Office Suite:</label>\n            <div class=\"col-lg-10\">\n                <input type=\"text\" name=\"suite\" class=\"form-control\" placeholder=\"Suite #\">\n            </div>\n          </div>\n                <!--City-->\n          <div class=\"form-group\">\n            <label for=\"city\" class=\"col-lg-2 control-label\">City:</label>\n            <div class=\"col-lg-10\">\n                <input type=\"text\" name=\"city\" class=\"form-control\" placeholder=\"City\">\n            </div>\n          </div>        \n                <!--Zip Code-->\n          <div class=\"form-group\">\n            <label for=\"zip\" class=\"col-lg-2 control-label\">Zip Code:</label>\n            <div class=\"col-lg-10\">\n              <input type=\"number\" name=\"zip\" class=\"form-control\" placeholder=\"Zip code\">\n            </div>\n          </div>\n                <!--Choose State-->\n          <div class=\"form-group\">\n            <label for=\"state\" class=\"col-lg-2 control-label\">State:</label>\n              <div class=\"col-lg-10\">\n                <select name=\"state\">\n                  <option value=\"AL\">Alabama</option>\n                  <option value=\"AK\">Alaska</option>\n                  <option value=\"AZ\">Arizona</option>\n                  <option value=\"AR\">Arkansas</option>\n                  <option value=\"CA\">California</option>\n                  <option value=\"CO\">Colorado</option>\n                  <option value=\"CT\">Connecticut</option>\n                  <option value=\"DE\">Delaware</option>\n                  <option value=\"FL\">Florida</option>\n                  <option value=\"GA\">Georgia</option>\n                  <option value=\"HI\">Hawaii</option>\n                  <option value=\"ID\">Idaho</option>\n                  <option value=\"IL\">Illinois</option>\n                  <option value=\"IN\">Indiana</option>\n                  <option value=\"IA\">Iowa</option>\n                  <option value=\"KS\">Kansas</option>\n                  <option value=\"KY\">Kentucky</option>\n                  <option value=\"LA\">Louisiana</option>\n                  <option value=\"ME\">Maine</option>\n                  <option value=\"MD\">Maryland</option>\n                  <option value=\"MA\">Massachusetts</option>\n                  <option value=\"MI\">Michigan</option>\n                  <option value=\"MN\">Minnesota</option>\n                  <option value=\"MS\">Mississippi</option>\n                  <option value=\"MO\">Missouri</option>\n                  <option value=\"MT\">Montana</option>\n                  <option value=\"NE\">Nebraska</option>\n                  <option value=\"NV\">Nevada</option>\n                  <option value=\"NH\">New Hampshire</option>\n                  <option value=\"NJ\">New Jersey</option>\n                  <option value=\"NM\">New Mexico</option>\n                  <option value=\"NY\">New York</option>\n                  <option value=\"NC\">North Carolina</option>\n                  <option value=\"ND\">North Dakota</option>\n                  <option value=\"OH\">Ohio</option>\n                  <option value=\"OK\">Oklahoma</option>\n                  <option value=\"OR\">Oregon</option>\n                  <option value=\"PA\">Pennsylvania</option>\n                  <option value=\"RI\">Rhode Island</option>\n                  <option value=\"SC\">South Carolina</option>\n                  <option value=\"SD\">South Dakota</option>\n                  <option value=\"TN\">Tennessee</option>\n                  <option value=\"TX\">Texas</option>\n                  <option value=\"UT\">Utah</option>\n                  <option value=\"VT\">Vermont</option>\n                  <option value=\"VA\">Virginia</option>\n                  <option value=\"WA\">Washington</option>\n                  <option value=\"WV\">West Virginia</option>\n                  <option value=\"WI\">Wisconsin</option>\n                  <option value=\"WY\">Wyoming</option>\n                </select> \n              </div> \n          </div>\n\n          <legend>Contact Information</legend>\n\n          <!--Contact Name-->\n          <div class=\"form-group\"> \n            <label for=\"contact\" class=\"col-lg-2 control-label\">Contact Person:</label>\n            <div class=\"col-lg-10\">\n              <input type=\"text\" name=\"contact\" class=\"form-control\" placeholder=\"Recruiter, Hiring Manager, etc.\">\n            </div>\n          </div>\n\n          <!--Contact Phone-->\n          <div class=\"form-group\"> \n            <label for=\"phone\" class=\"col-lg-2 control-label\">Phone::</label>\n            <div class=\"col-lg-10\">\n              <input type=\"text\" name=\"phone\" class=\"form-control\" placeholder=\"###-###-####\">\n            </div>\n          </div>\n\n          <!--Email-->\n          <div class=\"form-group\"> \n            <label for=\"contact\" class=\"col-lg-2 control-label\">Email:</label>\n            <div class=\"col-lg-10\">\n              <input type=\"text\" name=\"contact_email\" class=\"form-control\" placeholder=\"contact@company.com\">\n            </div>\n          </div>                    \n\n          <!--linkedIn-->\n          <div class=\"form-group\">\n            <label for=\"linkedin\" class=\"col-lg-2 control-label\">Contact linkedIn:</label>\n            <div class=\"col-lg-10\">\n              <input type=\"text\" name=\"linkedin\" class=\"form-control\" placeholder=\"**optional\">     \n            </div> \n          </div>   \n\n          <!--Notes-->\n          <div class=\"form-group\">\n            <label for=\"notes\" class=\"col-lg-2 control-label\">Notes:</label>\n            <div class=\"col-lg-10\">\n              <textarea name=\"notes\" cols=\"30\" rows=\"10\" class=\"form-control\" placeholder=\"Notes about this job you may wanna add.\"></textarea>    \n            </div> \n          </div> \n\n          <!--Submit Button-->\n          <div class=\"form-group\" style=\"text-align:center;\">\n            <button type=\"submit\" class=\"btn btn-primary\" style=\"text-align:center\">Submit</button>\n          </div>\n        </fieldset>\n      </form>\n      <!--End Form-->\n    </div>\n\n</div>\n\n\n\n"
 
 /***/ }),
 

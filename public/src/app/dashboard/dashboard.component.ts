@@ -11,10 +11,25 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private _cookieService: CookieService) {   }
+  constructor(private _cookieService: CookieService, private _router: Router){}
+
+  loggedUser = this._cookieService.get("email")
+
+  logOut(){
+    console.log("logOut() from dashbaord.comp invoked")
+    this._cookieService.removeAll();
+    this._router.navigate(['/']);
+  }
+
+
+
+
 
   ngOnInit() {
-        console.log("newentry comp",this._cookieService.get('email'))
+      console.log("Dashboard comp",this._cookieService.get('email'))
+      if (this.loggedUser == undefined){
+        this._router.navigate(['/']);
+      }
   }
 
 }

@@ -59,32 +59,3 @@ module.exports = {
         })
     },
 }
-
-createUser: (req, res) => {
-        console.log('reached users.js/createUser() - user:', req.body.username);
-        User.find({username: req.body.username})
-        .then(data => {
-            console.log("data:",data);
-            if (data.length == 0){
-                console.log('user not found in database, adding user');
-                var user = new User({username: req.body.username, _topics: [], _answers: [], _comments: []});
-                console.log(user);
-                user.save(user)
-                .then(data => {
-                    console.log('success! added user');
-                    res.json(data);
-                })
-                .catch(error => {
-                    console.log('error adding user');
-                    res.json(error);
-                })
-            } else {
-                console.log('user found in database, user not added');
-                res.json(data);
-            }
-        })
-        .catch(error => {
-            console.log('error finding user:', error);
-            res.json(error);
-        })
-    }

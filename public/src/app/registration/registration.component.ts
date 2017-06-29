@@ -15,7 +15,7 @@ export class RegistrationComponent implements OnInit {
 
   constructor(private _router: Router, private _cookieService:CookieService, private _http: HttpService) { }
 
-  newuser = new User()
+  newuser = new User();
   failBool: boolean;
 
 

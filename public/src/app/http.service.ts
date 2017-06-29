@@ -18,11 +18,12 @@ export class HttpService {
     .map((data) => data.json())
     .toPromise();
   }
-  //find user by id - as url param
-  findUser(id){
+  // //find user by email
+  // {email: ""}
+  findUser(email){
     console.log('reached http/findUser()');
-    console.log('/user/'+id);
-    return this._http.get('/user/'+id)
+    console.log(email);
+    return this._http.post('/user', email)
     .map((data) => data.json())
     .toPromise();
   }
@@ -37,10 +38,10 @@ export class HttpService {
     .toPromise();
   }
   //find all companies
-  findAllCompanies(){
+  findAllCompanies(user_email){
     console.log('reached http/findAllCompanies()');
     console.log('/companies');
-    return this._http.get('/companies/')
+    return this._http.post('/companies/', user_email)
     .map((data) => data.json())
     .toPromise();
   }
@@ -52,4 +53,17 @@ export class HttpService {
     .map((data) => data.json())
     .toPromise();
   }
+
+  deleteCompany(id){
+    console.log("reached the http.service deleteCompany()")
+    return this._http.get('/delete_company/'+id)
+    .map((data)=>{
+      data.json()
+    })
+    .toPromise();
+  }
+
+
+
+
 }

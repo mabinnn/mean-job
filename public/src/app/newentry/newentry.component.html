@@ -9,7 +9,7 @@
 
     <div class="newentrycomponent">
       <!--From to add new Entry-->
-      <form class="form-horizontal">
+      <form class="form-horizontal" #myform="ngForm" (submit)="addCompany(myform)">
         <fieldset>
           <legend>Add New Job Entry</legend>
 
@@ -17,56 +17,78 @@
           <div class="form-group">
             <label for="company" class="col-lg-2 control-label">Company:</label>
             <div class="col-lg-10">
-              <input type="text" name="company" class="form-control" placeholder="Agency, Employer, etc.">     
+              <input type="text" name="company" class="form-control" placeholder="Agency, Employer, etc."
+              required
+              [(ngModel)]="newCompany.name"
+              >     
             </div> 
           </div>
           <!--Position Applied-->
           <div class="form-group">
             <label for="role" class="col-lg-2 control-label">Position:</label>
             <div class="col-lg-10">
-              <input type="text" name="role" class="form-control" placeholder="ex: Software Enginner">     
+              <input type="text" name="role" class="form-control" placeholder="ex: Software Enginner"
+              required
+              [(ngModel)]="newCompany.role"
+              >     
             </div> 
           </div>        
           <!--Link URL-->
           <div class="form-group">
-            <label for="link" class="col-lg-2 control-label">Link:</label>
+            <label for="url" class="col-lg-2 control-label">Link:</label>
             <div class="col-lg-10">
-              <input type="text" name="link" class="form-control" placeholder="www.job.com">     
+              <input type="text" name="url" class="form-control" placeholder="www.job.com"
+              required
+              [(ngModel)]="newCompany.url"
+              >     
             </div> 
           </div>    
           <!--Address of the company-->
           <div class="form-group">
             <label for="street" class="col-lg-2 control-label">Street</label>
             <div class="col-lg-10">
-              <input type="text" name="street" class="form-control" placeholder="ex: 400 Main Ave.">
+              <input type="text" name="street" class="form-control" placeholder="ex: 400 Main Ave."
+              required
+              [(ngModel)]="newCompany.street"
+              >
             </div> 
           </div> 
                 <!--Suite-->
           <div class="form-group">
             <label for="Suite" class="col-lg-2 control-label">Office Suite:</label>
             <div class="col-lg-10">
-                <input type="text" name="suite" class="form-control" placeholder="Suite #">
+                <input type="text" name="suite" class="form-control" placeholder="Suite #"
+                [(ngModel)]="newCompany.suite"
+                >
             </div>
           </div>
                 <!--City-->
           <div class="form-group">
             <label for="city" class="col-lg-2 control-label">City:</label>
             <div class="col-lg-10">
-                <input type="text" name="city" class="form-control" placeholder="City">
+                <input type="text" name="city" class="form-control" placeholder="City"
+                required
+                [(ngModel)]="newCompany.city"
+                >
             </div>
           </div>        
                 <!--Zip Code-->
           <div class="form-group">
             <label for="zip" class="col-lg-2 control-label">Zip Code:</label>
             <div class="col-lg-10">
-              <input type="number" name="zip" class="form-control" placeholder="Zip code">
+              <input type="number" name="zip" class="form-control" placeholder="Zip code"
+              required
+              [(ngModel)]="newCompany.zip"
+              >
             </div>
           </div>
                 <!--Choose State-->
           <div class="form-group">
             <label for="state" class="col-lg-2 control-label">State:</label>
               <div class="col-lg-10">
-                <select name="state">
+                <select name="state" class="form-control" id="select"
+                [(ngModel)]="newCompany.state"
+                >
                   <option value="AL">Alabama</option>
                   <option value="AK">Alaska</option>
                   <option value="AZ">Arizona</option>
@@ -121,13 +143,44 @@
               </div> 
           </div>
 
+            <!--Application Status-->
+          <div class="form-group">
+            <label for="status" class="col-lg-2 control-label">Application Status:</label>
+              <div class="col-lg-10">
+                <select name="status" class="form-control" id="select"
+                [(ngModel)]="newCompany.status"
+                >
+                  <option value="Contacted">Contacted</option>
+                  <option value="Applied">Applied</option>
+                  <option value="Interview Set">Interview Set</option>
+                  <option value="Interviewed">Interviewed</option>
+                  <option value="Rejected">Rejected</option>
+                </select>
+              </div>  
+          </div>
+
+          <!--Notes about the Company-->
+          <div class="form-group">
+            <label for="notes" class="col-lg-2 control-label">Notes:</label>
+            <div class="col-lg-10">
+              <textarea name="notes" cols="30" rows="10" class="form-control" placeholder="Enter notes about this job."
+              [(ngModel)]="newCompany.notes"
+              ></textarea>    
+            </div> 
+          </div>         
+
+
+
           <legend>Contact Information</legend>
 
           <!--Contact Name-->
           <div class="form-group"> 
             <label for="contact" class="col-lg-2 control-label">Contact Person:</label>
             <div class="col-lg-10">
-              <input type="text" name="contact" class="form-control" placeholder="Recruiter, Hiring Manager, etc.">
+              <input type="text" name="contact" class="form-control" placeholder="Recruiter, Hiring Manager, etc."
+              required
+              [(ngModel)]="newCompany.contact_name"
+              >
             </div>
           </div>
 
@@ -135,7 +188,9 @@
           <div class="form-group"> 
             <label for="phone" class="col-lg-2 control-label">Phone::</label>
             <div class="col-lg-10">
-              <input type="text" name="phone" class="form-control" placeholder="###-###-####">
+              <input type="text" name="phone" class="form-control" placeholder="###-###-####"
+              [(ngModel)]="newCompany.phone"
+              >
             </div>
           </div>
 
@@ -143,7 +198,9 @@
           <div class="form-group"> 
             <label for="contact" class="col-lg-2 control-label">Email:</label>
             <div class="col-lg-10">
-              <input type="text" name="contact_email" class="form-control" placeholder="contact@company.com">
+              <input type="text" name="contact_email" class="form-control" placeholder="contact@company.com"
+              [(ngModel)]="newCompany.contact_email"
+              >
             </div>
           </div>                    
 
@@ -151,7 +208,9 @@
           <div class="form-group">
             <label for="linkedin" class="col-lg-2 control-label">Contact linkedIn:</label>
             <div class="col-lg-10">
-              <input type="text" name="linkedin" class="form-control" placeholder="**optional">     
+              <input type="text" name="linkedin" class="form-control" placeholder="**optional"
+              [(ngModel)]="newCompany.linkedin"
+              >     
             </div> 
           </div>   
 
@@ -159,7 +218,9 @@
           <div class="form-group">
             <label for="notes" class="col-lg-2 control-label">Notes:</label>
             <div class="col-lg-10">
-              <textarea name="notes" cols="30" rows="10" class="form-control" placeholder="Notes about this job you may wanna add."></textarea>    
+              <textarea name="note" cols="30" rows="10" class="form-control" placeholder="Notes about this job you may wanna add."
+              [(ngModel)]="newCompany.note"
+              ></textarea>    
             </div> 
           </div> 
 

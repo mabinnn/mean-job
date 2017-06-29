@@ -22,7 +22,7 @@ module.exports = {
         .then(company => {
             if (company) {//if company found
                 console.log('company:', company);
-                res.json(data);
+                res.json(company);
             } else {//company not found
                 console.log('company not found');
                 res.json(company);
@@ -35,14 +35,22 @@ module.exports = {
 
     findCompanies: (req, res) => {
         console.log('reached findCompanies()');
-        Company.find({})
-        .populate('_upcomings')
-        .exec()
-        .then(companies => {
-            console.log('companies:', companies);
-            res.json(data);
+        User.findOne({email: req.body.email})
+        .then(user => {
+            console.log('user found!');
+            Company.find({_user: user._id})
+            .populate('_upcomings')
+            .exec()
+            .then(companies => {
+                console.log('companies found:', companies);
+                res.json(companies);
+            })
+            .catch(error => {
+                res.json(error);
+            })
         })
         .catch(error => {
+            console.log('error finding user');
             res.json(error);
         })
     },
@@ -64,7 +72,7 @@ module.exports = {
     //     contact: {
     //         name: [[name]],
     //         linkedin: [[linkedinurl]],
-    //         email: [[email of contact]],
+    //         contact_email: [[email of contact]],
     //         phone: [[contact phone num]],
     //         note: [[note]]
     //     }

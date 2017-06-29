@@ -57,11 +57,11 @@ module.exports = {
     //     email: [[user email]]
     // }
     findUser: (req, res) => {
-        console.log('reached findUser()');
+        console.log('reached findUser() - ', req.body);
         User.findOne({email: req.body.email})
         .then(user => {
             console.log('user:', user);
-            res.json(data);
+            res.json(user);
         })
         .catch(error => {
             res.json(error);

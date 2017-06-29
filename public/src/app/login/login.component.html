@@ -4,9 +4,13 @@
 <div class="container" style="text-align:center">
   <h1>Welcome to our App!</h1>
   <div class="loginform">
-    <form class="form-horizontal" #myform="ngForm">
+    <form class="form-horizontal" #myform="ngForm" (submit)="login(myform)">
       <fieldset>
         <legend>Login Here</legend>
+
+        <div class="red" *ngIf="invalidPass">
+          <p>Invalid Password. Please try again.</p>
+        </div>
       
         <!--Username-->
         <div class="form-group">

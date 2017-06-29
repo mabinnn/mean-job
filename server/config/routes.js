@@ -16,7 +16,7 @@ module.exports = function(app){
         users.createUser(req, res);
     });
     /*find user by email*/
-    app.get('/user', (req, res) => {
+    app.post('/user', (req, res) => {
         users.findUser(req, res);
     });
 
@@ -24,7 +24,7 @@ module.exports = function(app){
     app.post('/new_company', (req, res) => {
         companies.createCompany(req, res);
     });
-    app.get('/companies', (req, res) => {
+    app.post('/companies', (req, res) => {
         companies.findCompanies(req, res);
     });
     /*company id in url*/

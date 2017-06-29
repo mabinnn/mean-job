@@ -36,6 +36,10 @@ module.exports = function(app){
     app.post('/new_note/:id', (req, res) => {
         companies.addNote(req, res);
     });
+    /* company id in url, company info as parameter */
+    app.post('/edit_company/:id', (req, res) => {
+        companies.editCompany(req, res);
+    });
     // /* - company id in url
     //    - contact note passed in req*/
     // app.post('/new_contact_note/:id', (req, res) => {

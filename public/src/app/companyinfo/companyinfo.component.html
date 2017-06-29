@@ -23,7 +23,7 @@
 
   <!--Display Google Maps-->
   <div class="googlemaps"> 
-    <agm-map [latitude]="lat" [longitude]="lng">
+    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="14">
       <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
     </agm-map>
   </div>
@@ -35,13 +35,14 @@
   </div>
 
   <div class="displaycompany">
-    <h2>{{displayOneComp.name}} </h2>
+    <legend> {{displayOneComp.name}}</legend>
     <p>Added on <i> {{ displayOneComp.createdAt | date:"longDate" }} </i> </p>
+    <a href="http://{{displayOneComp.url}}">Job Website</a>
     <p>Role: {{displayOneComp.role}}</p>
     <p>Notes: {{displayOneComp.notes}}</p>
-    <p>Statu: {{displayOneComp.status}}</p>
+    <p>Status: {{displayOneComp.status}}</p>
     <div class="contact">
-      <h3>Contact Person</h3>
+      <legend> Contact Person</legend>
       <p>{{displayOneComp.contact.contact_name}}</p>
       <p><a href="{{displayOneComp.contact.linkedin}}" *ngIf="displayOneComp.contact.linkedin">LinkedIn</a></p>
       <p>Email: {{displayOneComp.contact.contact_email}}</p>
@@ -52,11 +53,16 @@
 
   <!--Office visit-->
   <div class="visit">
-    <h2>Visiting Onsite?</h2>
+    <legend>Visiting Onsite?</legend>
     <p>{{displayOneComp.address.street}}</p>
     <p>{{displayOneComp.address.suite}}</p>
     <p>{{displayOneComp.address.city}}, {{displayOneComp.address.state}} {{displayOneComp.address.zip}}</p>
-    <p> <b>WEATER API here</b></p>
+    <p><b>Weather:</b></p>
+    <p>Temperature: {{weather.temp}} °F</p>
+    <p>High: {{weather.maxTemp}} °F</p>
+    <p>Low: {{weather.minTemp}} °F</p>
+    <p>Humidity: {{weather.minTemp}}%</p>
+    <p>Conditions: {{weather.sky}}</p>
   </div>
 </div>
 

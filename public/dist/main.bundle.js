@@ -187,7 +187,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
             __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* HttpModule */],
             __WEBPACK_IMPORTED_MODULE_6__agm_core__["a" /* AgmCoreModule */].forRoot({
-                apiKey: 'AIzaSyB4kOD9AMomNP4OswtJNFTkgQtJleJSNV8' // <-- Using my API Key
+                apiKey: 'AIzaSyB4kOD9AMomNP4OswtJNFTkgQtJleJSNV8' // <-- Using my API Key for google maps
             })
         ],
         providers: [__WEBPACK_IMPORTED_MODULE_4__http_service__["a" /* HttpService */], __WEBPACK_IMPORTED_MODULE_5_angular2_cookie_services_cookies_service__["CookieService"]],
@@ -275,7 +275,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "\nagm-map {\n    height: 500px;\n    width: 800px;\n}\n.googlemaps {\n    /*margin: 0 auto 0 auto;*/\n    margin-top: 10px;\n    width: 800px;\n    margin-left: auto;\n    margin-right: auto;\n}\n.nav {\n    margin-top: 10px;\n}\np, a {\n    display: block;\n    margin-left: 15px;\n}\n.container {\n    margin-bottom: 30px;\n}\n.displaycompany {\n    display: inline-block;\n    margin-left: 200px;\n    height: 300px;\n    width: 320px;\n    padding: 20px;\n}\n.visit {\n    display: inline-block;\n    margin-right: 200px;\n    height: 300px;\n    width: 320px;\n    padding: 20px;\n}\n.pull-left {\n    margin-top: 5px;\n}\n.pull-right {\n    margin-top: 5px;\n}\n.editbutton {\n    margin-top: 25px;\n    padding-right: 20px;\n    text-align: center; \n}\n\n\n\n", ""]);
+exports.push([module.i, "\nagm-map {\n    height: 500px;\n    width: 800px;\n}\n.googlemaps {\n    /*margin: 0 auto 0 auto;*/\n    margin-top: 10px;\n    width: 800px;\n    margin-left: auto;\n    margin-right: auto;\n}\n.nav {\n    margin-top: 10px;\n}\np, a {\n    display: block;\n    margin-left: 15px;\n}\n.container {\n    margin-bottom: 30px;\n}\n.displaycompany {\n    display: inline-block;\n    margin-left: 200px;\n    height: 300px;\n    width: 320px;\n    padding: 20px;\n}\n.visit {\n    display: inline-block;\n    margin-right: 200px;\n    height: 300px;\n    width: 320px;\n    padding: 20px;\n    text-align: left;\n}\n.pull-left {\n    margin-top: 5px;\n}\n.pull-right {\n    margin-top: 5px;\n}\n.editbutton {\n    margin-top: 25px;\n    padding-right: 20px;\n    text-align: center; \n}\nlegend {\n    margin-top: 15px;\n}\n\n\n\n", ""]);
 
 // exports
 
@@ -288,7 +288,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/companyinfo/companyinfo.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<link rel=\"stylesheet\" href=\"https://bootswatch.com/cerulean/bootstrap.min.css\">\n\n<div class=\"container\">\n  <!--Nav bar to search compnanies-->\n  <div class=\"nav\">\n    <nav class=\"navbar navbar-default\">\n      <div class=\"container-fluid\">\n        <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\n          <form class=\"navbar-form navbar-right\" role=\"search\" method=\"get\" action=\"http//www.google.com/search\">\n            <div class=\"form-group\">\n              <input type=\"text\" class=\"form-control\" placeholder=\"Search Comapany!\" value=\"\">\n            </div>\n            <button type=\"submit\" class=\"btn btn-default\">Submit</button>\n          </form>\n            <div class=\"pull-left\">\n              <a class=\"btn btn-success\" [routerLink]=\"['/homepage']\" >Back to Dashboard</a>\n            </div>\n        </div>\n      </div>\n    </nav>      \n  </div>\n\n  <!--Display Google Maps-->\n  <div class=\"googlemaps\"> \n    <agm-map [latitude]=\"lat\" [longitude]=\"lng\">\n      <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n    </agm-map>\n  </div>\n\n  <!--Display Comapny details-->\n\n  <div class=\"editbutton\">\n    <button (click)=\"editCompany()\" class=\"btn btn-default\">Edit Company Details</button>\n  </div>\n\n  <div class=\"displaycompany\">\n    <h2>{{displayOneComp.name}} </h2>\n    <p>Added on <i> {{ displayOneComp.createdAt | date:\"longDate\" }} </i> </p>\n    <p>Role: {{displayOneComp.role}}</p>\n    <p>Notes: {{displayOneComp.notes}}</p>\n    <p>Statu: {{displayOneComp.status}}</p>\n    <div class=\"contact\">\n      <h3>Contact Person</h3>\n      <p>{{displayOneComp.contact.contact_name}}</p>\n      <p><a href=\"{{displayOneComp.contact.linkedin}}\" *ngIf=\"displayOneComp.contact.linkedin\">LinkedIn</a></p>\n      <p>Email: {{displayOneComp.contact.contact_email}}</p>\n      <p>Phone: {{displayOneComp.contact.phone}}</p>\n      <p>Notes: {{displayOneComp.contact.note}}</p>\n    </div>\n  </div>\n\n  <!--Office visit-->\n  <div class=\"visit\">\n    <h2>Visiting Onsite?</h2>\n    <p>{{displayOneComp.address.street}}</p>\n    <p>{{displayOneComp.address.suite}}</p>\n    <p>{{displayOneComp.address.city}}, {{displayOneComp.address.state}} {{displayOneComp.address.zip}}</p>\n    <p> <b>WEATER API here</b></p>\n  </div>\n</div>\n\n\n\n"
+module.exports = "\n<link rel=\"stylesheet\" href=\"https://bootswatch.com/cerulean/bootstrap.min.css\">\n\n<div class=\"container\">\n  <!--Nav bar to search compnanies-->\n  <div class=\"nav\">\n    <nav class=\"navbar navbar-default\">\n      <div class=\"container-fluid\">\n        <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\n          <form class=\"navbar-form navbar-right\" role=\"search\" method=\"get\" action=\"http//www.google.com/search\">\n            <div class=\"form-group\">\n              <input type=\"text\" class=\"form-control\" placeholder=\"Search Comapany!\" value=\"\">\n            </div>\n            <button type=\"submit\" class=\"btn btn-default\">Submit</button>\n          </form>\n            <div class=\"pull-left\">\n              <a class=\"btn btn-success\" [routerLink]=\"['/homepage']\" >Back to Dashboard</a>\n            </div>\n        </div>\n      </div>\n    </nav>      \n  </div>\n\n  <!--Display Google Maps-->\n  <div class=\"googlemaps\"> \n    <agm-map [latitude]=\"lat\" [longitude]=\"lng\" [zoom]=\"14\">\n      <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n    </agm-map>\n  </div>\n\n  <!--Display Comapny details-->\n\n  <div class=\"editbutton\">\n    <button (click)=\"editCompany()\" class=\"btn btn-default\">Edit Company Details</button>\n  </div>\n\n  <div class=\"displaycompany\">\n    <legend> {{displayOneComp.name}}</legend>\n    <p>Added on <i> {{ displayOneComp.createdAt | date:\"longDate\" }} </i> </p>\n    <a href=\"http://{{displayOneComp.url}}\">Job Website</a>\n    <p>Role: {{displayOneComp.role}}</p>\n    <p>Notes: {{displayOneComp.notes}}</p>\n    <p>Status: {{displayOneComp.status}}</p>\n    <div class=\"contact\">\n      <legend> Contact Person</legend>\n      <p>{{displayOneComp.contact.contact_name}}</p>\n      <p><a href=\"{{displayOneComp.contact.linkedin}}\" *ngIf=\"displayOneComp.contact.linkedin\">LinkedIn</a></p>\n      <p>Email: {{displayOneComp.contact.contact_email}}</p>\n      <p>Phone: {{displayOneComp.contact.phone}}</p>\n      <p>Notes: {{displayOneComp.contact.note}}</p>\n    </div>\n  </div>\n\n  <!--Office visit-->\n  <div class=\"visit\">\n    <legend>Visiting Onsite?</legend>\n    <p>{{displayOneComp.address.street}}</p>\n    <p>{{displayOneComp.address.suite}}</p>\n    <p>{{displayOneComp.address.city}}, {{displayOneComp.address.state}} {{displayOneComp.address.zip}}</p>\n    <p><b>Weather:</b></p>\n    <p>Temperature: {{weather.temp}} °F</p>\n    <p>High: {{weather.maxTemp}} °F</p>\n    <p>Low: {{weather.minTemp}} °F</p>\n    <p>Humidity: {{weather.minTemp}}%</p>\n    <p>Conditions: {{weather.sky}}</p>\n  </div>\n</div>\n\n\n\n"
 
 /***/ }),
 
@@ -321,13 +321,49 @@ var CompanyinfoComponent = (function () {
         this._router = _router;
         this._http = _http;
         this._activatedRoute = _activatedRoute;
-        this.lat = 37.780337;
-        this.lng = -122.403408;
+        this.address = {
+            street: "",
+            city: "",
+            zip: "",
+            state: ""
+        };
+        this.weather = {
+            temp: 0,
+            minTemp: 0,
+            maxTemp: 0,
+            humidity: 0,
+            sky: ""
+        };
     }
-    //   map = new google.maps.Map(document.getElementById('map'), {
-    //   center: {lat: -34.397, lng: 150.644},
-    //   zoom: 8
-    // });
+    CompanyinfoComponent.prototype.getLongLat = function () {
+        var _this = this;
+        console.log(this.address);
+        this._http.googleAPI(this.address)
+            .then(function (api) {
+            _this.lng = api.results[0].geometry.location.lng;
+            _this.lat = api.results[0].geometry.location.lat;
+            console.log("APIIII:", api);
+            console.log(_this.lng);
+            console.log(_this.lat);
+        })
+            .catch(function (err) { console.log(err); });
+    };
+    CompanyinfoComponent.prototype.weatherAPI = function () {
+        var _this = this;
+        console.log("ADDRESS", this.address);
+        this._http.weatherAPI(this.address)
+            .then(function (api) {
+            _this.weather.temp = Math.floor(api.main.temp * (9 / 5) - 459.67);
+            _this.weather.minTemp = Math.floor(api.main.temp_min * (9 / 5) - 459.67);
+            _this.weather.maxTemp = Math.floor(api.main.temp_max * (9 / 5) - 459.67);
+            _this.weather.humidity = api.main.humidity;
+            _this.weather.sky = api.weather[0].main;
+            console.log(_this.weather);
+        })
+            .catch(function (err) {
+            console.log("error with the weather api");
+        });
+    };
     CompanyinfoComponent.prototype.showOneCompany = function (id) {
         var _this = this;
         console.log("This is the showOneCompany()");
@@ -336,12 +372,19 @@ var CompanyinfoComponent = (function () {
             console.log("Finding company...");
             console.log("company data:", data);
             _this.displayOneComp = data;
+            _this.address.street = _this.displayOneComp.address.street;
+            _this.address.city = _this.displayOneComp.address.city;
+            _this.address.state = _this.displayOneComp.address.state;
+            _this.address.zip = _this.displayOneComp.address.zip;
+            _this.getLongLat();
+            _this.weatherAPI();
         })
             .catch(function (err) {
             console.log("Error fetching company by ID");
         });
     };
     CompanyinfoComponent.prototype.editCompany = function () {
+        this._router.navigate(['/editcompany', this.param]);
     };
     CompanyinfoComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -500,7 +543,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "\n.btn-warning{\n    margin-top: 5px;\n}\n.container {\n    margin-top: 10px;\n}", ""]);
 
 // exports
 
@@ -513,7 +556,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/editcompany/editcompany.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n"
+module.exports = "\n<link rel=\"stylesheet\" href=\"https://bootswatch.com/cerulean/bootstrap.min.css\">\n<div class=\"container\">\n\n  <!--top navigation bar-->\n  <div class=\"nav\">\n    <nav class=\"navbar navbar-default\">\n      <div class=\"container-fluid\">\n        <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\n          <div class=\"pull-left\">\n            <a class=\"btn btn-warning\" [routerLink]=\"['/information', param ]\" >Cancel Edit</a>\n          </div>\n        </div>\n      </div>\n    </nav>      \n  </div>  \n\n\n    <div class=\"newentrycomponent\">\n      <!--From to add new Entry-->\n      <form class=\"form-horizontal\" #myform=\"ngForm\" (submit)=\"editCompany(myform)\">\n        <fieldset>\n          <legend>Edit {{displayOneComp.name}}</legend>\n\n          <!--display when submitted with invalid field\n          <div class=\"red\" *ngIf=\"failToSubmit\">\n            <i>**Please check all red fields.</i>\n          </div>-->\n\n          <!--Company name-->\n          <div class=\"form-group\">\n            <label for=\"company\" class=\"col-lg-2 control-label\">Company:</label>\n            <div class=\"col-lg-10\">\n              <input type=\"text\" name=\"company\" class=\"form-control\" placeholder=\"Agency, Employer, etc.\"\n              required\n              [(ngModel)]=\"displayOneComp.name\"\n              #company=\"ngModel\">  \n              <div class=\"red\" *ngIf=\"company.errors && (company.touched || myform.submitted)\">\n                <p *ngIf=\"company.errors.required\">Company name is required.</p>\n              </div>   \n            </div> \n          </div>\n\n          <!--Position Applied-->\n          <div class=\"form-group\">\n            <label for=\"role\" class=\"col-lg-2 control-label\">Position:</label>\n            <div class=\"col-lg-10\">\n              <input type=\"text\" name=\"role\" class=\"form-control\" placeholder=\"ex: Software Enginner\"\n              required\n              [(ngModel)]=\"displayOneComp.role\"\n              #role=\"ngModel\">  \n              <div class=\"red\" *ngIf=\"role.errors && (role.touched || myform.submitted)\">\n                <p *ngIf=\"role.errors.required\">Position applied is required.</p>\n              </div>     \n            </div> \n          </div>        \n          <!--Link URL-->\n          <div class=\"form-group\">\n            <label for=\"url\" class=\"col-lg-2 control-label\">Link:</label>\n            <div class=\"col-lg-10\">\n              <input type=\"text\" name=\"url\" class=\"form-control\" placeholder=\"www.job.com\"\n              [(ngModel)]=\"displayOneComp.url\">     \n            </div> \n          </div>    \n          <!--Address of the company-->\n          <div class=\"form-group\">\n            <label for=\"street\" class=\"col-lg-2 control-label\">Street</label>\n            <div class=\"col-lg-10\">\n              <input type=\"text\" name=\"street\" class=\"form-control\" placeholder=\"ex: 400 Main Ave.\"\n              [(ngModel)]=\"displayOneComp.address.street\"\n              #street=\"ngModel\"> \n            </div> \n          </div> \n                <!--Suite-->\n          <div class=\"form-group\">\n            <label for=\"Suite\" class=\"col-lg-2 control-label\">Office Suite:</label>\n            <div class=\"col-lg-10\">\n                <input type=\"text\" name=\"suite\" class=\"form-control\" placeholder=\"Suite #\"\n                [(ngModel)]=\"displayOneComp.address.suite\">\n            </div>\n          </div>\n                <!--City-->\n          <div class=\"form-group\">\n            <label for=\"city\" class=\"col-lg-2 control-label\">City:</label>\n            <div class=\"col-lg-10\">\n                <input type=\"text\" name=\"city\" class=\"form-control\" placeholder=\"City\"\n                [(ngModel)]=\"displayOneComp.address.city\">\n            </div>\n          </div>        \n                <!--Zip Code-->\n          <div class=\"form-group\">\n            <label for=\"zip\" class=\"col-lg-2 control-label\">Zip Code:</label>\n            <div class=\"col-lg-10\">\n              <input type=\"text\" name=\"zip\" class=\"form-control\"\n              [(ngModel)]=\"displayOneComp.address.zip\"\n              >\n            </div>\n          </div>\n                <!--Choose State-->\n          <div class=\"form-group\">\n            <label for=\"state\" class=\"col-lg-2 control-label\">State:</label>\n              <div class=\"col-lg-10\">\n                <select name=\"state\" class=\"form-control\" id=\"select\"\n                [(ngModel)]=\"displayOneComp.address.state\"\n                >\n                  <option value=\"AL\">Alabama</option>\n                  <option value=\"AK\">Alaska</option>\n                  <option value=\"AZ\">Arizona</option>\n                  <option value=\"AR\">Arkansas</option>\n                  <option value=\"CA\">California</option>\n                  <option value=\"CO\">Colorado</option>\n                  <option value=\"CT\">Connecticut</option>\n                  <option value=\"DE\">Delaware</option>\n                  <option value=\"FL\">Florida</option>\n                  <option value=\"GA\">Georgia</option>\n                  <option value=\"HI\">Hawaii</option>\n                  <option value=\"ID\">Idaho</option>\n                  <option value=\"IL\">Illinois</option>\n                  <option value=\"IN\">Indiana</option>\n                  <option value=\"IA\">Iowa</option>\n                  <option value=\"KS\">Kansas</option>\n                  <option value=\"KY\">Kentucky</option>\n                  <option value=\"LA\">Louisiana</option>\n                  <option value=\"ME\">Maine</option>\n                  <option value=\"MD\">Maryland</option>\n                  <option value=\"MA\">Massachusetts</option>\n                  <option value=\"MI\">Michigan</option>\n                  <option value=\"MN\">Minnesota</option>\n                  <option value=\"MS\">Mississippi</option>\n                  <option value=\"MO\">Missouri</option>\n                  <option value=\"MT\">Montana</option>\n                  <option value=\"NE\">Nebraska</option>\n                  <option value=\"NV\">Nevada</option>\n                  <option value=\"NH\">New Hampshire</option>\n                  <option value=\"NJ\">New Jersey</option>\n                  <option value=\"NM\">New Mexico</option>\n                  <option value=\"NY\">New York</option>\n                  <option value=\"NC\">North Carolina</option>\n                  <option value=\"ND\">North Dakota</option>\n                  <option value=\"OH\">Ohio</option>\n                  <option value=\"OK\">Oklahoma</option>\n                  <option value=\"OR\">Oregon</option>\n                  <option value=\"PA\">Pennsylvania</option>\n                  <option value=\"RI\">Rhode Island</option>\n                  <option value=\"SC\">South Carolina</option>\n                  <option value=\"SD\">South Dakota</option>\n                  <option value=\"TN\">Tennessee</option>\n                  <option value=\"TX\">Texas</option>\n                  <option value=\"UT\">Utah</option>\n                  <option value=\"VT\">Vermont</option>\n                  <option value=\"VA\">Virginia</option>\n                  <option value=\"WA\">Washington</option>\n                  <option value=\"WV\">West Virginia</option>\n                  <option value=\"WI\">Wisconsin</option>\n                  <option value=\"WY\">Wyoming</option>\n                </select> \n              </div> \n          </div>\n\n            <!--Application Status-->\n          <div class=\"form-group\">\n            <label for=\"status\" class=\"col-lg-2 control-label\">Application Status:</label>\n              <div class=\"col-lg-10\">\n                <select name=\"status\" class=\"form-control\" id=\"select\"\n                required\n                [(ngModel)]=\"displayOneComp.status\"\n                #status=\"ngModel\">\n                  <option value=\"Contacted\">Contacted</option>\n                  <option value=\"Applied\">Applied</option>\n                  <option value=\"Interview Set\">Interview Set</option>\n                  <option value=\"Interviewed\">Interviewed</option>\n                  <option value=\"Rejected\">Rejected</option>\n                </select>\n                <div class=\"red\" *ngIf=\"status.errors && (status.touched || myform.submitted)\">\n                  <p>Please make a selection</p>\n                </div>\n              </div>  \n          </div>\n\n          <!--Notes about the Company-->\n          <div class=\"form-group\">\n            <label for=\"notes\" class=\"col-lg-2 control-label\">Notes:</label>\n            <div class=\"col-lg-10\">\n              <textarea name=\"notes\" cols=\"30\" rows=\"10\" class=\"form-control\" placeholder=\"Enter notes about this job.\"\n              [(ngModel)]=\"displayOneComp.notes\"\n              ></textarea>    \n            </div> \n          </div>         \n\n          <legend>Contact Information</legend>\n          <!--Contact Name-->\n          <div class=\"form-group\"> \n            <label for=\"contact\" class=\"col-lg-2 control-label\">Contact Person:</label>\n            <div class=\"col-lg-10\">\n              <input type=\"text\" name=\"contact_name\" class=\"form-control\" placeholder=\"Recruiter, Hiring Manager, etc.\"\n              required\n              [(ngModel)]=\"displayOneComp.contact.contact_name\"\n              #contact_name = \"ngModel\">\n              <div class=\"red\" *ngIf=\"contact_name.errors && (contact_name.touched || myform.submitted)\">\n                <p>Please enter your contact person's name</p>\n              </div>\n            </div>\n          </div>\n\n          <!--Contact Phone-->\n          <div class=\"form-group\"> \n            <label for=\"phone\" class=\"col-lg-2 control-label\">Phone::</label>\n            <div class=\"col-lg-10\">\n              <input type=\"text\" name=\"phone\" class=\"form-control\" placeholder=\"888-888-8888\"\n              [(ngModel)]=\"displayOneComp.contact.phone\"\n              >\n            </div>\n          </div>\n\n          <!--Contact Email-->\n          <div class=\"form-group\"> \n            <label for=\"contact\" class=\"col-lg-2 control-label\">Email:</label>\n            <div class=\"col-lg-10\">\n              <input type=\"text\" name=\"contact_email\" class=\"form-control\" placeholder=\"contact@company.com\"\n              pattern = \"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$\"\n              [(ngModel)]=\"displayOneComp.contact.contact_email\"\n              #contact_email = \"ngModel\">\n              <div class=\"red\" *ngIf=\"contact_email.errors && contact_email.touched\">\n                <p *ngIf=\"contact_email.errors.pattern\">Please enter a valid email address</p>\n              </div>\n            </div>\n          </div>                    \n\n          <!--linkedIn-->\n          <div class=\"form-group\">\n            <label for=\"linkedin\" class=\"col-lg-2 control-label\">Contact linkedIn:</label>\n            <div class=\"col-lg-10\">\n              <input type=\"text\" name=\"linkedin\" class=\"form-control\" placeholder=\"**optional\"\n              [(ngModel)]=\"displayOneComp.contact.linkedin\"\n              >     \n            </div> \n          </div>   \n\n          <!--Notes-->\n          <div class=\"form-group\">\n            <label for=\"notes\" class=\"col-lg-2 control-label\">Notes:</label>\n            <div class=\"col-lg-10\">\n              <textarea name=\"note\" cols=\"30\" rows=\"10\" class=\"form-control\" placeholder=\"Notes about the contact person\"\n              [(ngModel)]=\"displayOneComp.contact.note\"\n              ></textarea>    \n            </div> \n          </div> \n\n          <!--Submit Button-->\n          <div class=\"form-group\" style=\"text-align:center;\">\n            <button [disabled]=\"!myform.form.valid\"  type=\"submit\" class=\"btn btn-success\" style=\"text-align:center\">Save Changes</button>\n          </div>\n        </fieldset>\n      </form>\n      <!--End Form-->\n    </div>\n\n</div>\n\n\n\n"
 
 /***/ }),
 
@@ -522,6 +565,10 @@ module.exports = "\n"
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__http_service__ = __webpack_require__("../../../../../src/app/http.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__ = __webpack_require__("../../../../angular2-cookie/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditcompanyComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -533,10 +580,51 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
+
 var EditcompanyComponent = (function () {
-    function EditcompanyComponent() {
+    function EditcompanyComponent(_cookieService, _router, _http, _activatedRoute) {
+        this._cookieService = _cookieService;
+        this._router = _router;
+        this._http = _http;
+        this._activatedRoute = _activatedRoute;
     }
+    EditcompanyComponent.prototype.showOneCompany = function (id) {
+        var _this = this;
+        console.log("This is the showOneCompany()");
+        this._http.findCompany(id)
+            .then(function (data) {
+            console.log("Finding company...");
+            console.log("company data:", data);
+            _this.displayOneComp = data;
+        })
+            .catch(function (err) {
+            console.log("Error fetching company by ID");
+        });
+    };
+    EditcompanyComponent.prototype.editCompany = function (form) {
+        var _this = this;
+        console.log('reached editCompany()');
+        this._http.editCompany(this.param, this.displayOneComp)
+            .then(function (data) {
+            console.log('COMPANY EDITED!');
+            _this._router.navigate(['/information', _this.param]);
+        })
+            .catch(function (error) {
+            console.log("company edit failed :'(", error);
+        });
+    };
     EditcompanyComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        if (!this._cookieService.get("email")) {
+            this._router.navigate(['/']);
+        }
+        this._activatedRoute.params.subscribe(function (param) {
+            _this.param = param.dog;
+            _this.showOneCompany(_this.param); // <- passing global var
+            console.log(param.dog);
+        });
     };
     return EditcompanyComponent;
 }());
@@ -546,9 +634,10 @@ EditcompanyComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/editcompany/editcompany.component.html"),
         styles: [__webpack_require__("../../../../../src/app/editcompany/editcompany.component.css")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__["CookieService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__["CookieService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__http_service__["a" /* HttpService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__http_service__["a" /* HttpService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* ActivatedRoute */]) === "function" && _d || Object])
 ], EditcompanyComponent);
 
+var _a, _b, _c, _d;
 //# sourceMappingURL=editcompany.component.js.map
 
 /***/ }),
@@ -623,6 +712,14 @@ var HttpService = (function () {
             .map(function (data) { return data.json(); })
             .toPromise();
     };
+    //edit company by id - as url param
+    HttpService.prototype.editCompany = function (id, company) {
+        console.log('reached http/editCOmpany()');
+        console.log('/edit_company/' + id);
+        return this._http.post('/edit_company/' + id, company)
+            .map(function (data) { return data.json(); })
+            .toPromise();
+    };
     HttpService.prototype.deleteCompany = function (id) {
         console.log("reached the http.service deleteCompany()");
         return this._http.get('/delete_company/' + id)
@@ -630,6 +727,21 @@ var HttpService = (function () {
             data.json();
         })
             .toPromise();
+    };
+    //weather api
+    HttpService.prototype.weatherAPI = function (address) {
+        console.log("This is the weatherAPI()");
+        var weatherURL = "http://api.openweathermap.org/data/2.5/weather?zip=" + address.zip + ",us&appid=e06f6de032117e0a2698105710b12b35";
+        console.log(weatherURL);
+        return this._http.get(weatherURL)
+            .map(function (data) { return data.json(); }).toPromise();
+    };
+    //maps api
+    HttpService.prototype.googleAPI = function (address) {
+        console.log('entered retreive');
+        var url = "http://maps.google.com/maps/api/geocode/json?address=" + address.street + "+" + address.city + ",+" + address.state;
+        console.log(url);
+        return this._http.get(url).map(function (data) { return data.json(); }).toPromise();
     };
     return HttpService;
 }());

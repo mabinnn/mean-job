@@ -38,7 +38,7 @@ module.exports = {
         User.findOne({email: req.body.email})
         .then(user => {
             console.log('user found!');
-            Company.find({_user: user._id})
+            Company.find({_user: user._id}).sort({createdAt: -1})
             .populate('_upcomings')
             .exec()
             .then(companies => {
@@ -128,29 +128,50 @@ module.exports = {
         })
     },
 
-    addNote: (req, res) => {
-        console.log('reached companies/addNote()');
-        Company.findOne({_id: req.params.id})
+    editCompany: (req, res) => {
+        console.log('reached companies/editCompany()');
+        console.log('req.body:',req.body);
+        Company.update({_id: req.params.id}, req.body)
         .then(company => {
-            if (company) {//if company exists
-                company.notes.push(req.body.note);
-                company.save(company)
-                .then(data => {
-                    res.json(data);
-                })
-                .catch(error => {
-                    res.json(error);
-                })
+            console.log('company FOUND:', company);
+            if (company) {
+                console.log('company updated');
+                res.json(company);
+
             } else {
-                console.log('company not found, note not added');
+                console.log('company not updated');
                 res.json(company);
             }
         })
         .catch(error => {
-            console.log('error finding company in addNote()')
+            console.log('error finding company');
             res.json(error);
         })
     },
+
+    // addNote: (req, res) => {
+    //     console.log('reached companies/addNote()');
+    //     Company.findOne({_id: req.params.id})
+    //     .then(company => {
+    //         if (company) {//if company exists
+    //             company.notes.push(req.body.note);
+    //             company.save(company)
+    //             .then(data => {
+    //                 res.json(data);
+    //             })
+    //             .catch(error => {
+    //                 res.json(error);
+    //             })
+    //         } else {
+    //             console.log('company not found, note not added');
+    //             res.json(company);
+    //         }
+    //     })
+    //     .catch(error => {
+    //         console.log('error finding company in addNote()')
+    //         res.json(error);
+    //     })
+    // },
 
     deleteCompany: (req, res) => {
         console.log("COMPANY:", req.params.id);

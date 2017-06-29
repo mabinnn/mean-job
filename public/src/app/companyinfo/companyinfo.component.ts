@@ -21,15 +21,50 @@ export class CompanyinfoComponent implements OnInit {
     private _activatedRoute: ActivatedRoute) { }
 
   param: string;
-  displayOneComp: object;
+  displayOneComp: any;
+  address = {
+    street : "",
+    city : "",
+    zip: "",
+    state : ""
+  };
+  lng: number;
+  lat: number;
+  weather = {
+    temp: 0,
+    minTemp : 0,
+    maxTemp : 0,
+    humidity: 0,
+    sky: ""
+  };
 
-  lat: number = 37.780337;
-  lng: number = -122.403408;
-
-  //   map = new google.maps.Map(document.getElementById('map'), {
-  //   center: {lat: -34.397, lng: 150.644},
-  //   zoom: 8
-  // });
+  getLongLat(){
+      console.log(this.address);
+      this._http.googleAPI(this.address)
+      .then (api => {
+        this.lng = api.results[0].geometry.location.lng; 
+        this.lat = api.results[0].geometry.location.lat;
+        console.log("APIIII:",api);
+        console.log(this.lng);
+        console.log(this.lat);
+      })
+      .catch (err => {console.log(err);})
+  }
+  weatherAPI(){
+    console.log("ADDRESS",this.address);
+    this._http.weatherAPI(this.address)
+    .then(api=>{
+      this.weather.temp = Math.floor(api.main.temp*(9/5)-459.67);
+      this.weather.minTemp = Math.floor(api.main.temp_min*(9/5)-459.67);
+      this.weather.maxTemp = Math.floor(api.main.temp_max*(9/5)-459.67);
+      this.weather.humidity = api.main.humidity;
+      this.weather.sky = api.weather[0].main;
+      console.log(this.weather);
+    })
+    .catch(err=>{
+      console.log("error with the weather api");
+    })
+  }
 
   showOneCompany(id){
     console.log("This is the showOneCompany()");
@@ -38,6 +73,12 @@ export class CompanyinfoComponent implements OnInit {
       console.log("Finding company...");
       console.log("company data:",data);
       this.displayOneComp = data;
+      this.address.street = this.displayOneComp.address.street;
+      this.address.city = this.displayOneComp.address.city;
+      this.address.state = this.displayOneComp.address.state;
+      this.address.zip = this.displayOneComp.address.zip;
+      this.getLongLat();
+      this.weatherAPI();
     })
     .catch(err=>{
       console.log("Error fetching company by ID");
@@ -45,7 +86,7 @@ export class CompanyinfoComponent implements OnInit {
   }
 
   editCompany(){
-
+    this._router.navigate(['/editcompany', this.param]);
   }
 
 
@@ -61,7 +102,6 @@ export class CompanyinfoComponent implements OnInit {
       this.showOneCompany(this.param); // <- passing global var
       console.log(param.cat);
     });
-    
   }   
 
 }

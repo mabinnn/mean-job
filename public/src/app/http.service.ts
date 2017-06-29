@@ -53,6 +53,14 @@ export class HttpService {
     .map((data) => data.json())
     .toPromise();
   }
+  //edit company by id - as url param
+  editCompany(id, company){
+    console.log('reached http/editCOmpany()');
+    console.log('/edit_company/'+id);
+    return this._http.post('/edit_company/'+id, company)
+    .map((data) => data.json())
+    .toPromise();
+  }
 
   deleteCompany(id){
     console.log("reached the http.service deleteCompany()")
@@ -63,6 +71,22 @@ export class HttpService {
     .toPromise();
   }
 
+  //weather api
+  weatherAPI(address){
+    console.log("This is the weatherAPI()")
+    var weatherURL = "http://api.openweathermap.org/data/2.5/weather?zip="+address.zip+",us&appid=e06f6de032117e0a2698105710b12b35"
+    console.log(weatherURL)
+    return this._http.get(weatherURL)
+    .map(data => data.json()).toPromise();
+  }
+
+  //maps api
+  googleAPI(address){
+    console.log('entered retreive');
+    var url = "http://maps.google.com/maps/api/geocode/json?address="+address.street+"+"+address.city+",+"+address.state;
+    console.log(url);
+    return this._http.get(url).map(data => data.json()).toPromise();
+  }
 
 
 

@@ -33,6 +33,7 @@ p, a {
     height: 300px;
     width: 320px;
     padding: 20px;
+    text-align: left;
 }
 .pull-left {
     margin-top: 5px;
@@ -44,6 +45,9 @@ p, a {
     margin-top: 25px;
     padding-right: 20px;
     text-align: center; 
+}
+legend {
+    margin-top: 15px;
 }
 
 

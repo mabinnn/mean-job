@@ -36,7 +36,7 @@ import { EditcompanyComponent } from './editcompany/editcompany.component';
     FormsModule,
     HttpModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyB4kOD9AMomNP4OswtJNFTkgQtJleJSNV8'   // <-- Using my API Key
+      apiKey: 'AIzaSyB4kOD9AMomNP4OswtJNFTkgQtJleJSNV8'   // <-- Using my API Key for google maps
     })
   ],
   providers: [HttpService, CookieService],

@@ -7,7 +7,7 @@ mongoose.Promise = global.Promise;
 //create schema
 var CompanySchema = new mongoose.Schema({
     name: {type: String, required: true},
-    link: {type: String},
+    url: {type: String},
     role: {type: String},
     address: {
         street: {type: String},

@@ -24,6 +24,7 @@ webpackEmptyContext.id = "../../../../../src async recursive";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__newentry_newentry_component__ = __webpack_require__("../../../../../src/app/newentry/newentry.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/dashboard/dashboard.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__companyinfo_companyinfo_component__ = __webpack_require__("../../../../../src/app/companyinfo/companyinfo.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__editcompany_editcompany_component__ = __webpack_require__("../../../../../src/app/editcompany/editcompany.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppRoutingModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -38,13 +39,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var routes = [
     { path: "", pathMatch: 'full', component: __WEBPACK_IMPORTED_MODULE_2__login_login_component__["a" /* LoginComponent */] },
     { path: "register", component: __WEBPACK_IMPORTED_MODULE_3__registration_registration_component__["a" /* RegistrationComponent */] },
     { path: "addnew", component: __WEBPACK_IMPORTED_MODULE_4__newentry_newentry_component__["a" /* NewentryComponent */] },
     { path: "homepage", component: __WEBPACK_IMPORTED_MODULE_5__dashboard_dashboard_component__["a" /* DashboardComponent */] },
-    { path: "information", component: __WEBPACK_IMPORTED_MODULE_6__companyinfo_companyinfo_component__["a" /* CompanyinfoComponent */] },
-    { path: "dashboard", component: __WEBPACK_IMPORTED_MODULE_5__dashboard_dashboard_component__["a" /* DashboardComponent */] }
+    { path: "information/:cat", component: __WEBPACK_IMPORTED_MODULE_6__companyinfo_companyinfo_component__["a" /* CompanyinfoComponent */] },
+    { path: "dashboard", component: __WEBPACK_IMPORTED_MODULE_5__dashboard_dashboard_component__["a" /* DashboardComponent */] },
+    { path: "editcompany/:dog", component: __WEBPACK_IMPORTED_MODULE_7__editcompany_editcompany_component__["a" /* EditcompanyComponent */] }
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {
@@ -137,7 +140,7 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/dashboard/dashboard.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__companyinfo_companyinfo_component__ = __webpack_require__("../../../../../src/app/companyinfo/companyinfo.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__registration_registration_component__ = __webpack_require__("../../../../../src/app/registration/registration.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__homepage_homepage_component__ = __webpack_require__("../../../../../src/app/homepage/homepage.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__editcompany_editcompany_component__ = __webpack_require__("../../../../../src/app/editcompany/editcompany.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -176,7 +179,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_11__dashboard_dashboard_component__["a" /* DashboardComponent */],
             __WEBPACK_IMPORTED_MODULE_12__companyinfo_companyinfo_component__["a" /* CompanyinfoComponent */],
             __WEBPACK_IMPORTED_MODULE_13__registration_registration_component__["a" /* RegistrationComponent */],
-            __WEBPACK_IMPORTED_MODULE_14__homepage_homepage_component__["a" /* HomepageComponent */]
+            __WEBPACK_IMPORTED_MODULE_14__editcompany_editcompany_component__["a" /* EditcompanyComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -213,7 +216,7 @@ var Company = (function () {
         //     zip: 0,
         //     state: "",
         // },
-        // public user: "",
+        // public user = "",
         // public contact: object = {
         //     name: "",
         //     linkedin: "",
@@ -222,7 +225,7 @@ var Company = (function () {
         //     notes: "",
         // },
         // public notes: Array<string> = [],
-        // public status: ""
+        // public status = ""
         name, url, role, address, street, suite, city, zip, state, contact_name, notes, linkedin, contact_email, phone, note, status) {
         if (name === void 0) { name = ""; }
         if (url === void 0) { url = ""; }
@@ -231,7 +234,7 @@ var Company = (function () {
         if (street === void 0) { street = ""; }
         if (suite === void 0) { suite = ""; }
         if (city === void 0) { city = ""; }
-        if (zip === void 0) { zip = 0; }
+        if (zip === void 0) { zip = ""; }
         if (state === void 0) { state = ""; }
         if (contact_name === void 0) { contact_name = ""; }
         if (notes === void 0) { notes = ""; }
@@ -272,7 +275,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "\nagm-map {\n    height: 500px;\n    width: 800px;\n}\n.googlemaps {\n    /*margin: 0 auto 0 auto;*/\n    margin-top: 10px;\n    width: 800px;\n    margin-left: auto;\n    margin-right: auto;\n}\n.nav {\n    margin-top: 10px;\n}\np, a {\n    display: block;\n    margin-left: 15px;\n}\n.container {\n    margin-bottom: 30px;\n}\n.displaycompany {\n    display: inline-block;\n    margin-left: 200px;\n    height: 300px;\n    width: 320px;\n    padding: 20px;\n}\n.visit {\n    float: right;\n    display: inline-block;\n    margin-right: 200px;\n    height: 300px;\n    width: 320px;\n    padding: 20px;\n}", ""]);
+exports.push([module.i, "\nagm-map {\n    height: 500px;\n    width: 800px;\n}\n.googlemaps {\n    /*margin: 0 auto 0 auto;*/\n    margin-top: 10px;\n    width: 800px;\n    margin-left: auto;\n    margin-right: auto;\n}\n.nav {\n    margin-top: 10px;\n}\np, a {\n    display: block;\n    margin-left: 15px;\n}\n.container {\n    margin-bottom: 30px;\n}\n.displaycompany {\n    display: inline-block;\n    margin-left: 200px;\n    height: 300px;\n    width: 320px;\n    padding: 20px;\n}\n.visit {\n    display: inline-block;\n    margin-right: 200px;\n    height: 300px;\n    width: 320px;\n    padding: 20px;\n}\n.pull-left {\n    margin-top: 5px;\n}\n.pull-right {\n    margin-top: 5px;\n}\n.editbutton {\n    margin-top: 25px;\n    padding-right: 20px;\n    text-align: center; \n}\n\n\n\n", ""]);
 
 // exports
 
@@ -285,7 +288,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/companyinfo/companyinfo.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<link rel=\"stylesheet\" href=\"https://bootswatch.com/cerulean/bootstrap.min.css\">\n\n<div class=\"container\">\n  <!--Nav bar to search compnanies-->\n  <div class=\"nav\">\n    <nav class=\"navbar navbar-default\">\n      <div class=\"container-fluid\">\n        <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\n          <form class=\"navbar-form navbar-left\" role=\"search\">\n            <div class=\"form-group\">\n              <input type=\"text\" class=\"form-control\" placeholder=\"Search Comapany!\">\n            </div>\n            <button type=\"submit\" class=\"btn btn-default\">Submit</button>\n          </form>\n        </div>\n      </div>\n    </nav>      \n  </div>\n\n  <!--Display Google Maps-->\n  <div class=\"googlemaps\"> \n    <agm-map [latitude]=\"lat\" [longitude]=\"lng\">\n      <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n    </agm-map>\n  </div>\n\n  <!--Display Comapny details-->\n  <div class=\"displaycompany\">\n    <h2>Apple Inc</h2>\n    <p>Added on</p>\n    <div class=\"contact\">\n      <h3>Contact Person</h3>\n      <a href=\"http://linkedin\">linkedin of Contact</a>\n      <p>Email of contact</p>\n      <p>Phone Number</p>\n    </div>\n  </div>\n\n  <!--Office visit-->\n  <div class=\"visit\">\n    <h2>Visiting Onsite?</h2>\n    <p>Address here</p>\n    <p> WEATER API here</p>\n  </div>\n</div>\n\n\n\n\n"
+module.exports = "\n<link rel=\"stylesheet\" href=\"https://bootswatch.com/cerulean/bootstrap.min.css\">\n\n<div class=\"container\">\n  <!--Nav bar to search compnanies-->\n  <div class=\"nav\">\n    <nav class=\"navbar navbar-default\">\n      <div class=\"container-fluid\">\n        <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\n          <form class=\"navbar-form navbar-right\" role=\"search\" method=\"get\" action=\"http//www.google.com/search\">\n            <div class=\"form-group\">\n              <input type=\"text\" class=\"form-control\" placeholder=\"Search Comapany!\" value=\"\">\n            </div>\n            <button type=\"submit\" class=\"btn btn-default\">Submit</button>\n          </form>\n            <div class=\"pull-left\">\n              <a class=\"btn btn-success\" [routerLink]=\"['/homepage']\" >Back to Dashboard</a>\n            </div>\n        </div>\n      </div>\n    </nav>      \n  </div>\n\n  <!--Display Google Maps-->\n  <div class=\"googlemaps\"> \n    <agm-map [latitude]=\"lat\" [longitude]=\"lng\">\n      <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n    </agm-map>\n  </div>\n\n  <!--Display Comapny details-->\n\n  <div class=\"editbutton\">\n    <button (click)=\"editCompany()\" class=\"btn btn-default\">Edit Company Details</button>\n  </div>\n\n  <div class=\"displaycompany\">\n    <h2>{{displayOneComp.name}} </h2>\n    <p>Added on <i> {{ displayOneComp.createdAt | date:\"longDate\" }} </i> </p>\n    <p>Role: {{displayOneComp.role}}</p>\n    <p>Notes: {{displayOneComp.notes}}</p>\n    <p>Statu: {{displayOneComp.status}}</p>\n    <div class=\"contact\">\n      <h3>Contact Person</h3>\n      <p>{{displayOneComp.contact.contact_name}}</p>\n      <p><a href=\"{{displayOneComp.contact.linkedin}}\" *ngIf=\"displayOneComp.contact.linkedin\">LinkedIn</a></p>\n      <p>Email: {{displayOneComp.contact.contact_email}}</p>\n      <p>Phone: {{displayOneComp.contact.phone}}</p>\n      <p>Notes: {{displayOneComp.contact.note}}</p>\n    </div>\n  </div>\n\n  <!--Office visit-->\n  <div class=\"visit\">\n    <h2>Visiting Onsite?</h2>\n    <p>{{displayOneComp.address.street}}</p>\n    <p>{{displayOneComp.address.suite}}</p>\n    <p>{{displayOneComp.address.city}}, {{displayOneComp.address.state}} {{displayOneComp.address.zip}}</p>\n    <p> <b>WEATER API here</b></p>\n  </div>\n</div>\n\n\n\n"
 
 /***/ }),
 
@@ -294,6 +297,10 @@ module.exports = "\n<link rel=\"stylesheet\" href=\"https://bootswatch.com/cerul
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__http_service__ = __webpack_require__("../../../../../src/app/http.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__ = __webpack_require__("../../../../angular2-cookie/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CompanyinfoComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -305,8 +312,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
+ // <-- Import Activated routes for passing param in the url
 var CompanyinfoComponent = (function () {
-    function CompanyinfoComponent() {
+    function CompanyinfoComponent(_cookieService, _router, _http, _activatedRoute) {
+        this._cookieService = _cookieService;
+        this._router = _router;
+        this._http = _http;
+        this._activatedRoute = _activatedRoute;
         this.lat = 37.780337;
         this.lng = -122.403408;
     }
@@ -314,7 +328,34 @@ var CompanyinfoComponent = (function () {
     //   center: {lat: -34.397, lng: 150.644},
     //   zoom: 8
     // });
+    CompanyinfoComponent.prototype.showOneCompany = function (id) {
+        var _this = this;
+        console.log("This is the showOneCompany()");
+        this._http.findCompany(id)
+            .then(function (data) {
+            console.log("Finding company...");
+            console.log("company data:", data);
+            _this.displayOneComp = data;
+        })
+            .catch(function (err) {
+            console.log("Error fetching company by ID");
+        });
+    };
+    CompanyinfoComponent.prototype.editCompany = function () {
+    };
     CompanyinfoComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        // check if cookie is available, if not, redirect to login page
+        console.log("companyinfo component cookie:", this._cookieService.get('email'));
+        if (!this._cookieService.get('email')) {
+            this._router.navigate(['/']); // end check  
+        }
+        //get the .cat in the url 
+        this._activatedRoute.params.subscribe(function (param) {
+            _this.param = param.cat;
+            _this.showOneCompany(_this.param); // <- passing global var
+            console.log(param.cat);
+        });
     };
     return CompanyinfoComponent;
 }());
@@ -324,9 +365,10 @@ CompanyinfoComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/companyinfo/companyinfo.component.html"),
         styles: [__webpack_require__("../../../../../src/app/companyinfo/companyinfo.component.css")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__["CookieService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_cookie_core__["CookieService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__http_service__["a" /* HttpService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__http_service__["a" /* HttpService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* ActivatedRoute */]) === "function" && _d || Object])
 ], CompanyinfoComponent);
 
+var _a, _b, _c, _d;
 //# sourceMappingURL=companyinfo.component.js.map
 
 /***/ }),
@@ -339,7 +381,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "\n\n#mytable {\n    width: 100%;\n    -ms-flex-line-pack: center;\n        align-content: center;\n    margin-top: 30px;\n    margin-bottom: 50px;\n}\n.container {\n    margin-top: 50px;\n}\n.pull-right {\n    margin-right: 40px;\n    margin-bottom: 20px;\n}\na, {\n    margin-right: 15px;\n}", ""]);
+exports.push([module.i, "\n\n.mytable {\n    width: 100%;\n    -ms-flex-line-pack: center;\n        align-content: center;\n    margin-top: 30px;\n    margin-bottom: 50px;\n}\n.container {\n    margin-top: 50px;\n}\n.div-left {\n    float: left;\n    padding-left: 10px;\n}\n.div-right {\n    float: right;\n    padding-right: 10px;\n}\n.header {\n    display: block;\n}\na, {\n    margin-right: 15px;\n}\n.red {\n    color: red;\n}\ntd {\n    font-family: San Francisco, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif;\n    letter-spacing: -0.02em;\n    font-size: 14px;\n}\n.pull-left {\n    margin-top: 5px;\n}\n#logout, #prof {\n    margin-top: 5px;\n}\n.btn-success , #add-new{\n    display: block;\n    height: 40px;\n    border-radius: 45px;\n    margin-top: 100px;\n    width: 10%;\n}\n", ""]);
 
 // exports
 
@@ -352,7 +394,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<link rel=\"stylesheet\" href=\"https://bootswatch.com/cerulean/bootstrap.min.css\">\n\n<div class=\"container\"> \n  <div class=\"header\">\n    <h3>Welcome, {{ currentUserName }}  </h3>\n      <div class=\"pull-right\">\n        <h2>Job Search</h2>\n          <a href=\"http://www.linkedin.com\">LinkedIn |</a>\n          <a href=\"http://www.indeed.com\">Indeed |</a>\n          <a href=\"http://www.monster.com\">Monster</a>\n      </div>\n    <a [routerLink]=\"['/addnew']\" class=\"btn btn-primary\">Add New Entry</a> \n    <button class=\"btn btn-warning\" (click)=\"logOut()\">Logout</button> \n  </div>\n\n  <table id=\"mytable\" class=\"table table-striped table-hover \">\n    <tr>\n      <th>Company Name</th>\n      <th>Date Added</th>\n      <th>Status</th>\n      <th>Notes</th>\n      <th>Action</th>\n    </tr>\n      <tr class=\"success\" *ngFor=\"let company of fetchedRecords\">\n          <td><a [routerLink]=\"['/information']\"> {{company.name}} </a></td>\n          <td>{{company.createdAt | date:\"shortTime\"}}</td>\n          <td>{{company.status}}</td>\n          <td>{{company.notes}}</td>\n          <td>\n            <button class=\"btn btn-danger\" (click)=\"delete(company._id)\">Delete</button>\n          </td>\n      </tr>\n  </table>\n\n\n{{ fetchedRecords | json }}\n\n</div>\n"
+module.exports = "\n<link rel=\"stylesheet\" href=\"https://bootswatch.com/cerulean/bootstrap.min.css\">\n\n<div class=\"container\"> \n\n    <!--Top navigation bar-->\n  <div class=\"nav\">\n    <nav class=\"navbar navbar-default\">\n      <div class=\"container-fluid\">\n        <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\n          <div class=\"pull-left\" id=\"prof\"> \n            <a class=\"btn btn-info\" [routerLink]=\"['/homepage']\" >User Profile</a>\n          </div>\n          <div class=\"pull-right\" id=\"logout\">\n            <button class=\"btn btn-warning\" (click)=\"logOut()\">Logout</button>\n          </div>\n        </div>\n      </div>\n    </nav>      \n  </div>  \n\n  <div class=\"header\">\n      <div class=\"div-left\">\n        <h1>Welcome, {{ currentUserName }}</h1>\n      </div>\n      <div class=\"div-right\">\n        <h3>Job Search</h3>\n          <a href=\"http://www.linkedin.com\">LinkedIn |</a>\n          <a href=\"http://www.indeed.com\">Indeed |</a>\n          <a href=\"http://www.monster.com\">Monster</a>\n      </div>\n  </div>\n  <div>\n    <a id=\"addnew\" [routerLink]=\"['/addnew']\" class=\"btn btn-success\">Add New +</a> \n  </div>\n  <div class=\"mytable\">\n    <table class=\"table table-striped table-hover \">\n      <tr>\n        <th>Company Name</th>\n        <th>Position</th>\n        <th>Date Added</th>\n        <th>Status</th>\n        <th>Notes</th>\n        <th>Action</th>\n      </tr>\n          <tr class=\"success\" *ngFor=\"let company of fetchedRecords\">\n              <td><a [routerLink]=\"['/information', company._id]\"> {{company.name}} </a></td>\n              <td>{{company.role}}</td>\n              <td>{{company.createdAt | date:'longDate' }}</td>\n              <td>{{company.status}}</td>\n              <td>{{company.notes}}</td>\n              <td><a class=\"red\" (click)=\"delete(company._id)\">Delete</a></td> \n          </tr>\n    </table>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -450,7 +492,7 @@ var _a, _b, _c;
 
 /***/ }),
 
-/***/ "../../../../../src/app/homepage/homepage.component.css":
+/***/ "../../../../../src/app/editcompany/editcompany.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
@@ -468,19 +510,19 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ "../../../../../src/app/homepage/homepage.component.html":
+/***/ "../../../../../src/app/editcompany/editcompany.component.html":
 /***/ (function(module, exports) {
 
 module.exports = "\n"
 
 /***/ }),
 
-/***/ "../../../../../src/app/homepage/homepage.component.ts":
+/***/ "../../../../../src/app/editcompany/editcompany.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomepageComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditcompanyComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -491,23 +533,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-var HomepageComponent = (function () {
-    function HomepageComponent() {
+var EditcompanyComponent = (function () {
+    function EditcompanyComponent() {
     }
-    HomepageComponent.prototype.ngOnInit = function () {
+    EditcompanyComponent.prototype.ngOnInit = function () {
     };
-    return HomepageComponent;
+    return EditcompanyComponent;
 }());
-HomepageComponent = __decorate([
+EditcompanyComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'app-homepage',
-        template: __webpack_require__("../../../../../src/app/homepage/homepage.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/homepage/homepage.component.css")]
+        selector: 'app-editcompany',
+        template: __webpack_require__("../../../../../src/app/editcompany/editcompany.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/editcompany/editcompany.component.css")]
     }),
     __metadata("design:paramtypes", [])
-], HomepageComponent);
+], EditcompanyComponent);
 
-//# sourceMappingURL=homepage.component.js.map
+//# sourceMappingURL=editcompany.component.js.map
 
 /***/ }),
 
@@ -659,7 +701,20 @@ var LoginComponent = (function () {
             password: ""
         };
         this.invalidPass = false;
+        this.userNotInDatabase = false;
     }
+    // Check if user exists in the database
+    // searchifUserExist(form){
+    //   console.log("checking if user exist in the database");
+    //   this._http.findUser({email: this.userLogging.email})
+    //   .then(data=>{
+    //     console.log("data from searchExists:", data)
+    //   })
+    //   .catch(err=>{
+    //     console.log("User does not exist, cannot login")
+    //   })
+    //   form.resetForm();
+    // }
     LoginComponent.prototype.login = function () {
         var _this = this;
         console.log("Reached login() in the login.comp");
@@ -711,7 +766,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "\n.form-horizontal, newentrycomponent {\n    display: inline-block;\n    margin-top: 50px;\n    width: 60%;\n}\n\n.pull-right {\n    margin-top: 30px;\n    margin-right: 50px;\n}\n\na {\n    display: block;\n    margin-top: 5px;\n}\n.dashboardcomponent {\n    margin-top: 30px;\n    margin-bottom: 30px;\n}\nlegend {\n    margin-top: 20px;\n}\n", ""]);
+exports.push([module.i, "\n.form-horizontal, newentrycomponent {\n    display: inline-block;\n    margin-top: 50px;\n    width: 60%;\n}\n.dashboardcomponent {\n    margin-top: 30px;\n    margin-bottom: 30px;\n}\nlegend {\n    margin-top: 20px;\n}\n.red {\n    color: red;\n    font-size: 14px;\n    margin-top: 5px;\n}\n.pull-left {\n    margin-top: 5px;\n}\n.nav {\n    margin-top: 20px;\n}", ""]);
 
 // exports
 
@@ -724,7 +779,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/newentry/newentry.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<link rel=\"stylesheet\" href=\"https://bootswatch.com/cerulean/bootstrap.min.css\">\n<div class=\"container\">\n\n  <div class=\"pull-right\">\n    <a [routerLink]=\"['/homepage']\">Back to Dashboard</a>\n    <a [routerLink]=\"['/']\">Logout</a>\n  </div>\n\n    <div class=\"newentrycomponent\">\n      <!--From to add new Entry-->\n      <form class=\"form-horizontal\" #myform=\"ngForm\" (submit)=\"addCompany(myform)\">\n        <fieldset>\n          <legend>Add New Job Entry</legend>\n\n          <!--Company name-->\n          <div class=\"form-group\">\n            <label for=\"company\" class=\"col-lg-2 control-label\">Company:</label>\n            <div class=\"col-lg-10\">\n              <input type=\"text\" name=\"company\" class=\"form-control\" placeholder=\"Agency, Employer, etc.\"\n              required\n              [(ngModel)]=\"newCompany.name\"\n              >     \n            </div> \n          </div>\n          <!--Position Applied-->\n          <div class=\"form-group\">\n            <label for=\"role\" class=\"col-lg-2 control-label\">Position:</label>\n            <div class=\"col-lg-10\">\n              <input type=\"text\" name=\"role\" class=\"form-control\" placeholder=\"ex: Software Enginner\"\n              required\n              [(ngModel)]=\"newCompany.role\"\n              >     \n            </div> \n          </div>        \n          <!--Link URL-->\n          <div class=\"form-group\">\n            <label for=\"url\" class=\"col-lg-2 control-label\">Link:</label>\n            <div class=\"col-lg-10\">\n              <input type=\"text\" name=\"url\" class=\"form-control\" placeholder=\"www.job.com\"\n              required\n              [(ngModel)]=\"newCompany.url\"\n              >     \n            </div> \n          </div>    \n          <!--Address of the company-->\n          <div class=\"form-group\">\n            <label for=\"street\" class=\"col-lg-2 control-label\">Street</label>\n            <div class=\"col-lg-10\">\n              <input type=\"text\" name=\"street\" class=\"form-control\" placeholder=\"ex: 400 Main Ave.\"\n              required\n              [(ngModel)]=\"newCompany.street\"\n              >\n            </div> \n          </div> \n                <!--Suite-->\n          <div class=\"form-group\">\n            <label for=\"Suite\" class=\"col-lg-2 control-label\">Office Suite:</label>\n            <div class=\"col-lg-10\">\n                <input type=\"text\" name=\"suite\" class=\"form-control\" placeholder=\"Suite #\"\n                [(ngModel)]=\"newCompany.suite\"\n                >\n            </div>\n          </div>\n                <!--City-->\n          <div class=\"form-group\">\n            <label for=\"city\" class=\"col-lg-2 control-label\">City:</label>\n            <div class=\"col-lg-10\">\n                <input type=\"text\" name=\"city\" class=\"form-control\" placeholder=\"City\"\n                required\n                [(ngModel)]=\"newCompany.city\"\n                >\n            </div>\n          </div>        \n                <!--Zip Code-->\n          <div class=\"form-group\">\n            <label for=\"zip\" class=\"col-lg-2 control-label\">Zip Code:</label>\n            <div class=\"col-lg-10\">\n              <input type=\"number\" name=\"zip\" class=\"form-control\" placeholder=\"Zip code\"\n              required\n              [(ngModel)]=\"newCompany.zip\"\n              >\n            </div>\n          </div>\n                <!--Choose State-->\n          <div class=\"form-group\">\n            <label for=\"state\" class=\"col-lg-2 control-label\">State:</label>\n              <div class=\"col-lg-10\">\n                <select name=\"state\" class=\"form-control\" id=\"select\"\n                [(ngModel)]=\"newCompany.state\"\n                >\n                  <option value=\"AL\">Alabama</option>\n                  <option value=\"AK\">Alaska</option>\n                  <option value=\"AZ\">Arizona</option>\n                  <option value=\"AR\">Arkansas</option>\n                  <option value=\"CA\">California</option>\n                  <option value=\"CO\">Colorado</option>\n                  <option value=\"CT\">Connecticut</option>\n                  <option value=\"DE\">Delaware</option>\n                  <option value=\"FL\">Florida</option>\n                  <option value=\"GA\">Georgia</option>\n                  <option value=\"HI\">Hawaii</option>\n                  <option value=\"ID\">Idaho</option>\n                  <option value=\"IL\">Illinois</option>\n                  <option value=\"IN\">Indiana</option>\n                  <option value=\"IA\">Iowa</option>\n                  <option value=\"KS\">Kansas</option>\n                  <option value=\"KY\">Kentucky</option>\n                  <option value=\"LA\">Louisiana</option>\n                  <option value=\"ME\">Maine</option>\n                  <option value=\"MD\">Maryland</option>\n                  <option value=\"MA\">Massachusetts</option>\n                  <option value=\"MI\">Michigan</option>\n                  <option value=\"MN\">Minnesota</option>\n                  <option value=\"MS\">Mississippi</option>\n                  <option value=\"MO\">Missouri</option>\n                  <option value=\"MT\">Montana</option>\n                  <option value=\"NE\">Nebraska</option>\n                  <option value=\"NV\">Nevada</option>\n                  <option value=\"NH\">New Hampshire</option>\n                  <option value=\"NJ\">New Jersey</option>\n                  <option value=\"NM\">New Mexico</option>\n                  <option value=\"NY\">New York</option>\n                  <option value=\"NC\">North Carolina</option>\n                  <option value=\"ND\">North Dakota</option>\n                  <option value=\"OH\">Ohio</option>\n                  <option value=\"OK\">Oklahoma</option>\n                  <option value=\"OR\">Oregon</option>\n                  <option value=\"PA\">Pennsylvania</option>\n                  <option value=\"RI\">Rhode Island</option>\n                  <option value=\"SC\">South Carolina</option>\n                  <option value=\"SD\">South Dakota</option>\n                  <option value=\"TN\">Tennessee</option>\n                  <option value=\"TX\">Texas</option>\n                  <option value=\"UT\">Utah</option>\n                  <option value=\"VT\">Vermont</option>\n                  <option value=\"VA\">Virginia</option>\n                  <option value=\"WA\">Washington</option>\n                  <option value=\"WV\">West Virginia</option>\n                  <option value=\"WI\">Wisconsin</option>\n                  <option value=\"WY\">Wyoming</option>\n                </select> \n              </div> \n          </div>\n\n            <!--Application Status-->\n          <div class=\"form-group\">\n            <label for=\"status\" class=\"col-lg-2 control-label\">Application Status:</label>\n              <div class=\"col-lg-10\">\n                <select name=\"status\" class=\"form-control\" id=\"select\"\n                [(ngModel)]=\"newCompany.status\"\n                >\n                  <option value=\"Contacted\">Contacted</option>\n                  <option value=\"Applied\">Applied</option>\n                  <option value=\"Interview Set\">Interview Set</option>\n                  <option value=\"Interviewed\">Interviewed</option>\n                  <option value=\"Rejected\">Rejected</option>\n                </select>\n              </div>  \n          </div>\n\n          <!--Notes about the Company-->\n          <div class=\"form-group\">\n            <label for=\"notes\" class=\"col-lg-2 control-label\">Notes:</label>\n            <div class=\"col-lg-10\">\n              <textarea name=\"notes\" cols=\"30\" rows=\"10\" class=\"form-control\" placeholder=\"Enter notes about this job.\"\n              [(ngModel)]=\"newCompany.notes\"\n              ></textarea>    \n            </div> \n          </div>         \n\n\n\n          <legend>Contact Information</legend>\n\n          <!--Contact Name-->\n          <div class=\"form-group\"> \n            <label for=\"contact\" class=\"col-lg-2 control-label\">Contact Person:</label>\n            <div class=\"col-lg-10\">\n              <input type=\"text\" name=\"contact\" class=\"form-control\" placeholder=\"Recruiter, Hiring Manager, etc.\"\n              required\n              [(ngModel)]=\"newCompany.contact_name\"\n              >\n            </div>\n          </div>\n\n          <!--Contact Phone-->\n          <div class=\"form-group\"> \n            <label for=\"phone\" class=\"col-lg-2 control-label\">Phone::</label>\n            <div class=\"col-lg-10\">\n              <input type=\"text\" name=\"phone\" class=\"form-control\" placeholder=\"###-###-####\"\n              [(ngModel)]=\"newCompany.phone\"\n              >\n            </div>\n          </div>\n\n          <!--Email-->\n          <div class=\"form-group\"> \n            <label for=\"contact\" class=\"col-lg-2 control-label\">Email:</label>\n            <div class=\"col-lg-10\">\n              <input type=\"text\" name=\"contact_email\" class=\"form-control\" placeholder=\"contact@company.com\"\n              [(ngModel)]=\"newCompany.contact_email\"\n              >\n            </div>\n          </div>                    \n\n          <!--linkedIn-->\n          <div class=\"form-group\">\n            <label for=\"linkedin\" class=\"col-lg-2 control-label\">Contact linkedIn:</label>\n            <div class=\"col-lg-10\">\n              <input type=\"text\" name=\"linkedin\" class=\"form-control\" placeholder=\"**optional\"\n              [(ngModel)]=\"newCompany.linkedin\"\n              >     \n            </div> \n          </div>   \n\n          <!--Notes-->\n          <div class=\"form-group\">\n            <label for=\"notes\" class=\"col-lg-2 control-label\">Notes:</label>\n            <div class=\"col-lg-10\">\n              <textarea name=\"note\" cols=\"30\" rows=\"10\" class=\"form-control\" placeholder=\"Notes about this job you may wanna add.\"\n              [(ngModel)]=\"newCompany.note\"\n              ></textarea>    \n            </div> \n          </div> \n\n          <!--Submit Button-->\n          <div class=\"form-group\" style=\"text-align:center;\">\n            <button type=\"submit\" class=\"btn btn-primary\" style=\"text-align:center\">Submit</button>\n          </div>\n        </fieldset>\n      </form>\n      <!--End Form-->\n    </div>\n\n</div>\n\n\n\n"
+module.exports = "\n<link rel=\"stylesheet\" href=\"https://bootswatch.com/cerulean/bootstrap.min.css\">\n<div class=\"container\">\n\n  <!--top navigation bar-->\n  <div class=\"nav\">\n    <nav class=\"navbar navbar-default\">\n      <div class=\"container-fluid\">\n        <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\n          <div class=\"pull-left\">\n            <a class=\"btn btn-success\" [routerLink]=\"['/homepage']\" >Back to Dashboard</a>\n          </div>\n        </div>\n      </div>\n    </nav>      \n  </div>  \n\n\n    <div class=\"newentrycomponent\">\n      <!--From to add new Entry-->\n      <form class=\"form-horizontal\" #myform=\"ngForm\" (submit)=\"addCompany(myform)\">\n        <fieldset>\n          <legend>Add New Job Entry</legend>\n\n          <!--display when submitted with invalid field\n          <div class=\"red\" *ngIf=\"failToSubmit\">\n            <i>**Please check all red fields.</i>\n          </div>-->\n\n          <!--Company name-->\n          <div class=\"form-group\">\n            <label for=\"company\" class=\"col-lg-2 control-label\">Company:</label>\n            <div class=\"col-lg-10\">\n              <input type=\"text\" name=\"company\" class=\"form-control\" placeholder=\"Agency, Employer, etc.\"\n              required\n              [(ngModel)]=\"newCompany.name\"\n              #company=\"ngModel\">  \n              <div class=\"red\" *ngIf=\"company.errors && (company.touched || myform.submitted)\">\n                <p *ngIf=\"company.errors.required\">Company name is required.</p>\n              </div>   \n            </div> \n          </div>\n\n          <!--Position Applied-->\n          <div class=\"form-group\">\n            <label for=\"role\" class=\"col-lg-2 control-label\">Position:</label>\n            <div class=\"col-lg-10\">\n              <input type=\"text\" name=\"role\" class=\"form-control\" placeholder=\"ex: Software Enginner\"\n              required\n              [(ngModel)]=\"newCompany.role\"\n              #role=\"ngModel\">  \n              <div class=\"red\" *ngIf=\"role.errors && (role.touched || myform.submitted)\">\n                <p *ngIf=\"role.errors.required\">Position applied is required.</p>\n              </div>     \n            </div> \n          </div>        \n          <!--Link URL-->\n          <div class=\"form-group\">\n            <label for=\"url\" class=\"col-lg-2 control-label\">Link:</label>\n            <div class=\"col-lg-10\">\n              <input type=\"text\" name=\"url\" class=\"form-control\" placeholder=\"www.job.com\"\n              [(ngModel)]=\"newCompany.url\">     \n            </div> \n          </div>    \n          <!--Address of the company-->\n          <div class=\"form-group\">\n            <label for=\"street\" class=\"col-lg-2 control-label\">Street</label>\n            <div class=\"col-lg-10\">\n              <input type=\"text\" name=\"street\" class=\"form-control\" placeholder=\"ex: 400 Main Ave.\"\n              [(ngModel)]=\"newCompany.street\"\n              #street=\"ngModel\"> \n            </div> \n          </div> \n                <!--Suite-->\n          <div class=\"form-group\">\n            <label for=\"Suite\" class=\"col-lg-2 control-label\">Office Suite:</label>\n            <div class=\"col-lg-10\">\n                <input type=\"text\" name=\"suite\" class=\"form-control\" placeholder=\"Suite #\"\n                [(ngModel)]=\"newCompany.suite\">\n            </div>\n          </div>\n                <!--City-->\n          <div class=\"form-group\">\n            <label for=\"city\" class=\"col-lg-2 control-label\">City:</label>\n            <div class=\"col-lg-10\">\n                <input type=\"text\" name=\"city\" class=\"form-control\" placeholder=\"City\"\n                [(ngModel)]=\"newCompany.city\">\n            </div>\n          </div>        \n                <!--Zip Code-->\n          <div class=\"form-group\">\n            <label for=\"zip\" class=\"col-lg-2 control-label\">Zip Code:</label>\n            <div class=\"col-lg-10\">\n              <input type=\"text\" name=\"zip\" class=\"form-control\"\n              [(ngModel)]=\"newCompany.zip\"\n              >\n            </div>\n          </div>\n                <!--Choose State-->\n          <div class=\"form-group\">\n            <label for=\"state\" class=\"col-lg-2 control-label\">State:</label>\n              <div class=\"col-lg-10\">\n                <select name=\"state\" class=\"form-control\" id=\"select\"\n                [(ngModel)]=\"newCompany.state\"\n                >\n                  <option value=\"AL\">Alabama</option>\n                  <option value=\"AK\">Alaska</option>\n                  <option value=\"AZ\">Arizona</option>\n                  <option value=\"AR\">Arkansas</option>\n                  <option value=\"CA\">California</option>\n                  <option value=\"CO\">Colorado</option>\n                  <option value=\"CT\">Connecticut</option>\n                  <option value=\"DE\">Delaware</option>\n                  <option value=\"FL\">Florida</option>\n                  <option value=\"GA\">Georgia</option>\n                  <option value=\"HI\">Hawaii</option>\n                  <option value=\"ID\">Idaho</option>\n                  <option value=\"IL\">Illinois</option>\n                  <option value=\"IN\">Indiana</option>\n                  <option value=\"IA\">Iowa</option>\n                  <option value=\"KS\">Kansas</option>\n                  <option value=\"KY\">Kentucky</option>\n                  <option value=\"LA\">Louisiana</option>\n                  <option value=\"ME\">Maine</option>\n                  <option value=\"MD\">Maryland</option>\n                  <option value=\"MA\">Massachusetts</option>\n                  <option value=\"MI\">Michigan</option>\n                  <option value=\"MN\">Minnesota</option>\n                  <option value=\"MS\">Mississippi</option>\n                  <option value=\"MO\">Missouri</option>\n                  <option value=\"MT\">Montana</option>\n                  <option value=\"NE\">Nebraska</option>\n                  <option value=\"NV\">Nevada</option>\n                  <option value=\"NH\">New Hampshire</option>\n                  <option value=\"NJ\">New Jersey</option>\n                  <option value=\"NM\">New Mexico</option>\n                  <option value=\"NY\">New York</option>\n                  <option value=\"NC\">North Carolina</option>\n                  <option value=\"ND\">North Dakota</option>\n                  <option value=\"OH\">Ohio</option>\n                  <option value=\"OK\">Oklahoma</option>\n                  <option value=\"OR\">Oregon</option>\n                  <option value=\"PA\">Pennsylvania</option>\n                  <option value=\"RI\">Rhode Island</option>\n                  <option value=\"SC\">South Carolina</option>\n                  <option value=\"SD\">South Dakota</option>\n                  <option value=\"TN\">Tennessee</option>\n                  <option value=\"TX\">Texas</option>\n                  <option value=\"UT\">Utah</option>\n                  <option value=\"VT\">Vermont</option>\n                  <option value=\"VA\">Virginia</option>\n                  <option value=\"WA\">Washington</option>\n                  <option value=\"WV\">West Virginia</option>\n                  <option value=\"WI\">Wisconsin</option>\n                  <option value=\"WY\">Wyoming</option>\n                </select> \n              </div> \n          </div>\n\n            <!--Application Status-->\n          <div class=\"form-group\">\n            <label for=\"status\" class=\"col-lg-2 control-label\">Application Status:</label>\n              <div class=\"col-lg-10\">\n                <select name=\"status\" class=\"form-control\" id=\"select\"\n                required\n                [(ngModel)]=\"newCompany.status\"\n                #status=\"ngModel\">\n                  <option value=\"Contacted\">Contacted</option>\n                  <option value=\"Applied\">Applied</option>\n                  <option value=\"Interview Set\">Interview Set</option>\n                  <option value=\"Interviewed\">Interviewed</option>\n                  <option value=\"Rejected\">Rejected</option>\n                </select>\n                <div class=\"red\" *ngIf=\"status.errors && (status.touched || myform.submitted)\">\n                  <p>Please make a selection</p>\n                </div>\n              </div>  \n          </div>\n\n          <!--Notes about the Company-->\n          <div class=\"form-group\">\n            <label for=\"notes\" class=\"col-lg-2 control-label\">Notes:</label>\n            <div class=\"col-lg-10\">\n              <textarea name=\"notes\" cols=\"30\" rows=\"10\" class=\"form-control\" placeholder=\"Enter notes about this job.\"\n              [(ngModel)]=\"newCompany.notes\"\n              ></textarea>    \n            </div> \n          </div>         \n\n          <legend>Contact Information</legend>\n          <!--Contact Name-->\n          <div class=\"form-group\"> \n            <label for=\"contact\" class=\"col-lg-2 control-label\">Contact Person:</label>\n            <div class=\"col-lg-10\">\n              <input type=\"text\" name=\"contact_name\" class=\"form-control\" placeholder=\"Recruiter, Hiring Manager, etc.\"\n              required\n              [(ngModel)]=\"newCompany.contact_name\"\n              #contact_name = \"ngModel\">\n              <div class=\"red\" *ngIf=\"contact_name.errors && (contact_name.touched || myform.submitted)\">\n                <p>Please enter your contact person's name</p>\n              </div>\n            </div>\n          </div>\n\n          <!--Contact Phone-->\n          <div class=\"form-group\"> \n            <label for=\"phone\" class=\"col-lg-2 control-label\">Phone::</label>\n            <div class=\"col-lg-10\">\n              <input type=\"text\" name=\"phone\" class=\"form-control\" placeholder=\"888-888-8888\"\n              [(ngModel)]=\"newCompany.phone\"\n              >\n            </div>\n          </div>\n\n          <!--Contact Email-->\n          <div class=\"form-group\"> \n            <label for=\"contact\" class=\"col-lg-2 control-label\">Email:</label>\n            <div class=\"col-lg-10\">\n              <input type=\"text\" name=\"contact_email\" class=\"form-control\" placeholder=\"contact@company.com\"\n              pattern = \"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$\"\n              [(ngModel)]=\"newCompany.contact_email\"\n              #contact_email = \"ngModel\">\n              <div class=\"red\" *ngIf=\"contact_email.errors && contact_email.touched\">\n                <p *ngIf=\"contact_email.errors.pattern\">Please enter a valid email address</p>\n              </div>\n            </div>\n          </div>                    \n\n          <!--linkedIn-->\n          <div class=\"form-group\">\n            <label for=\"linkedin\" class=\"col-lg-2 control-label\">Contact linkedIn:</label>\n            <div class=\"col-lg-10\">\n              <input type=\"text\" name=\"linkedin\" class=\"form-control\" placeholder=\"**optional\"\n              [(ngModel)]=\"newCompany.linkedin\"\n              >     \n            </div> \n          </div>   \n\n          <!--Notes-->\n          <div class=\"form-group\">\n            <label for=\"notes\" class=\"col-lg-2 control-label\">Notes:</label>\n            <div class=\"col-lg-10\">\n              <textarea name=\"note\" cols=\"30\" rows=\"10\" class=\"form-control\" placeholder=\"Notes about the contact person\"\n              [(ngModel)]=\"newCompany.note\"\n              ></textarea>    \n            </div> \n          </div> \n\n          <!--Submit Button-->\n          <div class=\"form-group\" style=\"text-align:center;\">\n            <button [disabled]=\"!myform.form.valid\"  type=\"submit\" class=\"btn btn-primary\" style=\"text-align:center\">Submit</button>\n          </div>\n        </fieldset>\n      </form>\n      <!--End Form-->\n    </div>\n\n</div>\n\n\n\n"
 
 /***/ }),
 
@@ -758,48 +813,61 @@ var NewentryComponent = (function () {
         this._cookieService = _cookieService;
         this._http = _http;
         this._router = _router;
-        this.loggedUser = this._cookieService.get('email');
+        this.loggedUserCookie = this._cookieService.get('email');
         this.newCompany = new __WEBPACK_IMPORTED_MODULE_4__company__["a" /* Company */]();
     }
     NewentryComponent.prototype.addCompany = function (form) {
         var _this = this;
-        console.log("Adding Company:", form);
-        var new_company = {
-            name: this.newCompany.name,
-            url: this.newCompany.url,
-            role: this.newCompany.url,
-            address: {
-                street: this.newCompany.street,
-                suite: this.newCompany.suite,
-                city: this.newCompany.city,
-                zip: this.newCompany.zip,
-                state: this.newCompany.state
-            },
-            user: this.loggedUser,
-            status: this.newCompany.status,
-            notes: this.newCompany.notes,
-            contact: {
-                contact_name: this.newCompany.contact_name,
-                linkedin: this.newCompany.linkedin,
-                contact_email: this.newCompany.contact_email,
-                phone: this.newCompany.phone,
-                note: this.newCompany.note
-            }
-        };
-        console.log("Forced New Company:", new_company);
-        this._http.addCompany(new_company)
-            .then(function (data) {
-            console.log("Success");
-            _this._router.navigate(['/homepage']);
-            form.reset();
-        })
-            .catch(function (err) {
-            console.log("Error adding company");
-        });
+        console.log("this.newCompany: ", form);
+        if (!form.valid) {
+            this.isFormValid = false;
+            console.log("error with the new entry form");
+            // this.failToSubmit = true
+            return;
+        }
+        else {
+            console.log("Adding Company:", form);
+            var new_company = {
+                name: this.newCompany.name,
+                url: this.newCompany.url,
+                role: this.newCompany.role,
+                address: {
+                    street: this.newCompany.street,
+                    suite: this.newCompany.suite,
+                    city: this.newCompany.city,
+                    zip: this.newCompany.zip,
+                    state: this.newCompany.state
+                },
+                user: this.loggedUserCookie,
+                status: this.newCompany.status,
+                notes: this.newCompany.notes,
+                contact: {
+                    contact_name: this.newCompany.contact_name,
+                    linkedin: this.newCompany.linkedin,
+                    contact_email: this.newCompany.contact_email,
+                    phone: this.newCompany.phone,
+                    note: this.newCompany.note
+                }
+            };
+            console.log("Forced New Company:", new_company);
+            this._http.addCompany(new_company)
+                .then(function (data) {
+                console.log("Success");
+                _this._router.navigate(['/homepage']);
+                form.resetForm();
+            })
+                .catch(function (err) {
+                console.log("Error adding company");
+            });
+        }
     };
     NewentryComponent.prototype.ngOnInit = function () {
-        console.log("newentry comp", this._cookieService.get('email'));
-    };
+        // check if cookie is available, if not, redirect to login page
+        console.log("newentry comp cookie:", this._cookieService.get('email'));
+        if (!this._cookieService.get('email')) {
+            this._router.navigate(['/']);
+        }
+    }; // end check
     return NewentryComponent;
 }());
 NewentryComponent = __decorate([

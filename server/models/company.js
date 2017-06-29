@@ -13,7 +13,7 @@ var CompanySchema = new mongoose.Schema({
         street: {type: String},
         suite: {type: String},
         city: {type: String},
-        zip: {type: Number},
+        zip: {type: String},
         state: {type: String}
     },
     _upcomings: [{type: Schema.Types.ObjectId, ref: 'Upcoming'}],
@@ -25,9 +25,9 @@ var CompanySchema = new mongoose.Schema({
         linkedin: {type: String},
         contact_email: {type: String},
         phone: {type: String},
-        notes: {type: String}
+        note: {type: String}
     }
-}, { timestamp: true } );
+}, { timestamps: true } );
 
 //register schema as model
 var Company = mongoose.model('Company', CompanySchema);

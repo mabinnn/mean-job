@@ -12,7 +12,7 @@ export class Company {
         //     zip: 0,
         //     state: "",
         // },
-        // public user: "",
+        // public user = "",
         // public contact: object = {
         //     name: "",
         //     linkedin: "",
@@ -21,7 +21,7 @@ export class Company {
         //     notes: "",
         // },
         // public notes: Array<string> = [],
-        // public status: ""
+        // public status = ""
 
         public name: string = "",
         public url: string = "",
@@ -30,7 +30,7 @@ export class Company {
         public street: string = "",
         public suite: string = "",
         public city: string = "",
-        public zip: number = 0,
+        public zip: string = "",
         public state: string = "",
         public contact_name: string = "",
         public notes: string = "",

@@ -24,7 +24,7 @@ var UserSchema = new mongoose.Schema({
     },
     password: {type: String, required: true},
     _companies: [{type: Schema.Types.ObjectId, ref: 'Company'}]
-}, {timestamp: true});
+}, {timestamps: true});
 
 //register schema as model
 var User = mongoose.model('User', UserSchema);

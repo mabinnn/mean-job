@@ -5,15 +5,16 @@ import { RegistrationComponent } from './registration/registration.component';
 import { NewentryComponent } from './newentry/newentry.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CompanyinfoComponent } from './companyinfo/companyinfo.component';
-import { HomepageComponent } from './homepage/homepage.component';
+import { EditcompanyComponent } from './editcompany/editcompany.component';
 
 const routes: Routes = [
   {path: "", pathMatch: 'full', component: LoginComponent },
   {path: "register", component:  RegistrationComponent },
   {path: "addnew", component: NewentryComponent},
   {path: "homepage", component: DashboardComponent},
-  {path: "information", component: CompanyinfoComponent},
-  {path: "dashboard", component: DashboardComponent}
+  {path: "information/:cat", component: CompanyinfoComponent},
+  {path: "dashboard", component: DashboardComponent},
+  {path: "editcompany/:dog", component: EditcompanyComponent}
 ];
 
 @NgModule({

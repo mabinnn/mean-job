@@ -2,16 +2,30 @@
 <link rel="stylesheet" href="https://bootswatch.com/cerulean/bootstrap.min.css">
 <div class="container">
 
-  <div class="pull-right">
-    <a [routerLink]="['/homepage']">Back to Dashboard</a>
-    <a [routerLink]="['/']">Logout</a>
-  </div>
+  <!--top navigation bar-->
+  <div class="nav">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <div class="pull-left">
+            <a class="btn btn-success" [routerLink]="['/homepage']" >Back to Dashboard</a>
+          </div>
+        </div>
+      </div>
+    </nav>      
+  </div>  
+
 
     <div class="newentrycomponent">
       <!--From to add new Entry-->
       <form class="form-horizontal" #myform="ngForm" (submit)="addCompany(myform)">
         <fieldset>
           <legend>Add New Job Entry</legend>
+
+          <!--display when submitted with invalid field
+          <div class="red" *ngIf="failToSubmit">
+            <i>**Please check all red fields.</i>
+          </div>-->
 
           <!--Company name-->
           <div class="form-group">
@@ -20,9 +34,13 @@
               <input type="text" name="company" class="form-control" placeholder="Agency, Employer, etc."
               required
               [(ngModel)]="newCompany.name"
-              >     
+              #company="ngModel">  
+              <div class="red" *ngIf="company.errors && (company.touched || myform.submitted)">
+                <p *ngIf="company.errors.required">Company name is required.</p>
+              </div>   
             </div> 
           </div>
+
           <!--Position Applied-->
           <div class="form-group">
             <label for="role" class="col-lg-2 control-label">Position:</label>
@@ -30,7 +48,10 @@
               <input type="text" name="role" class="form-control" placeholder="ex: Software Enginner"
               required
               [(ngModel)]="newCompany.role"
-              >     
+              #role="ngModel">  
+              <div class="red" *ngIf="role.errors && (role.touched || myform.submitted)">
+                <p *ngIf="role.errors.required">Position applied is required.</p>
+              </div>     
             </div> 
           </div>        
           <!--Link URL-->
@@ -38,9 +59,7 @@
             <label for="url" class="col-lg-2 control-label">Link:</label>
             <div class="col-lg-10">
               <input type="text" name="url" class="form-control" placeholder="www.job.com"
-              required
-              [(ngModel)]="newCompany.url"
-              >     
+              [(ngModel)]="newCompany.url">     
             </div> 
           </div>    
           <!--Address of the company-->
@@ -48,9 +67,8 @@
             <label for="street" class="col-lg-2 control-label">Street</label>
             <div class="col-lg-10">
               <input type="text" name="street" class="form-control" placeholder="ex: 400 Main Ave."
-              required
               [(ngModel)]="newCompany.street"
-              >
+              #street="ngModel"> 
             </div> 
           </div> 
                 <!--Suite-->
@@ -58,8 +76,7 @@
             <label for="Suite" class="col-lg-2 control-label">Office Suite:</label>
             <div class="col-lg-10">
                 <input type="text" name="suite" class="form-control" placeholder="Suite #"
-                [(ngModel)]="newCompany.suite"
-                >
+                [(ngModel)]="newCompany.suite">
             </div>
           </div>
                 <!--City-->
@@ -67,17 +84,14 @@
             <label for="city" class="col-lg-2 control-label">City:</label>
             <div class="col-lg-10">
                 <input type="text" name="city" class="form-control" placeholder="City"
-                required
-                [(ngModel)]="newCompany.city"
-                >
+                [(ngModel)]="newCompany.city">
             </div>
           </div>        
                 <!--Zip Code-->
           <div class="form-group">
             <label for="zip" class="col-lg-2 control-label">Zip Code:</label>
             <div class="col-lg-10">
-              <input type="number" name="zip" class="form-control" placeholder="Zip code"
-              required
+              <input type="text" name="zip" class="form-control"
               [(ngModel)]="newCompany.zip"
               >
             </div>
@@ -148,14 +162,18 @@
             <label for="status" class="col-lg-2 control-label">Application Status:</label>
               <div class="col-lg-10">
                 <select name="status" class="form-control" id="select"
+                required
                 [(ngModel)]="newCompany.status"
-                >
+                #status="ngModel">
                   <option value="Contacted">Contacted</option>
                   <option value="Applied">Applied</option>
                   <option value="Interview Set">Interview Set</option>
                   <option value="Interviewed">Interviewed</option>
                   <option value="Rejected">Rejected</option>
                 </select>
+                <div class="red" *ngIf="status.errors && (status.touched || myform.submitted)">
+                  <p>Please make a selection</p>
+                </div>
               </div>  
           </div>
 
@@ -169,18 +187,18 @@
             </div> 
           </div>         
 
-
-
           <legend>Contact Information</legend>
-
           <!--Contact Name-->
           <div class="form-group"> 
             <label for="contact" class="col-lg-2 control-label">Contact Person:</label>
             <div class="col-lg-10">
-              <input type="text" name="contact" class="form-control" placeholder="Recruiter, Hiring Manager, etc."
+              <input type="text" name="contact_name" class="form-control" placeholder="Recruiter, Hiring Manager, etc."
               required
               [(ngModel)]="newCompany.contact_name"
-              >
+              #contact_name = "ngModel">
+              <div class="red" *ngIf="contact_name.errors && (contact_name.touched || myform.submitted)">
+                <p>Please enter your contact person's name</p>
+              </div>
             </div>
           </div>
 
@@ -188,19 +206,23 @@
           <div class="form-group"> 
             <label for="phone" class="col-lg-2 control-label">Phone::</label>
             <div class="col-lg-10">
-              <input type="text" name="phone" class="form-control" placeholder="###-###-####"
+              <input type="text" name="phone" class="form-control" placeholder="888-888-8888"
               [(ngModel)]="newCompany.phone"
               >
             </div>
           </div>
 
-          <!--Email-->
+          <!--Contact Email-->
           <div class="form-group"> 
             <label for="contact" class="col-lg-2 control-label">Email:</label>
             <div class="col-lg-10">
               <input type="text" name="contact_email" class="form-control" placeholder="contact@company.com"
+              pattern = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
               [(ngModel)]="newCompany.contact_email"
-              >
+              #contact_email = "ngModel">
+              <div class="red" *ngIf="contact_email.errors && contact_email.touched">
+                <p *ngIf="contact_email.errors.pattern">Please enter a valid email address</p>
+              </div>
             </div>
           </div>                    
 
@@ -218,7 +240,7 @@
           <div class="form-group">
             <label for="notes" class="col-lg-2 control-label">Notes:</label>
             <div class="col-lg-10">
-              <textarea name="note" cols="30" rows="10" class="form-control" placeholder="Notes about this job you may wanna add."
+              <textarea name="note" cols="30" rows="10" class="form-control" placeholder="Notes about the contact person"
               [(ngModel)]="newCompany.note"
               ></textarea>    
             </div> 
@@ -226,7 +248,7 @@
 
           <!--Submit Button-->
           <div class="form-group" style="text-align:center;">
-            <button type="submit" class="btn btn-primary" style="text-align:center">Submit</button>
+            <button [disabled]="!myform.form.valid"  type="submit" class="btn btn-primary" style="text-align:center">Submit</button>
           </div>
         </fieldset>
       </form>

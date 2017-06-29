@@ -7,12 +7,15 @@
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <form class="navbar-form navbar-left" role="search">
+          <form class="navbar-form navbar-right" role="search" method="get" action="http//www.google.com/search">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search Comapany!">
+              <input type="text" class="form-control" placeholder="Search Comapany!" value="">
             </div>
             <button type="submit" class="btn btn-default">Submit</button>
           </form>
+            <div class="pull-left">
+              <a class="btn btn-success" [routerLink]="['/homepage']" >Back to Dashboard</a>
+            </div>
         </div>
       </div>
     </nav>      
@@ -26,25 +29,36 @@
   </div>
 
   <!--Display Comapny details-->
+
+  <div class="editbutton">
+    <button (click)="editCompany()" class="btn btn-default">Edit Company Details</button>
+  </div>
+
   <div class="displaycompany">
-    <h2>Apple Inc</h2>
-    <p>Added on</p>
+    <h2>{{displayOneComp.name}} </h2>
+    <p>Added on <i> {{ displayOneComp.createdAt | date:"longDate" }} </i> </p>
+    <p>Role: {{displayOneComp.role}}</p>
+    <p>Notes: {{displayOneComp.notes}}</p>
+    <p>Statu: {{displayOneComp.status}}</p>
     <div class="contact">
       <h3>Contact Person</h3>
-      <a href="http://linkedin">linkedin of Contact</a>
-      <p>Email of contact</p>
-      <p>Phone Number</p>
+      <p>{{displayOneComp.contact.contact_name}}</p>
+      <p><a href="{{displayOneComp.contact.linkedin}}" *ngIf="displayOneComp.contact.linkedin">LinkedIn</a></p>
+      <p>Email: {{displayOneComp.contact.contact_email}}</p>
+      <p>Phone: {{displayOneComp.contact.phone}}</p>
+      <p>Notes: {{displayOneComp.contact.note}}</p>
     </div>
   </div>
 
   <!--Office visit-->
   <div class="visit">
     <h2>Visiting Onsite?</h2>
-    <p>Address here</p>
-    <p> WEATER API here</p>
+    <p>{{displayOneComp.address.street}}</p>
+    <p>{{displayOneComp.address.suite}}</p>
+    <p>{{displayOneComp.address.city}}, {{displayOneComp.address.state}} {{displayOneComp.address.zip}}</p>
+    <p> <b>WEATER API here</b></p>
   </div>
 </div>
-
 
 
 

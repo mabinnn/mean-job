@@ -20,6 +20,22 @@ export class LoginComponent implements OnInit {
   }
 
   invalidPass = false;
+  userNotInDatabase = false;
+
+  // Check if user exists in the database
+  // searchifUserExist(form){
+  //   console.log("checking if user exist in the database");
+  //   this._http.findUser({email: this.userLogging.email})
+  //   .then(data=>{
+  //     console.log("data from searchExists:", data)
+  //   })
+  //   .catch(err=>{
+  //     console.log("User does not exist, cannot login")
+  //   })
+  //   form.resetForm();
+  // }
+
+
 
   login(){
     console.log("Reached login() in the login.comp")

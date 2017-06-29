@@ -17,7 +17,7 @@ import { NewentryComponent } from './newentry/newentry.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CompanyinfoComponent } from './companyinfo/companyinfo.component';
 import { RegistrationComponent } from './registration/registration.component';
-import { HomepageComponent } from './homepage/homepage.component';
+import { EditcompanyComponent } from './editcompany/editcompany.component';
 
 
 @NgModule({
@@ -28,7 +28,7 @@ import { HomepageComponent } from './homepage/homepage.component';
     DashboardComponent,
     CompanyinfoComponent,
     RegistrationComponent,
-    HomepageComponent
+    EditcompanyComponent
   ],
   imports: [
     BrowserModule,

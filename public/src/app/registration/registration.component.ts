@@ -23,16 +23,16 @@ export class RegistrationComponent implements OnInit {
 
     if(!form.valid || this.newuser.password !== this.newuser.confirmpassword){
       this.invalidForm();
-      return
+      return;
     } else {
-      this._cookieService.put('email', this.newuser.email)
-      console.log("the cookie is:", this._cookieService.get('email'))
+      this._cookieService.put('email', this.newuser.email);
+      console.log("the cookie is:", this._cookieService.get('email'));
       this._http.addUser(this.newuser)
       .then(data =>{
-        console.log("Created user into the database: ", this.newuser)
+        console.log("Created user into the database: ", this.newuser);
       })
       .catch(err =>{
-        console.log("Error adding user who is trying to register.")
+        console.log("Error adding user who is trying to register.");
       })
       this._router.navigate(['/homepage']);
     }
@@ -40,7 +40,7 @@ export class RegistrationComponent implements OnInit {
 
   // This function sets the boolean to true so we can display a div in the html
   invalidForm(){
-    console.log("Invalid Form, or passwords are not matching")
+    console.log("Invalid Form, or passwords are not matching");
     this.failBool = true;
   }
 

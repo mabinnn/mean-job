@@ -18,6 +18,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CompanyinfoComponent } from './companyinfo/companyinfo.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { EditcompanyComponent } from './editcompany/editcompany.component';
+import { FilterPipe } from './filter.pipe';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { EditcompanyComponent } from './editcompany/editcompany.component';
     DashboardComponent,
     CompanyinfoComponent,
     RegistrationComponent,
-    EditcompanyComponent
+    EditcompanyComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

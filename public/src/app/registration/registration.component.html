@@ -11,6 +11,9 @@
           <div class="red" *ngIf="failBool">
             <p>Form is invalid. Please try again. </p>
           </div>
+          <div class="red" *ngIf="userExists">
+            <p>User with that email already exists.</p>
+          </div>
 
         <!--First Name-->
         <div class="form-group">

@@ -38,31 +38,32 @@
     <legend> {{displayOneComp.name}}</legend>
     <p>Added on <i> {{ displayOneComp.createdAt | date:"longDate" }} </i> </p>
     <a href="http://{{displayOneComp.url}}">Job Website</a>
-    <p>Role: {{displayOneComp.role}}</p>
-    <p>Notes: {{displayOneComp.notes}}</p>
-    <p>Status: {{displayOneComp.status}}</p>
+    <p><span class="grn">Role:</span> {{displayOneComp.role}}</p>
+    <p><span class="grn">Notes:</span> {{displayOneComp.notes}}</p>
+    <p><span class="grn">Status:</span> {{displayOneComp.status}}</p>
     <div class="contact">
       <legend> Contact Person</legend>
       <p>{{displayOneComp.contact.contact_name}}</p>
       <p><a href="{{displayOneComp.contact.linkedin}}" *ngIf="displayOneComp.contact.linkedin">LinkedIn</a></p>
-      <p>Email: {{displayOneComp.contact.contact_email}}</p>
-      <p>Phone: {{displayOneComp.contact.phone}}</p>
-      <p>Notes: {{displayOneComp.contact.note}}</p>
+      <p><span class="grn">Email:</span> {{displayOneComp.contact.contact_email}}</p>
+      <p><span class="grn">Phone:</span> {{displayOneComp.contact.phone}}</p>
+      <p><span class="grn">Notes:</span> {{displayOneComp.contact.note}}</p>
     </div>
   </div>
 
   <!--Office visit-->
   <div class="visit">
     <legend>Visiting Onsite?</legend>
+    <p><b>Address:</b></p>
     <p>{{displayOneComp.address.street}}</p>
     <p>{{displayOneComp.address.suite}}</p>
     <p>{{displayOneComp.address.city}}, {{displayOneComp.address.state}} {{displayOneComp.address.zip}}</p>
-    <p><b>Weather:</b></p>
-    <p>Temperature: {{weather.temp}} °F</p>
-    <p>High: {{weather.maxTemp}} °F</p>
-    <p>Low: {{weather.minTemp}} °F</p>
-    <p>Humidity: {{weather.minTemp}}%</p>
-    <p>Conditions: {{weather.sky}}</p>
+    <p *ngIf="weather.temp"><b>Weather:</b></p>
+    <p *ngIf="weather.temp"><span class="grn">Temperature:</span> {{weather.temp}} °F</p>
+    <p *ngIf="weather.temp"><span class="grn">High:</span> {{weather.maxTemp}} °F</p>
+    <p *ngIf="weather.temp"><span class="grn">Low:</span> {{weather.minTemp}} °F</p>
+    <p *ngIf="weather.temp"><span class="grn">Humidity:</span> {{weather.minTemp}}%</p>
+    <p *ngIf="weather.temp"><span class="grn">Conditions:</span> {{weather.sky}}</p>
   </div>
 </div>
 

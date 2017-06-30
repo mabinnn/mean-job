@@ -86,7 +86,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--The whole content below can be removed with the new code.-->\n\n<div class=\"container\">\n  <router-outlet></router-outlet>\n</div>\n\n\n\n\n"
+module.exports = "<!--The whole content below can be removed with the new code.-->\n\n<div class=\"container\">\n    <router-outlet></router-outlet>\n\n</div>\n\n\n\n\n"
 
 /***/ }),
 
@@ -141,6 +141,7 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__companyinfo_companyinfo_component__ = __webpack_require__("../../../../../src/app/companyinfo/companyinfo.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__registration_registration_component__ = __webpack_require__("../../../../../src/app/registration/registration.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__editcompany_editcompany_component__ = __webpack_require__("../../../../../src/app/editcompany/editcompany.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__filter_pipe__ = __webpack_require__("../../../../../src/app/filter.pipe.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -165,6 +166,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var AppModule = (function () {
     function AppModule() {
     }
@@ -179,7 +181,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_11__dashboard_dashboard_component__["a" /* DashboardComponent */],
             __WEBPACK_IMPORTED_MODULE_12__companyinfo_companyinfo_component__["a" /* CompanyinfoComponent */],
             __WEBPACK_IMPORTED_MODULE_13__registration_registration_component__["a" /* RegistrationComponent */],
-            __WEBPACK_IMPORTED_MODULE_14__editcompany_editcompany_component__["a" /* EditcompanyComponent */]
+            __WEBPACK_IMPORTED_MODULE_14__editcompany_editcompany_component__["a" /* EditcompanyComponent */],
+            __WEBPACK_IMPORTED_MODULE_15__filter_pipe__["a" /* FilterPipe */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -275,7 +278,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "\nagm-map {\n    height: 500px;\n    width: 800px;\n}\n.googlemaps {\n    /*margin: 0 auto 0 auto;*/\n    margin-top: 10px;\n    width: 800px;\n    margin-left: auto;\n    margin-right: auto;\n}\n.nav {\n    margin-top: 10px;\n}\np, a {\n    display: block;\n    margin-left: 15px;\n}\n.container {\n    margin-bottom: 30px;\n}\n.displaycompany {\n    display: inline-block;\n    margin-left: 200px;\n    height: 300px;\n    width: 320px;\n    padding: 20px;\n}\n.visit {\n    display: inline-block;\n    margin-right: 200px;\n    height: 300px;\n    width: 320px;\n    padding: 20px;\n    text-align: left;\n}\n.pull-left {\n    margin-top: 5px;\n}\n.pull-right {\n    margin-top: 5px;\n}\n.editbutton {\n    margin-top: 25px;\n    padding-right: 20px;\n    text-align: center; \n}\nlegend {\n    margin-top: 15px;\n}\n\n\n\n", ""]);
+exports.push([module.i, "\nagm-map {\n    height: 500px;\n    width: 800px;\n}\n.googlemaps {\n    /*margin: 0 auto 0 auto;*/\n    margin-top: 10px;\n    width: 800px;\n    margin-left: auto;\n    margin-right: auto;\n}\n.nav {\n    margin-top: 10px;\n}\np, a {\n    display: block;\n    margin-left: 15px;\n}\n.container {\n    margin-bottom: 100px;\n}\n.displaycompany {\n    display: inline-block;\n    vertical-align: top;\n    margin-left: 200px;\n    height: 300px;\n    width: 320px;\n    padding: 20px;\n}\n.visit {\n    display: inline-block;\n    vertical-align: top;\n    margin-right: 200px;\n    height: 300px;\n    width: 320px;\n    padding: 20px;\n    text-align: left;\n}\n.pull-left {\n    margin-top: 5px;\n}\n.pull-right {\n    margin-top: 5px;\n}\n.editbutton {\n    margin-top: 25px;\n    padding-right: 20px;\n    text-align: center; \n}\nlegend {\n    margin-top: 15px;\n}\n.grn {\n    color: #73a839;\n}\n\n\n\n", ""]);
 
 // exports
 
@@ -288,7 +291,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/companyinfo/companyinfo.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<link rel=\"stylesheet\" href=\"https://bootswatch.com/cerulean/bootstrap.min.css\">\n\n<div class=\"container\">\n  <!--Nav bar to search compnanies-->\n  <div class=\"nav\">\n    <nav class=\"navbar navbar-default\">\n      <div class=\"container-fluid\">\n        <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\n          <form class=\"navbar-form navbar-right\" role=\"search\" method=\"get\" action=\"http//www.google.com/search\">\n            <div class=\"form-group\">\n              <input type=\"text\" class=\"form-control\" placeholder=\"Search Comapany!\" value=\"\">\n            </div>\n            <button type=\"submit\" class=\"btn btn-default\">Submit</button>\n          </form>\n            <div class=\"pull-left\">\n              <a class=\"btn btn-success\" [routerLink]=\"['/homepage']\" >Back to Dashboard</a>\n            </div>\n        </div>\n      </div>\n    </nav>      \n  </div>\n\n  <!--Display Google Maps-->\n  <div class=\"googlemaps\"> \n    <agm-map [latitude]=\"lat\" [longitude]=\"lng\" [zoom]=\"14\">\n      <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n    </agm-map>\n  </div>\n\n  <!--Display Comapny details-->\n\n  <div class=\"editbutton\">\n    <button (click)=\"editCompany()\" class=\"btn btn-default\">Edit Company Details</button>\n  </div>\n\n  <div class=\"displaycompany\">\n    <legend> {{displayOneComp.name}}</legend>\n    <p>Added on <i> {{ displayOneComp.createdAt | date:\"longDate\" }} </i> </p>\n    <a href=\"http://{{displayOneComp.url}}\">Job Website</a>\n    <p>Role: {{displayOneComp.role}}</p>\n    <p>Notes: {{displayOneComp.notes}}</p>\n    <p>Status: {{displayOneComp.status}}</p>\n    <div class=\"contact\">\n      <legend> Contact Person</legend>\n      <p>{{displayOneComp.contact.contact_name}}</p>\n      <p><a href=\"{{displayOneComp.contact.linkedin}}\" *ngIf=\"displayOneComp.contact.linkedin\">LinkedIn</a></p>\n      <p>Email: {{displayOneComp.contact.contact_email}}</p>\n      <p>Phone: {{displayOneComp.contact.phone}}</p>\n      <p>Notes: {{displayOneComp.contact.note}}</p>\n    </div>\n  </div>\n\n  <!--Office visit-->\n  <div class=\"visit\">\n    <legend>Visiting Onsite?</legend>\n    <p>{{displayOneComp.address.street}}</p>\n    <p>{{displayOneComp.address.suite}}</p>\n    <p>{{displayOneComp.address.city}}, {{displayOneComp.address.state}} {{displayOneComp.address.zip}}</p>\n    <p><b>Weather:</b></p>\n    <p>Temperature: {{weather.temp}} °F</p>\n    <p>High: {{weather.maxTemp}} °F</p>\n    <p>Low: {{weather.minTemp}} °F</p>\n    <p>Humidity: {{weather.minTemp}}%</p>\n    <p>Conditions: {{weather.sky}}</p>\n  </div>\n</div>\n\n\n\n"
+module.exports = "\n<link rel=\"stylesheet\" href=\"https://bootswatch.com/cerulean/bootstrap.min.css\">\n\n<div class=\"container\">\n  <!--Nav bar to search compnanies-->\n  <div class=\"nav\">\n    <nav class=\"navbar navbar-default\">\n      <div class=\"container-fluid\">\n        <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\n          <form class=\"navbar-form navbar-right\" role=\"search\" method=\"get\" action=\"http//www.google.com/search\">\n            <div class=\"form-group\">\n              <input type=\"text\" class=\"form-control\" placeholder=\"Search Comapany!\" value=\"\">\n            </div>\n            <button type=\"submit\" class=\"btn btn-default\">Submit</button>\n          </form>\n            <div class=\"pull-left\">\n              <a class=\"btn btn-success\" [routerLink]=\"['/homepage']\" >Back to Dashboard</a>\n            </div>\n        </div>\n      </div>\n    </nav>      \n  </div>\n\n  <!--Display Google Maps-->\n  <div class=\"googlemaps\"> \n    <agm-map [latitude]=\"lat\" [longitude]=\"lng\" [zoom]=\"14\">\n      <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n    </agm-map>\n  </div>\n\n  <!--Display Comapny details-->\n\n  <div class=\"editbutton\">\n    <button (click)=\"editCompany()\" class=\"btn btn-default\">Edit Company Details</button>\n  </div>\n\n  <div class=\"displaycompany\">\n    <legend> {{displayOneComp.name}}</legend>\n    <p>Added on <i> {{ displayOneComp.createdAt | date:\"longDate\" }} </i> </p>\n    <a href=\"http://{{displayOneComp.url}}\">Job Website</a>\n    <p><span class=\"grn\">Role:</span> {{displayOneComp.role}}</p>\n    <p><span class=\"grn\">Notes:</span> {{displayOneComp.notes}}</p>\n    <p><span class=\"grn\">Status:</span> {{displayOneComp.status}}</p>\n    <div class=\"contact\">\n      <legend> Contact Person</legend>\n      <p>{{displayOneComp.contact.contact_name}}</p>\n      <p><a href=\"{{displayOneComp.contact.linkedin}}\" *ngIf=\"displayOneComp.contact.linkedin\">LinkedIn</a></p>\n      <p><span class=\"grn\">Email:</span> {{displayOneComp.contact.contact_email}}</p>\n      <p><span class=\"grn\">Phone:</span> {{displayOneComp.contact.phone}}</p>\n      <p><span class=\"grn\">Notes:</span> {{displayOneComp.contact.note}}</p>\n    </div>\n  </div>\n\n  <!--Office visit-->\n  <div class=\"visit\">\n    <legend>Visiting Onsite?</legend>\n    <p><b>Address:</b></p>\n    <p>{{displayOneComp.address.street}}</p>\n    <p>{{displayOneComp.address.suite}}</p>\n    <p>{{displayOneComp.address.city}}, {{displayOneComp.address.state}} {{displayOneComp.address.zip}}</p>\n    <p *ngIf=\"weather.temp\"><b>Weather:</b></p>\n    <p *ngIf=\"weather.temp\"><span class=\"grn\">Temperature:</span> {{weather.temp}} °F</p>\n    <p *ngIf=\"weather.temp\"><span class=\"grn\">High:</span> {{weather.maxTemp}} °F</p>\n    <p *ngIf=\"weather.temp\"><span class=\"grn\">Low:</span> {{weather.minTemp}} °F</p>\n    <p *ngIf=\"weather.temp\"><span class=\"grn\">Humidity:</span> {{weather.minTemp}}%</p>\n    <p *ngIf=\"weather.temp\"><span class=\"grn\">Conditions:</span> {{weather.sky}}</p>\n  </div>\n</div>\n\n\n\n"
 
 /***/ }),
 
@@ -471,13 +474,21 @@ var DashboardComponent = (function () {
         this._http = _http;
         this.loggedUser = this._cookieService.get("email");
         this.fetchedRecords = [];
+        this.companyNames = [];
     }
+    DashboardComponent.prototype.getCompByName = function () {
+        for (var _i = 0, _a = this.fetchedRecords; _i < _a.length; _i++) {
+            var x = _a[_i];
+            this.companyNames.push(x.name);
+        }
+    };
     DashboardComponent.prototype.collectCompanies = function () {
         var _this = this;
         this._http.findAllCompanies({ email: this.loggedUser })
             .then(function (data) {
             console.log("Companies collected");
             _this.fetchedRecords = data;
+            _this.getCompByName(); // <-- store comp names into an array
         })
             .catch(function (err) {
             console.log("Error fetching records to the dashboard");
@@ -639,6 +650,43 @@ EditcompanyComponent = __decorate([
 
 var _a, _b, _c, _d;
 //# sourceMappingURL=editcompany.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/filter.pipe.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FilterPipe; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var FilterPipe = (function () {
+    function FilterPipe() {
+    }
+    FilterPipe.prototype.transform = function (value, input) {
+        if (input) {
+            input = input.toLowerCase();
+            return value.filter(function (el) {
+                return el.toString().toLowerCase().indexOf(this.filter.toString().toLowerCase()) > -1;
+            });
+        }
+        return value;
+    };
+    return FilterPipe;
+}());
+FilterPipe = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Pipe"])({
+        name: 'filter'
+    })
+], FilterPipe);
+
+//# sourceMappingURL=filter.pipe.js.map
 
 /***/ }),
 
@@ -1017,7 +1065,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/registration/registration.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<link rel=\"stylesheet\" href=\"https://bootswatch.com/cerulean/bootstrap.min.css\">\n<div class=\"container\" style=\"text-align:center\">\n  <div class=\"registration\">\n\n    <form class=\"form-horizontal\" #myform=\"ngForm\" (submit)=\"submitRegForm(myform)\">\n      <fieldset>\n        <legend>Registration</legend>\n\n              <!--If form is submitted, but invalid, display this message-->\n          <div class=\"red\" *ngIf=\"failBool\">\n            <p>Form is invalid. Please try again. </p>\n          </div>\n\n        <!--First Name-->\n        <div class=\"form-group\">\n          <label for=\"fname\" class=\"col-lg-2 control-label\">First Name:</label>\n          <div class=\"col-lg-10\">\n            <input type=\"text\" name=\"fname\" class=\"form-control\" placeholder=\"Your first name\"\n            required\n            [(ngModel)]=\"newuser.firstname\"\n            #fname=\"ngModel\">     \n          </div >\n            <div class=\"red\" *ngIf=\"fname.errors && (fname.touched || myform.submitted)\">\n              <p *ngIf=\"fname.errors.required\">This field must not be blank</p>\n            </div>\n        </div>\n\n        <!--Last Name-->\n        <div class=\"form-group\">\n          <label for=\"lname\" class=\"col-lg-2 control-label\">Last Name:</label>\n          <div class=\"col-lg-10\">\n            <input type=\"text\"  class=\"form-control\" name=\"lname\" placeholder=\"Your last name\"\n            required\n            [(ngModel)]=\"newuser.lastname\"\n            #lname=\"ngModel\">\n          </div>\n            <div class=\"red\" *ngIf=\"lname.errors && (lname.touched || myform.submitted)\">\n              <p *ngIf=\"lname.errors.required\">This field must not be blank</p>\n            </div>\n        </div>\n\n        <!--Email-->\n        <div class=\"form-group\">\n          <label for=\"email\" class=\"col-lg-2 control-label\">Email:</label>\n          <div class=\"col-lg-10\">\n            <input type=\"text\" class=\"form-control\" name=\"email\" placeholder=\"your@email.com\"\n            required\n            pattern = \"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$\"\n            [(ngModel)]=\"newuser.email\"\n            #email=\"ngModel\">\n          </div>\n            <div class=\"red\" *ngIf=\"email.errors && (email.touched || myform.submitted)\">\n              <p *ngIf=\"email.errors.required\">This field must not be blank</p>\n              <p *ngIf=\"email.errors.pattern\">Please enter a valid email address</p>\n            </div>\n        </div>     \n\n        <!--Password -->\n        <div class=\"form-group\">\n          <label for=\"password\" class=\"col-lg-2 control-label\">Password</label>\n          <div class=\"col-lg-10\">\n            <input type=\"password\" class=\"form-control\" name=\"password\" placeholder=\"Must be between 8-12 characters\"\n            required\n            minlength=\"8\"\n            maxlength=\"12\"\n            [(ngModel)]=\"newuser.password\"\n            #password=\"ngModel\">\n          </div>\n            <div class=\"red\" *ngIf=\"password.errors && (password.touched || myform.submitted)\">\n              <p *ngIf=\"password.errors.required\">This field must not be blank</p>\n              <p *ngIf=\"password.errors.minlength || password.errors.maxlength\">Password should be between 8-12 characters</p>\n            </div>\n        </div>\n\n        <!--Confirm Password -->\n        <div class=\"form-group\">\n          <label for=\"confirmpw\" class=\"col-lg-2 control-label\">Confirm Password:</label>\n          <div class=\"col-lg-10\">\n            <input type=\"password\" class=\"form-control\" name=\"confirmpassword\" placeholder=\"Passwords must match\"\n            [(ngModel)]=\"newuser.confirmpassword\"\n            #confirmpassword=\"ngModel\">\n          </div>\n            <div class=\"red\" *ngIf=\"password.value !== confirmpassword.value && myform.submitted\">\n              <p>Password are not matching!</p>\n            </div>\n        </div>\n\n        <h4> Already Registered?</h4>\n        <h5>\n          <a [routerLink]=\"['/']\"> Go Back</a>\n        </h5>\n        <button  class=\"btn btn-primary\">Register!</button>      \n      </fieldset>\n    </form>\n  </div>\n</div>\n"
+module.exports = "\n<link rel=\"stylesheet\" href=\"https://bootswatch.com/cerulean/bootstrap.min.css\">\n<div class=\"container\" style=\"text-align:center\">\n  <div class=\"registration\">\n\n    <form class=\"form-horizontal\" #myform=\"ngForm\" (submit)=\"submitRegForm(myform)\">\n      <fieldset>\n        <legend>Registration</legend>\n\n              <!--If form is submitted, but invalid, display this message-->\n          <div class=\"red\" *ngIf=\"failBool\">\n            <p>Form is invalid. Please try again. </p>\n          </div>\n          <div class=\"red\" *ngIf=\"userExists\">\n            <p>User with that email already exists.</p>\n          </div>\n\n        <!--First Name-->\n        <div class=\"form-group\">\n          <label for=\"fname\" class=\"col-lg-2 control-label\">First Name:</label>\n          <div class=\"col-lg-10\">\n            <input type=\"text\" name=\"fname\" class=\"form-control\" placeholder=\"Your first name\"\n            required\n            [(ngModel)]=\"newuser.firstname\"\n            #fname=\"ngModel\">     \n          </div >\n            <div class=\"red\" *ngIf=\"fname.errors && (fname.touched || myform.submitted)\">\n              <p *ngIf=\"fname.errors.required\">This field must not be blank</p>\n            </div>\n        </div>\n\n        <!--Last Name-->\n        <div class=\"form-group\">\n          <label for=\"lname\" class=\"col-lg-2 control-label\">Last Name:</label>\n          <div class=\"col-lg-10\">\n            <input type=\"text\"  class=\"form-control\" name=\"lname\" placeholder=\"Your last name\"\n            required\n            [(ngModel)]=\"newuser.lastname\"\n            #lname=\"ngModel\">\n          </div>\n            <div class=\"red\" *ngIf=\"lname.errors && (lname.touched || myform.submitted)\">\n              <p *ngIf=\"lname.errors.required\">This field must not be blank</p>\n            </div>\n        </div>\n\n        <!--Email-->\n        <div class=\"form-group\">\n          <label for=\"email\" class=\"col-lg-2 control-label\">Email:</label>\n          <div class=\"col-lg-10\">\n            <input type=\"text\" class=\"form-control\" name=\"email\" placeholder=\"your@email.com\"\n            required\n            pattern = \"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$\"\n            [(ngModel)]=\"newuser.email\"\n            #email=\"ngModel\">\n          </div>\n            <div class=\"red\" *ngIf=\"email.errors && (email.touched || myform.submitted)\">\n              <p *ngIf=\"email.errors.required\">This field must not be blank</p>\n              <p *ngIf=\"email.errors.pattern\">Please enter a valid email address</p>\n            </div>\n        </div>     \n\n        <!--Password -->\n        <div class=\"form-group\">\n          <label for=\"password\" class=\"col-lg-2 control-label\">Password</label>\n          <div class=\"col-lg-10\">\n            <input type=\"password\" class=\"form-control\" name=\"password\" placeholder=\"Must be between 8-12 characters\"\n            required\n            minlength=\"8\"\n            maxlength=\"12\"\n            [(ngModel)]=\"newuser.password\"\n            #password=\"ngModel\">\n          </div>\n            <div class=\"red\" *ngIf=\"password.errors && (password.touched || myform.submitted)\">\n              <p *ngIf=\"password.errors.required\">This field must not be blank</p>\n              <p *ngIf=\"password.errors.minlength || password.errors.maxlength\">Password should be between 8-12 characters</p>\n            </div>\n        </div>\n\n        <!--Confirm Password -->\n        <div class=\"form-group\">\n          <label for=\"confirmpw\" class=\"col-lg-2 control-label\">Confirm Password:</label>\n          <div class=\"col-lg-10\">\n            <input type=\"password\" class=\"form-control\" name=\"confirmpassword\" placeholder=\"Passwords must match\"\n            [(ngModel)]=\"newuser.confirmpassword\"\n            #confirmpassword=\"ngModel\">\n          </div>\n            <div class=\"red\" *ngIf=\"password.value !== confirmpassword.value && myform.submitted\">\n              <p>Password are not matching!</p>\n            </div>\n        </div>\n\n        <h4> Already Registered?</h4>\n        <h5>\n          <a [routerLink]=\"['/']\"> Go Back</a>\n        </h5>\n        <button  class=\"btn btn-primary\">Register!</button>      \n      </fieldset>\n    </form>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -1052,6 +1100,7 @@ var RegistrationComponent = (function () {
         this._cookieService = _cookieService;
         this._http = _http;
         this.newuser = new __WEBPACK_IMPORTED_MODULE_1__user__["a" /* User */]();
+        this.userExists = false;
     }
     RegistrationComponent.prototype.submitRegForm = function (form) {
         var _this = this;

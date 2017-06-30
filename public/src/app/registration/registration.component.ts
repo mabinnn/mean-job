@@ -17,6 +17,7 @@ export class RegistrationComponent implements OnInit {
 
   newuser = new User();
   failBool: boolean;
+  userExists: boolean = false;
 
 
   submitRegForm(form){

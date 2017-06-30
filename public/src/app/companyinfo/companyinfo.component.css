@@ -18,10 +18,11 @@ p, a {
     margin-left: 15px;
 }
 .container {
-    margin-bottom: 30px;
+    margin-bottom: 100px;
 }
 .displaycompany {
     display: inline-block;
+    vertical-align: top;
     margin-left: 200px;
     height: 300px;
     width: 320px;
@@ -29,6 +30,7 @@ p, a {
 }
 .visit {
     display: inline-block;
+    vertical-align: top;
     margin-right: 200px;
     height: 300px;
     width: 320px;
@@ -48,6 +50,9 @@ p, a {
 }
 legend {
     margin-top: 15px;
+}
+.grn {
+    color: #73a839;
 }
 
 

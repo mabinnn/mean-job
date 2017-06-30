@@ -174,6 +174,7 @@ module.exports = {
     // },
 
     deleteCompany: (req, res) => {
+        console.log('!!!!!!!!!!!!!!!!!');
         console.log("COMPANY:", req.params.id);
 
         Company.findOne({_id: req.params.id})
@@ -181,7 +182,7 @@ module.exports = {
             if (company) {//if company exists
                 console.log("COMPANYDATA:", company);
                 User.update(
-                    {id: company._user},
+                    {_id: company._user},
                     {$pull: {_companies:{$in: [company._id]}}})
                 .then(data => {
                     console.log('removed company from user');

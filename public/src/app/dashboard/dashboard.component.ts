@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-
+import { FilterPipe } from './../filter.pipe';
 import { HttpService } from './../http.service';
 import {CookieService} from 'angular2-cookie/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -21,11 +21,21 @@ export class DashboardComponent implements OnInit {
   fetchedRecords = [];
 
 
+  companyNames = [];
+
+  getCompByName(){
+    for(var x of this.fetchedRecords){
+      this.companyNames.push(x.name);
+    }
+  } 
+
+
   collectCompanies(){
     this._http.findAllCompanies({email: this.loggedUser})
     .then(data=>{
       console.log("Companies collected");
       this.fetchedRecords = data;
+      this.getCompByName();  // <-- store comp names into an array
     })
     .catch(err=>{
       console.log("Error fetching records to the dashboard");
@@ -43,8 +53,6 @@ export class DashboardComponent implements OnInit {
       console.log(err)
     })
   }
-
-
 
   helloMessage(){
     this._http.findUser({email: this.loggedUser})

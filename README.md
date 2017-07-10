@@ -4,5 +4,5 @@
 
 
 # This is a project produced by two web developers. 
-# I, Marvin was the front-end developer (anguar) and my colleauge was the backend developer (express).
+# I was the front-end developer using angular and my colleauge was the backend developer using express.
 # This web application is developed using MEAN technologies; mondoDB, Express, Angular and Node.
